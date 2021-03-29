@@ -1,22 +1,10 @@
 <template>
   <v-container class='container' id='container'>
-    <h1>Felix' Geiles Stat Tool</h1>
+    <h1>Felix' Geiles Stat Tool {{this.mean}}</h1>
     <div class='data-input-container'>
-      <div class='slider' id=meanDiv>
-        <p>Mean</p>
-        <input id=meanValDisplay type='number' step='0.01' class='paramField' v-model='mean' @change="update_from_slider"/><br>
-        <input id='meanSlider' class='paramSlider' type='range' min='-10'  max='10' step='0.1' v-model='mean'  data-orientation='vertical' @change="update_from_slider" >
-      </div>
-      <div class='slider' id=sdDiv>
-        <p>Standard Deviation</p>
-        <input id=sdValDisplay type='number' step='0.01' class='paramField' v-model='std' @change="update_from_slider"/><br>
-        <input id='sdSlider' class='paramSlider' type='range' min='1' max='10'  step='0.1'  v-model='std'  data-orientation='vertical' @change="update_from_slider">
-      </div>
-      <div class='slider' id=valueDiv>
-        <p>A value</p>
-        <input id=valueDisplay type='number' step='0.01' class='paramField' v-model='aValue' @change="update_from_slider"/><br>
-        <input id='valueSlider' class='paramSlider' type='range' min='-10' max='10'  step='0.1'  v-model="aValue"  data-orientation='vertical' @change="update_from_slider">
-      </div>
+      <InputSlider name='Mean' setMethod='setMean' min=-10 max=10 step=0.1></InputSlider>
+      <InputSlider name='Standard Deviation' setMethod='setStd' min=0 max=10 step=0.1></InputSlider>
+      <InputSlider name='A value' setMethod='setAValue' min=-10 max=10 step=0.1></InputSlider>
     </div>
     <div id='chart-container' class='chart-container'></div>
     <h2>Prob:</h2>
@@ -31,6 +19,9 @@ import * as d3 from 'd3'
 import jStat from 'jstat'
 // @ts-ignore
 import { create, all } from 'mathjs'
+import { mapState } from 'vuex'
+
+import InputSlider from './InputSlider'
 
 interface Data {
   [index: number]: {
@@ -53,15 +44,14 @@ interface State {
   interval: number,
   upperBound: number,
   lowerBound: number,
-  mean: number,
-  std: number,
-  aValue: number,
   probability: number
 }
 
 export default Vue.extend({
   name: 'Chart',
-
+  components: {
+    InputSlider
+  },
   data: (): State => (
     {
       margin: {
@@ -73,9 +63,6 @@ export default Vue.extend({
       interval: 0.05,
       upperBound: 10.0,
       lowerBound: -10.0,
-      mean: 0,
-      std: 1,
-      aValue: 0,
       probability: 0,
       x: null,
       xAxis: null,
@@ -94,24 +81,14 @@ export default Vue.extend({
     this.create_area(this.x, this.y)
 
     this.update(chartData, this.x, this.y, this.xAxis, this.yAxis)
-    // var self = this
-
-    // d3.selectAll('.paramSlider')
-    //   .on('input', function () {
-    //     self.update_from_slider()
-    //   })
-
-    // d3.selectAll('.paramField')
-    //   .on('input', function () {
-    //     self.update_from_field()
-    //   })
+    this.compute_probability()
   },
   methods: {
     create_chart: function () {
       this.svg = d3.select('#chart-container')
         .append('svg')
-        .attr('width', this.width)
-        .attr('height', this.height)
+        .attr('width', this.width + this.margin.top + this.margin.bottom)
+        .attr('height', this.height + this.margin.top + this.margin.bottom)
         .attr('class', 'chart')
         .append('g')
         .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')')
@@ -162,7 +139,6 @@ export default Vue.extend({
         .attr('class', 'yAxis')
     },
     update: function (data: any, x: any, y: any, xAxis: any, yAxis: any) {
-      console.log('Updating')
       const ANIMATION_DURATION = 500
 
       // Create the X axis:
@@ -223,14 +199,25 @@ export default Vue.extend({
       this.update(chartData, this.x, this.y, this.xAxis, this.yAxis)
       this.compute_probability()
     },
-    update_from_field: function () {
-      var chartData = this.create_data()
-      this.update(chartData, this.x, this.y, this.xAxis, this.yAxis)
-      this.compute_probability()
-    },
     compute_probability: function () {
       const math = create(all, {})
+      console.log(this.probability)
       this.probability = (1 - math.erf((this.mean - this.aValue) / (Math.sqrt(2) * this.std))) / 2
+    }
+  },
+  computed: mapState([
+    // map this.count to store.state.count
+    'mean', 'std', 'aValue'
+  ]),
+  watch: {
+    mean: function (val) {
+      this.update_from_slider()
+    },
+    std: function (val) {
+      this.update_from_slider()
+    },
+    aValue: function (val) {
+      this.update_from_slider()
     }
   }
 })
