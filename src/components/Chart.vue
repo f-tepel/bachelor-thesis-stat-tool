@@ -2,11 +2,12 @@
   <v-container class='container' id='container'>
     <h1>Felix' Geiles Stat Tool {{this.mean}}</h1>
     <div class='data-input-container'>
-      <InputSlider name='Mean' setMethod='setMean' min=-10 max=10 step=0.1></InputSlider>
-      <InputSlider name='Standard Deviation' setMethod='setStd' min=0 max=10 step=0.1></InputSlider>
-      <InputSlider name='A value' setMethod='setAValue' min=-10 max=10 step=0.1></InputSlider>
+      <InputSlider name='Mean' setMethod='setMean' storeName='mean' min=-10 max=10 step=0.1></InputSlider>
+      <InputSlider name='Standard Deviation' setMethod='setStd' storeName='std' min=0 max=10 step=0.1></InputSlider>
+      <InputSlider name='A value' setMethod='setAValue' min=-10 storeName='aValue' max=10 step=0.1></InputSlider>
     </div>
     <div id='chart-container' class='chart-container'></div>
+    <Settings/>
     <h2>Prob:</h2>
     <h2>{{probability}}</h2>
   </v-container>
@@ -21,7 +22,8 @@ import jStat from 'jstat'
 import { create, all } from 'mathjs'
 import { mapState } from 'vuex'
 
-import InputSlider from './InputSlider'
+import InputSlider from './InputSlider.vue'
+import Settings from './Settings.vue'
 
 interface Data {
   [index: number]: {
@@ -50,7 +52,8 @@ interface State {
 export default Vue.extend({
   name: 'Chart',
   components: {
-    InputSlider
+    InputSlider,
+    Settings
   },
   data: (): State => (
     {

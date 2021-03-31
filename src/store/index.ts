@@ -6,8 +6,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     mean: 0,
-    std: 0,
-    aValue: 0
+    std: 1,
+    aValue: 0,
+    isGreater: true,
+    isSmaller: false,
+    isBetween: false
   },
   mutations: {
     setMean (state, val: number) {
@@ -18,6 +21,21 @@ export default new Vuex.Store({
     },
     setAValue (state, val: number) {
       state.aValue = val
+    },
+    setMode (state, val: string) {
+      if (val === 'greater') {
+        state.isGreater = true
+        state.isSmaller = false
+        state.isBetween = false
+      } else if (val === 'smaller') {
+        state.isGreater = false
+        state.isSmaller = true
+        state.isBetween = false
+      } else {
+        state.isGreater = false
+        state.isSmaller = false
+        state.isBetween = true
+      }
     }
   },
   actions: {
