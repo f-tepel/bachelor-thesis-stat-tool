@@ -1,15 +1,16 @@
 <template>
   <v-container class='container' id='container'>
-    <h1>Felix' Geiles Stat Tool {{this.isBetween}}</h1>
-    <div class='data-input-container'>
-      <InputSlider name='Mean' setMethod='setMean' storeName='mean' min=-10 max=10 step=0.1></InputSlider>
-      <InputSlider name='Standard Deviation' setMethod='setStd' storeName='std' min=0 max=10 step=0.1></InputSlider>
-      <AValueInput name='A value' setMethod='setAValue' min=-10 storeName='aValue' max=10 step=0.1></AValueInput>
-    </div>
+    <h1>Felix' Geiles Stat Tool</h1>
     <div id='chart-container' class='chart-container'></div>
-    <Settings/>
-    <h2>Prob:</h2>
-    <Probability/>
+    <div class="settings-container">
+      <Settings/>
+      <div class='data-input-container'>
+        <InputSlider name='Mean' setMethod='setMean' storeName='mean' min=-10 max=10 step=0.1></InputSlider>
+        <InputSlider name='Standard Deviation' setMethod='setStd' storeName='std' min=0 max=10 step=0.1></InputSlider>
+        <AValueInput name='A value' setMethod='setAValue' min=-10 storeName='aValue' max=10 step=0.1></AValueInput>
+      </div>
+      <Probability/>
+    </div>
   </v-container>
 </template>
 
@@ -43,6 +44,7 @@ interface State {
   margin: any,
   width: number,
   height: number,
+  ratio: number,
   ANIMATION_DURATION: number,
   interval: number,
   upperBound: number,
@@ -64,7 +66,8 @@ export default Vue.extend({
         top: 20, right: 10, bottom: 20, left: 40
       },
       width: 960,
-      height: 400,
+      height: 500,
+      ratio: 1300 / 500,
       ANIMATION_DURATION: 200,
       interval: 0.05,
       upperBound: 10.0,
@@ -79,6 +82,7 @@ export default Vue.extend({
     }
   ),
   mounted: function () {
+    this.calcChartSize()
     var chartData = this.create_data()
 
     this.create_chart()
@@ -97,6 +101,27 @@ export default Vue.extend({
         .attr('class', 'chart')
         .append('g')
         .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')')
+    },
+    calcChartSize () {
+      const currentWidth = window.innerWidth - 200
+      const currentHeight = window.innerHeight - 200
+
+      const currentRatio = currentWidth / currentHeight
+      let h, w
+
+      // Check if height is limiting factor
+      if (currentRatio > this.ratio) {
+        h = currentHeight * 0.8
+        w = h * this.ratio
+      // Else width is limiting
+      } else {
+        w = currentWidth * 0.8
+        h = w / this.ratio
+      }
+
+      // Set new width and height based on graph dimensions
+      this.width = w - this.margin.left - this.margin.right
+      this.height = h - this.margin.top - this.margin.bottom
     },
     create_data: function (): Data {
       var n = Math.ceil((this.upperBound - this.lowerBound) / this.interval)
@@ -278,18 +303,21 @@ p {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 90vh;
 }
 
 .data-input-container {
   text-align: center;
   display: flex;
-  width: 90%;
   margin: 0 auto 75px;
 }
 
 .chart-container {
   margin: 0 auto;
+}
+
+.settings-container {
+  margin: 0 auto;
+  width: 50%;
 }
 
 .slider {

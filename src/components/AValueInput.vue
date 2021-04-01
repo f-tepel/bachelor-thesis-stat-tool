@@ -2,8 +2,8 @@
   <div>
     <div class='slider' v-if="!isBetween">
       <p>{{isBetween}}</p>
-      <input type='number' :step='step' class='paramField' :min='min' v-model='value' @change="update"/><br>
-      <input class='paramSlider' type='range' :min='min' v-bind:max='max' :step='step' v-model='value'  data-orientation='vertical' @change="update"/>
+      <input type='number' :step='step' class='paramField' :min='min' v-model='value' @change="updateAValue"/><br>
+      <input class='paramSlider' type='range' :min='min' v-bind:max='max' :step='step' v-model='value'  data-orientation='vertical' @change="updateAValue"/>
     </div>
     <div v-if="isBetween" class="d-flex flex-row">
       <div>

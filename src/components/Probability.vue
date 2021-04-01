@@ -1,5 +1,9 @@
 <template>
-  <h1>{{probability}}</h1>
+  <div class="v-flex">
+    <p v-if="isGreater">Probability: F( x &le; {{aValue}} ) = {{Math.round(probability * 100) / 100}}</p>
+    <p v-if="isSmaller">Probability: F( {{aValue}} &le; x ) = {{Math.round(probability * 100) / 100}}</p>
+    <p v-if="isBetween">Probability: F( {{aValueStart}} &le; x &le; {{aValueEnd}}) = {{Math.round(probability * 100) / 100}}</p>
+  </div>
 </template>
 
 <script lang="ts">
