@@ -1,15 +1,15 @@
 <template>
   <v-container class='container' id='container'>
-    <h1>Felix' Geiles Stat Tool {{this.mean}}</h1>
+    <h1>Felix' Geiles Stat Tool {{this.isBetween}}</h1>
     <div class='data-input-container'>
       <InputSlider name='Mean' setMethod='setMean' storeName='mean' min=-10 max=10 step=0.1></InputSlider>
       <InputSlider name='Standard Deviation' setMethod='setStd' storeName='std' min=0 max=10 step=0.1></InputSlider>
-      <InputSlider name='A value' setMethod='setAValue' min=-10 storeName='aValue' max=10 step=0.1></InputSlider>
+      <AValueInput name='A value' setMethod='setAValue' min=-10 storeName='aValue' max=10 step=0.1></AValueInput>
     </div>
     <div id='chart-container' class='chart-container'></div>
     <Settings/>
     <h2>Prob:</h2>
-    <h2>{{probability}}</h2>
+    <Probability/>
   </v-container>
 </template>
 
@@ -19,11 +19,12 @@ import * as d3 from 'd3'
 // @ts-ignore
 import jStat from 'jstat'
 // @ts-ignore
-import { create, all } from 'mathjs'
 import { mapState } from 'vuex'
 
 import InputSlider from './InputSlider.vue'
+import AValueInput from './AValueInput.vue'
 import Settings from './Settings.vue'
+import Probability from './Probability.vue'
 
 interface Data {
   [index: number]: {
@@ -53,7 +54,9 @@ export default Vue.extend({
   name: 'Chart',
   components: {
     InputSlider,
-    Settings
+    AValueInput,
+    Settings,
+    Probability
   },
   data: (): State => (
     {
@@ -84,7 +87,6 @@ export default Vue.extend({
     this.create_area(this.x, this.y)
 
     this.update(chartData, this.x, this.y, this.xAxis, this.yAxis)
-    this.compute_probability()
   },
   methods: {
     create_chart: function () {
@@ -113,18 +115,35 @@ export default Vue.extend({
     create_area: function (x: any, y: any) {
       this.area = d3.area()
         .x((d: any) => {
-          if (d.x < this.aValue) {
+          if (this.isNeededValue(d.x, this.aValue)) {
             return x(d.x)
           }
+          if (this.isBetween) {
+            if (d.x < 0) {
+              return x(this.aValueStart)
+            } else {
+              return x(this.aValueEnd)
+            }
+          }
+
           return x(this.aValue)
         })
         .y0(this.height)
         .y1((d: any) => {
-          if (d.x < this.aValue) {
+          if (this.isNeededValue(d.x, this.aValue)) {
             return y(d.y)
           }
           return y(0)
         })
+    },
+    isNeededValue (x: number, a: number) {
+      if (this.isGreater) {
+        return x < a
+      } else if (this.isSmaller) {
+        return x > a
+      } else {
+        return (this.$store.state.aValueStart < x && this.$store.state.aValueEnd > x)
+      }
     },
     add_x_axis: function (chartData: any) {
       this.x = d3.scaleLinear()
@@ -200,17 +219,10 @@ export default Vue.extend({
     update_from_slider: function () {
       var chartData = this.create_data()
       this.update(chartData, this.x, this.y, this.xAxis, this.yAxis)
-      this.compute_probability()
-    },
-    compute_probability: function () {
-      const math = create(all, {})
-      console.log(this.probability)
-      this.probability = (1 - math.erf((this.mean - this.aValue) / (Math.sqrt(2) * this.std))) / 2
     }
   },
   computed: mapState([
-    // map this.count to store.state.count
-    'mean', 'std', 'aValue'
+    'mean', 'std', 'aValue', 'aValueStart', 'aValueEnd', 'isGreater', 'isSmaller', 'isBetween'
   ]),
   watch: {
     mean: function (val) {
@@ -220,6 +232,21 @@ export default Vue.extend({
       this.update_from_slider()
     },
     aValue: function (val) {
+      this.update_from_slider()
+    },
+    aValueStart: function (val) {
+      this.update_from_slider()
+    },
+    aValueEnd: function (val) {
+      this.update_from_slider()
+    },
+    isGreater: function (val) {
+      this.update_from_slider()
+    },
+    isSmaller: function (val) {
+      this.update_from_slider()
+    },
+    isBetween: function (val) {
       this.update_from_slider()
     }
   }
@@ -257,7 +284,7 @@ p {
 .data-input-container {
   text-align: center;
   display: flex;
-  width: 70%;
+  width: 90%;
   margin: 0 auto 75px;
 }
 

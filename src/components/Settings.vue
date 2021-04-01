@@ -11,14 +11,8 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Settings',
-  data () {
-    return {
-      //
-    }
-  },
   methods: {
     updateMode: function (mode: string) {
-      console.log('update')
       this.$store.commit('setMode', mode)
     }
   },

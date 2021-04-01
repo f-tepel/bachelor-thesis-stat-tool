@@ -8,6 +8,8 @@ export default new Vuex.Store({
     mean: 0,
     std: 1,
     aValue: 0,
+    aValueStart: -0.5,
+    aValueEnd: 0.5,
     isGreater: true,
     isSmaller: false,
     isBetween: false
@@ -21,6 +23,12 @@ export default new Vuex.Store({
     },
     setAValue (state, val: number) {
       state.aValue = val
+    },
+    setAValueStart (state, val: number) {
+      state.aValueStart = val
+    },
+    setAValueEnd (state, val: number) {
+      state.aValueEnd = val
     },
     setMode (state, val: string) {
       if (val === 'greater') {
