@@ -1,5 +1,5 @@
 <template>
-  <div class='slider'>
+  <div>
     <p>{{name}}</p>
     <input type='number' :step='step' class='paramField' :min='min' v-model='value' @change="update"/><br>
     <input class='paramSlider' type='range' :min='min' v-bind:max='max' :step='step' v-model='value'  data-orientation='vertical' @change="update"/>

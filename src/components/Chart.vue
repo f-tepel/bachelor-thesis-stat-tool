@@ -2,7 +2,7 @@
   <v-container class='container' id='container'>
     <h1>Felix' Geiles Stat Tool</h1>
     <div id='chart-container' class='chart-container'></div>
-    <div class="settings-container">
+    <div class="settings-container" :style="{width: width + 'px'}">
       <Settings/>
       <div class='data-input-container'>
         <InputSlider name='Mean' setMethod='setMean' storeName='mean' min=-10 max=10 step=0.1></InputSlider>
@@ -81,6 +81,12 @@ export default Vue.extend({
       area: null
     }
   ),
+  created () {
+    window.addEventListener('resize', this.resizeHandler)
+  },
+  destroyed () {
+    window.removeEventListener('resize', this.resizeHandler)
+  },
   mounted: function () {
     this.calcChartSize()
     var chartData = this.create_data()
@@ -102,26 +108,33 @@ export default Vue.extend({
         .append('g')
         .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')')
     },
+    resizeHandler () {
+      d3.selectAll('svg').remove()
+
+      this.calcChartSize()
+      var chartData = this.create_data()
+
+      this.create_chart()
+      this.add_x_axis(chartData)
+      this.add_y_axis(chartData)
+      this.create_area(this.x, this.y)
+
+      this.update(chartData, this.x, this.y, this.xAxis, this.yAxis)
+    },
     calcChartSize () {
-      const currentWidth = window.innerWidth - 200
-      const currentHeight = window.innerHeight - 200
+      const currentWidth = window.innerWidth
+      const currentHeight = window.innerHeight
 
-      const currentRatio = currentWidth / currentHeight
-      let h, w
-
-      // Check if height is limiting factor
-      if (currentRatio > this.ratio) {
-        h = currentHeight * 0.8
-        w = h * this.ratio
-      // Else width is limiting
+      if (currentWidth > 1500) {
+        this.width = currentWidth * 0.6
+        this.height = currentHeight * 0.5
+      } else if (currentWidth > 1000) {
+        this.width = currentWidth * 0.8
+        this.height = currentHeight * 0.5
       } else {
-        w = currentWidth * 0.8
-        h = w / this.ratio
+        this.width = currentWidth * 0.9
+        this.height = currentHeight * 0.5
       }
-
-      // Set new width and height based on graph dimensions
-      this.width = w - this.margin.left - this.margin.right
-      this.height = h - this.margin.top - this.margin.bottom
     },
     create_data: function (): Data {
       var n = Math.ceil((this.upperBound - this.lowerBound) / this.interval)
@@ -144,7 +157,7 @@ export default Vue.extend({
             return x(d.x)
           }
           if (this.isBetween) {
-            if (d.x < 0) {
+            if (d.x < this.aValueEnd) {
               return x(this.aValueStart)
             } else {
               return x(this.aValueEnd)
@@ -308,7 +321,7 @@ p {
 .data-input-container {
   text-align: center;
   display: flex;
-  margin: 0 auto 75px;
+  justify-content: space-between;
 }
 
 .chart-container {
@@ -317,7 +330,6 @@ p {
 
 .settings-container {
   margin: 0 auto;
-  width: 50%;
 }
 
 .slider {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class='slider' v-if="!isBetween">
-      <p>{{isBetween}}</p>
+      <p>A Value</p>
       <input type='number' :step='step' class='paramField' :min='min' v-model='value' @change="updateAValue"/><br>
       <input class='paramSlider' type='range' :min='min' v-bind:max='max' :step='step' v-model='value'  data-orientation='vertical' @change="updateAValue"/>
     </div>
@@ -39,9 +39,19 @@ export default Vue.extend({
       this.$store.commit('setAValue', this.value)
     },
     updateAValueStart () {
+      if (this.start >= this.end) {
+        this.start = Math.round((this.end - 0.1) * 100) / 100
+      }
+
       this.$store.commit('setAValueStart', this.start)
     },
     updateAValueEnd () {
+      this.start = parseFloat(this.start)
+      this.end = parseFloat(this.end)
+
+      if (this.end <= this.start) {
+        this.end = Math.round((this.start + 0.1) * 100) / 100
+      }
       this.$store.commit('setAValueEnd', this.end)
     }
   },
