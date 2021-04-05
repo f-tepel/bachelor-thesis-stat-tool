@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: stat-tool-frontend
+  namespace: felix-tepel
+spec:
+  selector:
+    app: stat-tool-frontend
+  ports:
+  - port: 1000
+    targetPort: 80

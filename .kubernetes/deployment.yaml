@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stat-tool-frontend
+  namespace: felix-tepel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stat-tool-frontend
+  template:
+    metadata:
+      labels:
+        app: stat-tool-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: ghcr.io/f-tepel/bachelor-thesis-stat-tool:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "50m"
+          requests:
+            memory: "60Mi"
+            cpu: "10m"
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: ghcr-secret

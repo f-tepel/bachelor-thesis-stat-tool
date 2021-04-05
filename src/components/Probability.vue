@@ -23,16 +23,20 @@ export default Vue.extend({
   },
   methods: {
     calcProbability () {
-      const math = create(all, {})
       if (this.isGreater) {
-        this.probability = (1 - math.erf((this.mean - this.aValue) / (Math.sqrt(2) * this.std))) / 2
+        this.probability = this.calcERF(this.mean, this.aValue, this.std)
       } else if (this.isSmaller) {
-        this.probability = 1 - (1 - math.erf((this.mean - this.aValue) / (Math.sqrt(2) * this.std))) / 2
+        this.probability = 1 - this.calcERF(this.mean, this.aValue, this.std)
       } else {
-        const startProba = (1 - math.erf((this.mean - this.aValueEnd) / (Math.sqrt(2) * this.std))) / 2
-        const endProba = (1 - math.erf((this.mean - this.aValueStart) / (Math.sqrt(2) * this.std))) / 2
+        const startProba = this.calcERF(this.mean, this.aValueEnd, this.std)
+        const endProba = this.calcERF(this.mean, this.aValueStart, this.std)
         this.probability = startProba - endProba
       }
+    },
+    calcERF (mean: number, aValue: number, std: number) {
+      const math = create(all, {})
+      // @ts-ignore
+      return (1 - math.erf((mean - aValue) / (Math.sqrt(2) * std))) / 2
     }
   },
   computed: mapState([

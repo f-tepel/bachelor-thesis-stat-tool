@@ -1,0 +1,11 @@
+FROM node:10-alpine
+
+WORKDIR /code
+
+COPY package*.json ./
+RUN yarn install
+
+COPY . .
+
+EXPOSE 80
+CMD ["yarn", "run", "serve"]

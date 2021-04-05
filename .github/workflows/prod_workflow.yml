@@ -1,0 +1,46 @@
+name: CI
+on:
+ push:
+  branches:
+    - master
+ 
+jobs:
+  push_image:
+    name: Build and push docker image
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Declare variables
+      run: |
+        echo "${{ github.repository }}" > REPO_NAME
+        echo "f-tepel" > USER
+    - name: Build and publish head Docker image
+      run: |
+        docker build . -t $(cat REPO_NAME)
+        docker tag $(cat REPO_NAME) ghcr.io/$(cat USER)/$(cat REPO_NAME):latest
+        docker tag $(cat REPO_NAME) ghcr.io/$(cat USER)/$(cat REPO_NAME):${{ github.sha }}
+        echo ${{ secrets.PAT }} | docker login ghcr.io -u $(cat USER) --password-stdin
+        docker push ghcr.io/$(cat USER)/$(cat REPO_NAME):latest
+        docker push ghcr.io/$(cat USER)/$(cat REPO_NAME):${{ github.sha }}
+  deploy:
+    needs: push_image
+    name: deploy to cluster
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Install doctl
+      uses: digitalocean/action-doctl@v2
+      with:
+        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+    
+    - name: Save DigitalOcean kubeconfig with short-lived credentials
+      run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 k8s-cluster
+        
+    - name: apply yaml files
+      run: kubectl apply -f .kubernetes
+    
+    - name: deploy new image
+      run: kubectl set image --record deployment/stat-tool-frontend stat-tool-frontend=ghcr.io/f-tepel/${{ github.repository }}:${{ github.sha }} --namespace=felix-tepel
+    
+    - name: verify deployment
+      run: kubectl rollout status deployment/stat-tool-frontend --namespace=felix-tepel  
