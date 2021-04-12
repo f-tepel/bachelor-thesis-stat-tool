@@ -14,7 +14,7 @@ spec:
         app: stat-tool-frontend
     spec:
       containers:
-      - name: frontend
+      - name: stat-tool-frontend
         image: ghcr.io/f-tepel/bachelor-thesis-stat-tool:latest
         resources:
           limits:
