@@ -1,17 +1,19 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
     <Chart/>
+    <Calculation/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Chart from '@/components/Chart.vue' // @ is an alias to /src
+import Chart from '@/components/Chart.vue'
+import Calculation from '@/components/Calculation.vue'
 
 @Component({
   components: {
-    Chart
+    Chart,
+    Calculation
   }
 })
 export default class Home extends Vue {}

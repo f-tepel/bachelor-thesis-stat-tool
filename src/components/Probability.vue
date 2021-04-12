@@ -1,8 +1,8 @@
 <template>
   <div class="v-flex mt-5">
-    <p v-if="isGreater">Probability: F( x &le; {{aValue}} ) = {{probability.toFixed(4)}}</p>
-    <p v-if="isSmaller">Probability: F( {{aValue}} &le; x ) = {{probability.toFixed(4)}}</p>
-    <p v-if="isBetween">Probability: F( {{aValueStart}} &le; x &le; {{aValueEnd}}) = {{probability.toFixed(4)}}</p>
+    <p v-if="isGreater">{{$t('probability')}}: F( x &le; {{aValue}} ) = {{probability.toFixed(4)}}</p>
+    <p v-if="isSmaller">{{$t('probability')}}: F( {{aValue}} &le; x ) = {{probability.toFixed(4)}}</p>
+    <p v-if="isBetween">{{$t('probability')}}: F( {{aValueStart}} &le; x &le; {{aValueEnd}}) = {{probability.toFixed(4)}}</p>
   </div>
 </template>
 

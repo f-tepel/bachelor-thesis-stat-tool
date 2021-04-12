@@ -1,18 +1,18 @@
 <template>
   <div>
     <div class='slider' v-if="!isBetween">
-      <p>A Value</p>
+      <p>{{$t('aValue')}}</p>
       <input type='number' :step='step' class='paramField' :min='min' v-model='value' @change="updateAValue"/><br>
       <input class='paramSlider' type='range' :min='min' v-bind:max='max' :step='step' v-model='value'  data-orientation='vertical' @change="updateAValue"/>
     </div>
     <div v-if="isBetween" class="d-flex flex-row">
       <div>
-        <p>A start value</p>
+        <p>{{$t('aValueStart')}}</p>
         <input type='number' :step='step' class='paramField' :min='min' v-model='start' @change="updateAValueStart"/><br>
         <input class='paramSlider' type='range' :min='min' v-bind:max='max' :step='step' v-model='start'  data-orientation='vertical' @change="updateAValueStart"/>
       </div>
       <div>
-        <p>A end value</p>
+        <p>{{$t('aValueEnd')}}</p>
         <input type='number' :step='step' class='paramField' :min='min' v-model='end' @change="updateAValueEnd"/><br>
         <input class='paramSlider' type='range' :min='min' v-bind:max='max' :step='step' v-model='end'  data-orientation='vertical' @change="updateAValueEnd"/>
       </div>

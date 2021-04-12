@@ -1,12 +1,11 @@
 <template>
   <v-container class='container' id='container'>
-    <h1>Felix' Geiles Stat Tool</h1>
     <div id='chart-container' class='chart-container'></div>
     <div class="settings-container" :style="{width: width + 'px'}">
       <Settings/>
       <div class='data-input-container'>
-        <InputSlider name='Mean' setMethod='setMean' storeName='mean' min=-10 max=10 step=0.1></InputSlider>
-        <InputSlider name='Standard Deviation' setMethod='setStd' storeName='std' min=0 max=10 step=0.1></InputSlider>
+        <InputSlider name='mean' setMethod='setMean' storeName='mean' min=-10 max=10 step=0.1></InputSlider>
+        <InputSlider name='std' setMethod='setStd' storeName='std' min=0 max=10 step=0.1></InputSlider>
         <AValueInput name='A value' setMethod='setAValue' min=-10 storeName='aValue' max=10 step=0.1></AValueInput>
       </div>
       <Probability/>
