@@ -32,6 +32,7 @@ export default Vue.extend({
         const endProba = this.calcERF(this.mean, this.aValueStart, this.std)
         this.probability = startProba - endProba
       }
+      this.$store.commit('setProbability', this.probability)
     },
     calcERF (mean: number, aValue: number, std: number) {
       const math = create(all, {})

@@ -2,8 +2,12 @@
   <div class="container">
     <h1 class="text-center">Calculation Procedure</h1>
     <div v-if="isGreater">
-      <h2>Formula to use</h2>
-      <vue-mathjax :formula="formula"></vue-mathjax>
+      <h2 class="text-center">1. Formula to use</h2>
+      <PhiFormula/>
+      <h2 class="text-center">2. Solve inner equation</h2>
+      <PhiFormulaInner/>
+      <PhiFormulaInnerInput :aValue="aValue" :mean="mean" :std="std"/>
+      <ZTable/>
     </div>
   </div>
 </template>
@@ -11,21 +15,26 @@
 <script lang="ts">
 import Vue from 'vue'
 import { mapState } from 'vuex'
-// @ts-ignore
-import { VueMathjax } from 'vue-mathjax'
+import ZTable from './math/zTable.vue'
+import PhiFormula from './math/phiFormula.vue'
+import PhiFormulaInner from './math/phiFormulaInner.vue'
+import PhiFormulaInnerInput from './math/phiFormulaInnerInput.vue'
 
 export default Vue.extend({
   name: 'Calculation',
   components: {
-    'vue-mathjax': VueMathjax
+    ZTable,
+    PhiFormula,
+    PhiFormulaInner,
+    PhiFormulaInnerInput
   },
   data () {
     return {
-      formula: '$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$'
+      //
     }
   },
   computed: mapState([
-    'mean', 'std', 'aValue', 'aValueStart', 'aValueEnd', 'isGreater', 'isSmaller', 'isBetween'
+    'mean', 'std', 'aValue', 'aValueStart', 'aValueEnd', 'isGreater', 'isSmaller', 'isBetween', 'probability'
   ])
 })
 </script>
