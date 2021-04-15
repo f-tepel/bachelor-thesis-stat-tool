@@ -6,7 +6,9 @@
       <PhiFormula/>
       <h2 class="text-center">2. Solve inner equation</h2>
       <PhiFormulaInner/>
-      <PhiFormulaInnerInput :aValue="aValue" :mean="mean" :std="std"/>
+      <PhiFormulaInnerInput/>
+      <br>
+      <h2 class="text-center">3. Look up z value in z Table</h2>
       <ZTable/>
     </div>
   </div>

@@ -13,7 +13,8 @@ export default new Vuex.Store({
     isGreater: true,
     isSmaller: false,
     isBetween: false,
-    probability: 0.5
+    probability: 0.5,
+    zValue: 0
   },
   mutations: {
     setMean (state, val: number) {
@@ -48,6 +49,9 @@ export default new Vuex.Store({
     },
     setProbability (state, val: number) {
       state.probability = val
+    },
+    setZValue (state, val: number) {
+      state.zValue = val
     }
 
   },

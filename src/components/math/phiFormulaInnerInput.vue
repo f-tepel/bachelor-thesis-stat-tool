@@ -14,20 +14,40 @@
         </mfrac>
       </mrow>
       <mo>=</mo>
-      <mi>{{zValue}}</mi>
+      <mi>{{Number(zValue).toFixed(2)}}</mi>
     </mrow>
   </math>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState } from 'vuex'
 
 export default Vue.extend({
   name: 'PhiFormulaInnerInput',
-  props: ['aValue', 'mean', 'std'],
-  computed: {
-    zValue () {
-      return ((this.aValue as any) - (this.mean as any)) / (this.std as any)
+  data () {
+    return {
+      zValue: 0
+    }
+  },
+  methods: {
+    calcZValue () {
+      this.zValue = ((this.aValue as any) - (this.mean as any)) / (this.std as any)
+      this.$store.commit('setZValue', this.zValue)
+    }
+  },
+  computed: mapState([
+    'mean', 'std', 'aValue'
+  ]),
+  watch: {
+    mean: function (val) {
+      this.calcZValue()
+    },
+    std: function (val) {
+      this.calcZValue()
+    },
+    aValue: function (val) {
+      this.calcZValue()
     }
   }
 })
