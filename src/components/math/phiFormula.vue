@@ -5,7 +5,6 @@
       <mo>=</mo>
       <mo>&Phi;</mo>
       <mfenced>
-        <mo>(</mo>
         <mrow>
           <mfrac>
             <mrow>
@@ -16,7 +15,6 @@
             <mi>&sigma;</mi>
           </mfrac>
         </mrow>
-        <mo>)</mo>
       </mfenced>
     </mrow>
   </math>
