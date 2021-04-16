@@ -101,6 +101,7 @@ export default Vue.extend({
       this.addClass(xAxisValue, 'active-border')
       this.addClass(yAxisValue, 'active-border')
 
+      // @ts-ignore
       const probabilityTable = Number(document.getElementById(roundedNew).innerHTML)
       this.$store.commit('setProbabilityTable', probabilityTable)
     }
