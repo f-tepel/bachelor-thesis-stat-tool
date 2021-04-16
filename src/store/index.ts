@@ -14,7 +14,9 @@ export default new Vuex.Store({
     isSmaller: false,
     isBetween: false,
     probability: 0.5,
-    zValue: 0
+    probabilityTable: 0.5,
+    zValue: 0.00,
+    chartWidth: 960
   },
   mutations: {
     setMean (state, val: number) {
@@ -52,8 +54,13 @@ export default new Vuex.Store({
     },
     setZValue (state, val: number) {
       state.zValue = val
+    },
+    setProbabilityTable (state, val: number) {
+      state.probabilityTable = val
+    },
+    setChartWidth (state, val: number) {
+      state.chartWidth = val
     }
-
   },
   actions: {
   },

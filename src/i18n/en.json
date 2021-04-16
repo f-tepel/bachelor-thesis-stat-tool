@@ -5,5 +5,26 @@
   "aValue": "A Value",
   "aValueStart": "A Value Start",
   "aValueEnd": "A Value End",
-  "probability": "Probability"
+  "probability": "Probability",
+  "calculation": {
+    "procedure": "Calculation Procedure",
+    "steps": [
+      {
+        "text": "1. Formula to use",
+        "description": "asdfasdf"
+      },
+      {
+        "text": "2. Solve inner equation",
+        "description": "asdfasdf"
+      },
+      {
+        "text": "3. Positive oder negative?",
+        "description": "asdfasdf"
+      },
+      {
+        "text": "4. Look up phi / z value in table",
+        "description": "asdfasdf"
+      }
+    ]
+  }
 }

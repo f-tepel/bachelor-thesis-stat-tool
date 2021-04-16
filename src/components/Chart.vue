@@ -134,6 +134,7 @@ export default Vue.extend({
         this.width = currentWidth * 0.9
         this.height = currentHeight * 0.5
       }
+      this.$store.commit('setChartWidth', this.width)
     },
     create_data: function (): Data {
       var n = Math.ceil((this.upperBound - this.lowerBound) / this.interval)

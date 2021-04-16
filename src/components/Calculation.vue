@@ -1,14 +1,97 @@
 <template>
-  <div class="container">
-    <h1 class="text-center">Calculation Procedure</h1>
+  <div class="container" :style="{width: chartWidth + 'px'}">
+    <div class="text-h3">{{$t('calculation.procedure')}}</div>
+    <br>
     <div v-if="isGreater">
-      <h2 class="text-center">1. Formula to use</h2>
+      <div class="text-h5">{{$t('calculation.steps[0].text')}}</div>
+      <p class="font-weight-regular">
+        {{$t('calculation.steps[0].description')}}
+      </p>
       <PhiFormula/>
-      <h2 class="text-center">2. Solve inner equation</h2>
+      <div class="text-h5">{{$t('calculation.steps[1].text')}}</div>
+      <p class="font-weight-regular">
+        {{$t('calculation.steps[1].description')}}
+      </p>
       <PhiFormulaInner/>
       <PhiFormulaInnerInput/>
       <br>
-      <h2 class="text-center">3. Look up z value in z Table</h2>
+      <div class="text-h5">{{$t('calculation.steps[2].text')}}</div>
+      <p class="font-weight-regular">
+        {{$t('calculation.steps[2].description')}}
+      </p>
+      <math display="block">
+        <mrow>
+          <mi>z</mi>
+          <mo>=</mo>
+          <mi>{{Number(zValue).toFixed(2)}}</mi>
+        </mrow>
+      </math>
+      <math display="block">
+        <mrow>
+          <mi>P (x &#60; a)</mi>
+          <mo>=</mo>
+          <mo>&Phi;</mo>
+          <mo>(</mo>
+          <mi>z</mi>
+          <mo>)</mo>
+        </mrow>
+      </math>
+      <div v-if="zValue >= 0">
+        <p class="font-weight-regular">
+          Da der z Wert positiv bzw. 0 ist, verändert sich die Formel nicht.
+        </p>
+      </div>
+      <div v-if="zValue < 0">
+        <p>Da der z Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv.</p>
+        <math display="block">
+          <mrow>
+            <mi>P (x &#60; {{aValue}})</mi>
+            <mo>=</mo>
+            <mi>1</mi>
+            <mo>-</mo>
+            <mo>&Phi;</mo>
+            <mo>(</mo>
+            <mo>|</mo>
+            <mi>z</mi>
+            <mo>|</mo>
+            <mo>)</mo>
+          </mrow>
+        </math>
+        <math display="block">
+          <mrow>
+            <mi>P (x &#60; {{aValue}})</mi>
+            <mo>=</mo>
+            <mi>1</mi>
+            <mo>-</mo>
+            <mo>&Phi;</mo>
+            <mi>{{Number(Math.abs(zValue)).toFixed(2)}}</mi>
+          </mrow>
+        </math>
+      </div>
+      <div class="text-h5">{{$t('calculation.steps[3].text')}}</div>
+      <p class="font-weight-regular">
+        {{$t('calculation.steps[3].description')}}
+      </p>
+      <br>
+      <math display="block" v-if="zValue >= 0">
+        <mrow>
+          <mi>P (x &#60; {{aValue}})</mi>
+          <mo>=</mo>
+          <mi>{{probabilityTable.toFixed(4)}}</mi>
+        </mrow>
+      </math>
+      <math display="block" v-if="zValue < 0">
+        <mrow>
+          <mi>P (x &#60; {{aValue}})</mi>
+          <mo>=</mo>
+          <mi>1</mi>
+          <mo>-</mo>
+          <mi>{{probabilityTable.toFixed(4)}}</mi>
+          <mo>=</mo>
+          <mi>{{(1 - probabilityTable).toFixed(4)}}</mi>
+        </mrow>
+      </math>
+      <br>
       <ZTable/>
     </div>
   </div>
@@ -36,7 +119,7 @@ export default Vue.extend({
     }
   },
   computed: mapState([
-    'mean', 'std', 'aValue', 'aValueStart', 'aValueEnd', 'isGreater', 'isSmaller', 'isBetween', 'probability'
+    'mean', 'std', 'aValue', 'aValueStart', 'aValueEnd', 'isGreater', 'isSmaller', 'isBetween', 'probability', 'zValue', 'probabilityTable', 'chartWidth'
   ])
 })
 </script>
