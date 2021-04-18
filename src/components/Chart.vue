@@ -175,9 +175,9 @@ export default Vue.extend({
         })
     },
     isNeededValue (x: number, a: number) {
-      if (this.isGreater) {
+      if (this.isSmaller) {
         return x < a
-      } else if (this.isSmaller) {
+      } else if (this.isGreater) {
         return x > a
       } else {
         return (this.$store.state.aValueStart < x && this.$store.state.aValueEnd > x)

@@ -1,7 +1,7 @@
 <template>
   <math display="block">
     <mrow>
-      <mi>z</mi>
+      <mi>{{zName}}</mi>
       <mo>=</mo>
       <mrow>
         <mfrac>
@@ -20,6 +20,12 @@
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
-  name: 'PhiFormulaInner'
+  name: 'PhiFormulaInner',
+  props: {
+    zName: {
+      type: String,
+      default: 'z'
+    }
+  }
 })
 </script>

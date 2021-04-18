@@ -10,12 +10,13 @@ export default new Vuex.Store({
     aValue: 0,
     aValueStart: -0.5,
     aValueEnd: 0.5,
-    isGreater: true,
+    isGreater: false,
     isSmaller: false,
-    isBetween: false,
+    isBetween: true,
     probability: 0.5,
     probabilityTable: 0.5,
     zValue: 0.00,
+    zValueTwo: 0.00,
     chartWidth: 960
   },
   mutations: {
@@ -54,6 +55,11 @@ export default new Vuex.Store({
     },
     setZValue (state, val: number) {
       state.zValue = val
+    },
+    setZValueTwo (state, val: number) {
+      console.log('udpate')
+      console.log(val)
+      state.zValueTwo = val
     },
     setProbabilityTable (state, val: number) {
       state.probabilityTable = val

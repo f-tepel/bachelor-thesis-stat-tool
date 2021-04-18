@@ -23,9 +23,9 @@ export default Vue.extend({
   },
   methods: {
     calcProbability () {
-      if (this.isGreater) {
+      if (this.isSmaller) {
         this.probability = this.calcERF(this.mean, this.aValue, this.std)
-      } else if (this.isSmaller) {
+      } else if (this.isGreater) {
         this.probability = 1 - this.calcERF(this.mean, this.aValue, this.std)
       } else {
         const startProba = this.calcERF(this.mean, this.aValueEnd, this.std)

@@ -6,7 +6,8 @@
       <mrow>
         <mfrac>
           <mrow>
-            <mi>{{aValue}}</mi>
+            <mi v-if="zName=='z1'">{{aValueStart}}</mi>
+            <mi v-if="zName=='z2'">{{aValueEnd}}</mi>
             <mo>-</mo>
             <mi>{{mean}}</mi>
           </mrow>
@@ -24,26 +25,34 @@ import Vue from 'vue'
 import { mapState } from 'vuex'
 
 export default Vue.extend({
-  name: 'PhiFormulaInnerInput',
+  name: 'PhiFormulaInnerInputBetween',
   props: {
     zName: {
-      type: String,
-      default: 'z'
+      type: String
     }
   },
   data () {
     return {
-      zValue: 0
+      zValue: 0,
+      aValue: 0
     }
   },
   methods: {
     calcZValue () {
-      this.zValue = ((this.aValue as any) - (this.mean as any)) / (this.std as any)
-      this.$store.commit('setZValue', this.zValue)
+      var zValue
+      if (this.zName === 'z1') {
+        zValue = ((this.aValueStart as any) - (this.mean as any)) / (this.std as any)
+        this.$store.commit('setZValue', this.zValue)
+        this.zValue = zValue
+      } else {
+        zValue = ((this.aValueEnd as any) - (this.mean as any)) / (this.std as any)
+        this.$store.commit('setZValueTwo', this.zValue)
+        this.zValue = zValue
+      }
     }
   },
   computed: mapState([
-    'mean', 'std', 'aValue'
+    'mean', 'std', 'aValueStart', 'aValueEnd'
   ]),
   watch: {
     mean: function (val) {
@@ -52,7 +61,10 @@ export default Vue.extend({
     std: function (val) {
       this.calcZValue()
     },
-    aValue: function (val) {
+    aValueStart: function (val) {
+      this.calcZValue()
+    },
+    aValueEnd: function (val) {
       this.calcZValue()
     }
   }

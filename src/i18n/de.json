@@ -8,7 +8,7 @@
   "probability": "Wahrscheinlichkeit",
   "calculation": {
     "procedure": "Rechenweg",
-    "steps": [
+    "smallerSteps": [
       {
         "text": "1. Welche Formel muss verwendet werden",
         "description": "Mit Hilfe der folgenden Formel kann die Wahrscheinlichkeit berechnet werden, dass ein Wert kleiner als der festgelegte a Wert ist. Es wird also eigentlich die Größe bzw. das Integral der schwarzen Fläche berechnet. Da die Berchnung des Intergrals jedoch sehr komplex ist, wird zur Hilfe die sogenannte Phi / Z Tabelle verwendet. Diese kommt aber erst in Schritt 4 zum Einsatz"
@@ -16,6 +16,42 @@
       {
         "text": "2. Innere Gleichung Lösen",
         "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, muss zunächst die innere Gleichung gelöst werden. Das Ergebnis wir hier 'z' genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren."
+      },
+      {
+        "text": "3. Positiv oder Negativ?",
+        "description": "Bevor der errechnete z Wert in der Phi Tabelle nachgeschlagen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:"
+      },
+      {
+        "text": "4. Wert in Phi / Z Tabelle nachschauen",
+        "description": "Zuletzt wird der z Wert verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma als y-Koordinate verwendet. Die Zahlen hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen. Die Grünen Kästchen helfen beim ablesen."
+      }
+    ],
+    "greaterSteps": [
+      {
+        "text": "1. Welche Formel muss verwendet werden",
+        "description": "Mit Hilfe der folgenden Formel kann die Wahrscheinlichkeit berechnet werden, dass ein Wert größer als der festgelegte a Wert ist. Es wird also eigentlich die Größe bzw. das Integral der schwarzen Fläche berechnet. Da die Berchnung des Intergrals jedoch sehr komplex ist, wird zur Hilfe die sogenannte Phi / Z Tabelle verwendet. Diese kommt aber erst in Schritt 4 zum Einsatz"
+      },
+      {
+        "text": "2. Innere Gleichung Lösen",
+        "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, muss zunächst die innere Gleichung gelöst werden. Das Ergebnis wir hier 'z' genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren."
+      },
+      {
+        "text": "3. Positiv oder Negativ?",
+        "description": "Bevor der errechnete z Wert in der Phi Tabelle nachgeschlagen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:"
+      },
+      {
+        "text": "4. Wert in Phi / Z Tabelle nachschauen",
+        "description": "Zuletzt wird der z Wert verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma als y-Koordinate verwendet. Die Zahlen hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen. Die Grünen Kästchen helfen beim ablesen."
+      }
+    ],
+    "inBetweenSteps": [
+      {
+        "text": "1. Welche Formel muss verwendet werden",
+        "description": "Wenn die Wahrscheinlichkeit berechnet werden soll, dass ein Wert größer als A1 und kleiner als A2 ist, müssen zwei Warhscheinlickeiten berechnet und voneinander abgezogen werden. Da mit der normalen Phi Formel nur die Wahrscheinlichkeit berechnet werden kann, dass ein Wert kleiner als A ist, muss zunächst die Wahrscheinlichkeit für p(x < a1) berechnet werden. Danach die Wahrscheinlichkeit für P(x < a2) und zuletzt voneinander subtrahiert werden. Es ergibt sicher daher folgende Formel"
+      },
+      {
+        "text": "2. Innere Gleichungen Lösen",
+        "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, müssen zunächst die inneren Gleichungen gelöst werden. Das Ergebnis wir hier 'z1' und 'z2 genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren."
       },
       {
         "text": "3. Positiv oder Negativ?",

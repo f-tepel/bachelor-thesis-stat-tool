@@ -2,97 +2,14 @@
   <div class="container" :style="{width: chartWidth + 'px'}">
     <div class="text-h3">{{$t('calculation.procedure')}}</div>
     <br>
+    <div v-if="isSmaller">
+      <SmallerThanProcedure/>
+    </div>
     <div v-if="isGreater">
-      <div class="text-h5">{{$t('calculation.steps[0].text')}}</div>
-      <p class="font-weight-regular">
-        {{$t('calculation.steps[0].description')}}
-      </p>
-      <PhiFormula/>
-      <div class="text-h5">{{$t('calculation.steps[1].text')}}</div>
-      <p class="font-weight-regular">
-        {{$t('calculation.steps[1].description')}}
-      </p>
-      <PhiFormulaInner/>
-      <PhiFormulaInnerInput/>
-      <br>
-      <div class="text-h5">{{$t('calculation.steps[2].text')}}</div>
-      <p class="font-weight-regular">
-        {{$t('calculation.steps[2].description')}}
-      </p>
-      <math display="block">
-        <mrow>
-          <mi>z</mi>
-          <mo>=</mo>
-          <mi>{{Number(zValue).toFixed(2)}}</mi>
-        </mrow>
-      </math>
-      <math display="block">
-        <mrow>
-          <mi>P (x &#60; a)</mi>
-          <mo>=</mo>
-          <mo>&Phi;</mo>
-          <mo>(</mo>
-          <mi>z</mi>
-          <mo>)</mo>
-        </mrow>
-      </math>
-      <div v-if="zValue >= 0">
-        <p class="font-weight-regular">
-          Da der z Wert positiv bzw. 0 ist, verändert sich die Formel nicht.
-        </p>
-      </div>
-      <div v-if="zValue < 0">
-        <p>Da der z Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv.</p>
-        <math display="block">
-          <mrow>
-            <mi>P (x &#60; {{aValue}})</mi>
-            <mo>=</mo>
-            <mi>1</mi>
-            <mo>-</mo>
-            <mo>&Phi;</mo>
-            <mo>(</mo>
-            <mo>|</mo>
-            <mi>z</mi>
-            <mo>|</mo>
-            <mo>)</mo>
-          </mrow>
-        </math>
-        <math display="block">
-          <mrow>
-            <mi>P (x &#60; {{aValue}})</mi>
-            <mo>=</mo>
-            <mi>1</mi>
-            <mo>-</mo>
-            <mo>&Phi;</mo>
-            <mi>{{Number(Math.abs(zValue)).toFixed(2)}}</mi>
-          </mrow>
-        </math>
-      </div>
-      <div class="text-h5">{{$t('calculation.steps[3].text')}}</div>
-      <p class="font-weight-regular">
-        {{$t('calculation.steps[3].description')}}
-      </p>
-      <br>
-      <math display="block" v-if="zValue >= 0">
-        <mrow>
-          <mi>P (x &#60; {{aValue}})</mi>
-          <mo>=</mo>
-          <mi>{{probabilityTable.toFixed(4)}}</mi>
-        </mrow>
-      </math>
-      <math display="block" v-if="zValue < 0">
-        <mrow>
-          <mi>P (x &#60; {{aValue}})</mi>
-          <mo>=</mo>
-          <mi>1</mi>
-          <mo>-</mo>
-          <mi>{{probabilityTable.toFixed(4)}}</mi>
-          <mo>=</mo>
-          <mi>{{(1 - probabilityTable).toFixed(4)}}</mi>
-        </mrow>
-      </math>
-      <br>
-      <ZTable/>
+      <GreaterThanProcedure/>
+    </div>
+    <div v-if="isBetween">
+      <InBetweenProcedure/>
     </div>
   </div>
 </template>
@@ -100,18 +17,16 @@
 <script lang="ts">
 import Vue from 'vue'
 import { mapState } from 'vuex'
-import ZTable from './math/zTable.vue'
-import PhiFormula from './math/phiFormula.vue'
-import PhiFormulaInner from './math/phiFormulaInner.vue'
-import PhiFormulaInnerInput from './math/phiFormulaInnerInput.vue'
+import SmallerThanProcedure from './calculationProcedures/smallerThan.vue'
+import GreaterThanProcedure from './calculationProcedures/greaterThan.vue'
+import InBetweenProcedure from './calculationProcedures/inBetween.vue'
 
 export default Vue.extend({
   name: 'Calculation',
   components: {
-    ZTable,
-    PhiFormula,
-    PhiFormulaInner,
-    PhiFormulaInnerInput
+    SmallerThanProcedure,
+    GreaterThanProcedure,
+    InBetweenProcedure
   },
   data () {
     return {
@@ -119,7 +34,7 @@ export default Vue.extend({
     }
   },
   computed: mapState([
-    'mean', 'std', 'aValue', 'aValueStart', 'aValueEnd', 'isGreater', 'isSmaller', 'isBetween', 'probability', 'zValue', 'probabilityTable', 'chartWidth'
+    'isGreater', 'isSmaller', 'isBetween', 'chartWidth'
   ])
 })
 </script>
