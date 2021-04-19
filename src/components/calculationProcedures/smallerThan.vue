@@ -89,7 +89,7 @@
       </mrow>
     </math>
     <br>
-    <ZTable/>
+    <ZTable :zValue="zValue"/>
   </div>
 </template>
 

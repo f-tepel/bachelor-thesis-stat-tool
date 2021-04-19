@@ -59,7 +59,7 @@
       },
       {
         "text": "4. Wert in Phi / Z Tabelle nachschauen",
-        "description": "Zuletzt wird der z Wert verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma als y-Koordinate verwendet. Die Zahlen hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen. Die Grünen Kästchen helfen beim ablesen."
+        "description": "Zuletzt werden die z Werte verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma als y-Koordinate verwendet. Die Zahlen hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen. Die Grünen Kästchen helfen beim ablesen."
       }
     ]
   }

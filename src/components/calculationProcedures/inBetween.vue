@@ -83,7 +83,9 @@
           <mi>1</mi>
           <mo>-</mo>
           <mo>&Phi;</mo>
+          <mo>(</mo>
           <mi>{{Number(Math.abs(zValue)).toFixed(2)}}</mi>
+          <mo>)</mo>
         </mrow>
       </math>
     </div>
@@ -134,16 +136,36 @@
       {{$t('calculation.inBetweenSteps[3].description')}}
     </p>
     <br>
-    <math display="block" v-if="zValue >= 0">
-      <mrow>
-        <mi>P (x &#60; {{aValue}})</mi>
-        <mo>=</mo>
-        <mi>{{probabilityTable.toFixed(4)}}</mi>
-      </mrow>
-    </math>
+    <div class="caption">
+      a1 Wahrscheinlichkeit berechnen
+    </div>
+    <div v-if="zValue >= 0">
+      <math display="block">
+        <mrow>
+          <mi>P (x &#60; a1)</mi>
+          <mo>=</mo>
+          <mo>&Phi;</mo>
+          <mo>(</mo>
+          <mi>z</mi>
+          <mo>)</mo>
+        </mrow>
+      </math>
+      <math display="block">
+        <mrow>
+          <mi>P (x &#60; {{aValueStart}})</mi>
+          <mo>=</mo>
+          <mo>&Phi;</mo>
+          <mo>(</mo>
+          <mi>{{zValue}}</mi>
+          <mo>)</mo>
+          <mo>=</mo>
+          <mi>{{probabilityTable.toFixed(4)}}</mi>
+        </mrow>
+      </math>
+    </div>
     <math display="block" v-if="zValue < 0">
       <mrow>
-        <mi>P (x &#60; {{aValue}})</mi>
+        <mi>P (x &#60; {{aValueStart}})</mi>
         <mo>=</mo>
         <mi>1</mi>
         <mo>-</mo>
@@ -153,7 +175,81 @@
       </mrow>
     </math>
     <br>
-    <ZTable/>
+    <br>
+    <div class="caption">
+      a2 Wahrscheinlichkeit berechnen
+    </div>
+    <div v-if="zValueTwo >= 0">
+      <math display="block">
+        <mrow>
+          <mi>P (x &#60; a2)</mi>
+          <mo>=</mo>
+          <mo>&Phi;</mo>
+          <mo>(</mo>
+          <mi>z</mi>
+          <mo>)</mo>
+        </mrow>
+      </math>
+      <math display="block">
+        <mrow>
+          <mi>P (x &#60; {{aValueEnd}})</mi>
+          <mo>=</mo>
+          <mo>&Phi;</mo>
+          <mo>(</mo>
+          <mi>{{zValueTwo.toFixed(4)}}</mi>
+          <mo>)</mo>
+          <mo>=</mo>
+          <mi>{{probabilityTableTwo.toFixed(4)}}</mi>
+        </mrow>
+      </math>
+    </div>
+    <math display="block" v-if="zValueTwo < 0">
+      <mrow>
+        <mi>P (x &#60; {{aValueEnd}})</mi>
+        <mo>=</mo>
+        <mi>1</mi>
+        <mo>-</mo>
+        <mi>{{probabilityTableTwo.toFixed(4)}}</mi>
+        <mo>=</mo>
+        <mi>{{(1 - probabilityTableTwo).toFixed(4)}}</mi>
+      </mrow>
+    </math>
+    <br>
+    <br>
+    <div class="caption">
+      Gesamtwahrscheinlichkeit berechnen
+    </div>
+    <br>
+    <math display="block">
+      <mrow>
+        <mi>P (a1 &#60; x &#60; a2)</mi>
+        <mo>=</mo>
+        <mi>P (x &#60; a2)</mi>
+        <mo>-</mo>
+        <mi>P (x &#60; a1)</mi>
+      </mrow>
+    </math>
+    <br>
+    <math display="block">
+      <mrow>
+        <mi>P (a1 &#60; x &#60; a2)</mi>
+        <mo>=</mo>
+        <mi>{{probabilityTableTwo}}</mi>
+        <mo>-</mo>
+        <mi>{{Number(1 - probabilityTable).toFixed(4)}}</mi>
+      </mrow>
+    </math>
+    <br>
+    <math display="block">
+      <mrow>
+        <mi>P (a1 &#60; x &#60; a2)</mi>
+        <mo>=</mo>
+        <mi>{{Number(probabilityTableTwo - (1 - probabilityTable)).toFixed(4)}}</mi>
+      </mrow>
+    </math>
+    <br>
+    <br>
+    <ZTable :zValue="zValue" :zValueTwo="zValueTwo"/>
   </div>
 </template>
 
@@ -179,7 +275,7 @@ export default Vue.extend({
     }
   },
   computed: mapState([
-    'mean', 'std', 'aValue', 'aValueStart', 'aValueEnd', 'isGreater', 'isSmaller', 'isBetween', 'probability', 'zValue', 'zValueTwo', 'probabilityTable', 'chartWidth'
+    'mean', 'std', 'aValue', 'aValueStart', 'aValueEnd', 'isGreater', 'isSmaller', 'isBetween', 'probability', 'zValue', 'zValueTwo', 'probabilityTable', 'probabilityTableTwo', 'chartWidth'
   ])
 })
 </script>

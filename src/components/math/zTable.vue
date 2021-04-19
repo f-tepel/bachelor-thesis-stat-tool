@@ -52,6 +52,13 @@ export default Vue.extend({
       rows: zData
     }
   },
+  props: {
+    zValue: Number,
+    zValueTwo: {
+      type: Number,
+      required: false
+    }
+  },
   mounted () {
     this.drawBoxes(this.zValue, 0.00)
   },
@@ -76,8 +83,6 @@ export default Vue.extend({
       newVal = Math.abs(newVal)
       oldVal = Math.abs(oldVal)
 
-      console.log(newVal)
-
       if (oldVal > 4) {
         oldVal = 4
       }
@@ -85,14 +90,11 @@ export default Vue.extend({
         newVal = 4
       }
       const roundedNew = Number(newVal).toFixed(2).toString()
-      console.log(roundedNew)
       const roundedOld = Number(oldVal).toFixed(2).toString()
       const xAxisValue = 'x-0.0' + roundedNew[3]
       const yAxisValue = 'y-' + roundedNew.substring(0, 3)
       const xAxisValueOld = 'x-0.0' + roundedOld[3]
       const yAxisValuesOld = 'y-' + roundedOld.substring(0, 3)
-      console.log(xAxisValue)
-      console.log(yAxisValue)
 
       this.removeClass(roundedOld, 'active')
       this.addClass(roundedNew, 'active')
@@ -101,18 +103,23 @@ export default Vue.extend({
       this.addClass(xAxisValue, 'active-border')
       this.addClass(yAxisValue, 'active-border')
 
+      console.log(this.zValueTwo)
+      if (this.zValueTwo) {
+        // @ts-ignore
+        const probabilityTableTwo = Number(document.getElementById(roundedNew).innerHTML)
+        this.$store.commit('setProbabilityTableTwo', probabilityTableTwo)
+      }
       // @ts-ignore
-      const probabilityTable = Number(document.getElementById(roundedNew).innerHTML)
-      this.$store.commit('setProbabilityTable', probabilityTable)
-    }
-  },
-  computed: {
-    zValue () {
-      return this.$store.state.zValue
+      const probabilityTableOne = Number(document.getElementById(roundedNew).innerHTML)
+      this.$store.commit('setProbabilityTable', probabilityTableOne)
     }
   },
   watch: {
     zValue: function (newVal, oldVal) {
+      this.drawBoxes(newVal, oldVal)
+    },
+    zValueTwo: function (newVal, oldVal) {
+      console.log('updating')
       this.drawBoxes(newVal, oldVal)
     }
   }

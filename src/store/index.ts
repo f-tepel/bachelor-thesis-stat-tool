@@ -15,6 +15,7 @@ export default new Vuex.Store({
     isBetween: true,
     probability: 0.5,
     probabilityTable: 0.5,
+    probabilityTableTwo: 0.5,
     zValue: 0.00,
     zValueTwo: 0.00,
     chartWidth: 960
@@ -57,12 +58,13 @@ export default new Vuex.Store({
       state.zValue = val
     },
     setZValueTwo (state, val: number) {
-      console.log('udpate')
-      console.log(val)
       state.zValueTwo = val
     },
     setProbabilityTable (state, val: number) {
       state.probabilityTable = val
+    },
+    setProbabilityTableTwo (state, val: number) {
+      state.probabilityTableTwo = val
     },
     setChartWidth (state, val: number) {
       state.chartWidth = val

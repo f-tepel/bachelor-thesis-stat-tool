@@ -42,11 +42,11 @@ export default Vue.extend({
       var zValue
       if (this.zName === 'z1') {
         zValue = ((this.aValueStart as any) - (this.mean as any)) / (this.std as any)
-        this.$store.commit('setZValue', this.zValue)
+        this.$store.commit('setZValue', zValue)
         this.zValue = zValue
       } else {
         zValue = ((this.aValueEnd as any) - (this.mean as any)) / (this.std as any)
-        this.$store.commit('setZValueTwo', this.zValue)
+        this.$store.commit('setZValueTwo', zValue)
         this.zValue = zValue
       }
     }
