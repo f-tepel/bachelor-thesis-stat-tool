@@ -37,6 +37,9 @@ export default Vue.extend({
       aValue: 0
     }
   },
+  mounted () {
+    this.calcZValue()
+  },
   methods: {
     calcZValue () {
       var zValue

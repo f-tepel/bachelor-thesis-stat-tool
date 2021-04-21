@@ -127,7 +127,9 @@
           <mi>1</mi>
           <mo>-</mo>
           <mo>&Phi;</mo>
+          <mo>(</mo>
           <mi>{{Number(Math.abs(zValueTwo)).toFixed(2)}}</mi>
+          <mo>)</mo>
         </mrow>
       </math>
     </div>
@@ -142,16 +144,6 @@
     <div v-if="zValue >= 0">
       <math display="block">
         <mrow>
-          <mi>P (x &#60; a1)</mi>
-          <mo>=</mo>
-          <mo>&Phi;</mo>
-          <mo>(</mo>
-          <mi>z</mi>
-          <mo>)</mo>
-        </mrow>
-      </math>
-      <math display="block">
-        <mrow>
           <mi>P (x &#60; {{aValueStart}})</mi>
           <mo>=</mo>
           <mo>&Phi;</mo>
@@ -164,6 +156,18 @@
       </math>
     </div>
     <math display="block" v-if="zValue < 0">
+      <math display="block">
+        <mrow>
+          <mi>P (x &#60; a1)</mi>
+          <mo>=</mo>
+          <mi>1</mi>
+          <mo>-</mo>
+          <mo>&Phi;</mo>
+          <mo>(</mo>
+          <mi>{{Math.abs(zValue)}}</mi>
+          <mo>)</mo>
+        </mrow>
+      </math>
       <mrow>
         <mi>P (x &#60; {{aValueStart}})</mi>
         <mo>=</mo>
@@ -182,16 +186,6 @@
     <div v-if="zValueTwo >= 0">
       <math display="block">
         <mrow>
-          <mi>P (x &#60; a2)</mi>
-          <mo>=</mo>
-          <mo>&Phi;</mo>
-          <mo>(</mo>
-          <mi>z</mi>
-          <mo>)</mo>
-        </mrow>
-      </math>
-      <math display="block">
-        <mrow>
           <mi>P (x &#60; {{aValueEnd}})</mi>
           <mo>=</mo>
           <mo>&Phi;</mo>
@@ -204,6 +198,18 @@
       </math>
     </div>
     <math display="block" v-if="zValueTwo < 0">
+      <math display="block">
+        <mrow>
+          <mi>P (x &#60; a2)</mi>
+          <mo>=</mo>
+          <mi>1</mi>
+          <mo>-</mo>
+          <mo>&Phi;</mo>
+          <mo>(</mo>
+          <mi>{{Math.abs(zValueTwo)}}</mi>
+          <mo>)</mo>
+        </mrow>
+      </math>
       <mrow>
         <mi>P (x &#60; {{aValueEnd}})</mi>
         <mo>=</mo>

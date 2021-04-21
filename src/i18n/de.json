@@ -47,7 +47,7 @@
     "inBetweenSteps": [
       {
         "text": "1. Welche Formel muss verwendet werden",
-        "description": "Wenn die Wahrscheinlichkeit berechnet werden soll, dass ein Wert größer als A1 und kleiner als A2 ist, müssen zwei Warhscheinlickeiten berechnet und voneinander abgezogen werden. Da mit der normalen Phi Formel nur die Wahrscheinlichkeit berechnet werden kann, dass ein Wert kleiner als A ist, muss zunächst die Wahrscheinlichkeit für p(x < a1) berechnet werden. Danach die Wahrscheinlichkeit für P(x < a2) und zuletzt voneinander subtrahiert werden. Es ergibt sicher daher folgende Formel"
+        "description": "Wenn die Wahrscheinlichkeit berechnet werden soll, dass ein Wert größer als A1 und kleiner als A2 ist, müssen zwei Warhscheinlickeiten berechnet und voneinander abgezogen werden. Da mit der normalen Phi Formel nur die Wahrscheinlichkeit berechnet werden kann, dass ein Wert kleiner als A ist, muss zunächst die Wahrscheinlichkeit für p(x < a2) berechnet werden. Danach die Wahrscheinlichkeit für P(x < a1) und zuletzt voneinander subtrahiert werden. Es ergibt sicher daher folgende Formel"
       },
       {
         "text": "2. Innere Gleichungen Lösen",

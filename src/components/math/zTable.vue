@@ -60,7 +60,8 @@ export default Vue.extend({
     }
   },
   mounted () {
-    this.drawBoxes(this.zValue, 0.00)
+    this.drawBoxes(this.zValue, 0.00, false)
+    this.drawBoxes(this.zValueTwo, 0.00, true)
   },
   methods: {
     addClass (id: string, className: string) {
@@ -79,9 +80,12 @@ export default Vue.extend({
         console.log('Failed to add class ' + className + ' to element with id ' + id)
       }
     },
-    drawBoxes (newVal: number, oldVal: number) {
+    drawBoxes (newVal: number, oldVal: number, useZValueTwo: boolean) {
       newVal = Math.abs(newVal)
       oldVal = Math.abs(oldVal)
+      console.log('draw box for ' + newVal)
+      console.log(oldVal)
+      console.log(this.zValue)
 
       if (oldVal > 4) {
         oldVal = 4
@@ -96,31 +100,42 @@ export default Vue.extend({
       const xAxisValueOld = 'x-0.0' + roundedOld[3]
       const yAxisValuesOld = 'y-' + roundedOld.substring(0, 3)
 
-      this.removeClass(roundedOld, 'active')
+      if (useZValueTwo) {
+        if (oldVal !== Math.abs(this.zValue)) {
+          this.removeClass(roundedOld, 'active')
+          this.removeClass(xAxisValueOld, 'active-border')
+          this.removeClass(yAxisValuesOld, 'active-border')
+        }
+      } else {
+        if (oldVal !== Math.abs(this.zValueTwo)) {
+          this.removeClass(roundedOld, 'active')
+          this.removeClass(xAxisValueOld, 'active-border')
+          this.removeClass(yAxisValuesOld, 'active-border')
+        }
+      }
+
       this.addClass(roundedNew, 'active')
-      this.removeClass(xAxisValueOld, 'active-border')
-      this.removeClass(yAxisValuesOld, 'active-border')
       this.addClass(xAxisValue, 'active-border')
       this.addClass(yAxisValue, 'active-border')
 
-      console.log(this.zValueTwo)
-      if (this.zValueTwo) {
+      if (useZValueTwo) {
         // @ts-ignore
         const probabilityTableTwo = Number(document.getElementById(roundedNew).innerHTML)
         this.$store.commit('setProbabilityTableTwo', probabilityTableTwo)
+      } else {
+        // @ts-ignore
+        const probabilityTableOne = Number(document.getElementById(roundedNew).innerHTML)
+        this.$store.commit('setProbabilityTable', probabilityTableOne)
       }
-      // @ts-ignore
-      const probabilityTableOne = Number(document.getElementById(roundedNew).innerHTML)
-      this.$store.commit('setProbabilityTable', probabilityTableOne)
     }
   },
   watch: {
     zValue: function (newVal, oldVal) {
-      this.drawBoxes(newVal, oldVal)
+      this.drawBoxes(newVal, oldVal, false)
     },
     zValueTwo: function (newVal, oldVal) {
       console.log('updating')
-      this.drawBoxes(newVal, oldVal)
+      this.drawBoxes(newVal, oldVal, true)
     }
   }
 })

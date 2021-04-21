@@ -36,6 +36,9 @@ export default Vue.extend({
       zValue: 0
     }
   },
+  mounted () {
+    this.calcZValue()
+  },
   methods: {
     calcZValue () {
       this.zValue = ((this.aValue as any) - (this.mean as any)) / (this.std as any)

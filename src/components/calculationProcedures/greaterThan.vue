@@ -79,9 +79,22 @@
     <br>
     <math display="block" v-if="zValue >= 0">
       <mrow>
-        <mi>P (x &#60; {{aValue}})</mi>
+        <mi>P (x &gt; {{aValue}})</mi>
         <mo>=</mo>
-        <mi>{{probabilityTable.toFixed(4)}}</mi>
+        <mi>1</mi>
+        <mo>-</mo>
+        <mo>P (x &#60; {{aValue}})</mo>
+      </mrow>
+    </math>
+    <math display="block" v-if="zValue >= 0">
+      <mrow>
+        <mi>P (x &gt; {{aValue}})</mi>
+        <mo>=</mo>
+        <mi>1</mi>
+        <mo>-</mo>
+        <mo>{{probabilityTable.toFixed(4)}}</mo>
+        <mo>=</mo>
+        <mi>{{1 - probabilityTable.toFixed(4)}}</mi>
       </mrow>
     </math>
     <math display="block" v-if="zValue < 0">
