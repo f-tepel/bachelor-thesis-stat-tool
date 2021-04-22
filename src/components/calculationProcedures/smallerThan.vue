@@ -35,11 +35,11 @@
     </math>
     <div v-if="zValue >= 0">
       <p class="font-weight-regular">
-        Da der z Wert positiv bzw. 0 ist, verändert sich die Formel nicht.
+        {{$t('calculation.smallerSteps[2].valuePositive')}}
       </p>
     </div>
     <div v-if="zValue < 0">
-      <p>Da der z Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv.</p>
+      <p>{{$t('calculation.smallerSteps[2].valueNegative')}}</p>
       <math display="block">
         <mrow>
           <mi>P (x &#60; {{aValue}})</mi>
@@ -68,6 +68,11 @@
     <div class="text-h5">{{$t('calculation.smallerSteps[3].text')}}</div>
     <p class="font-weight-regular">
       {{$t('calculation.smallerSteps[3].description')}}
+    </p>
+
+    <p>
+      <b>{{$t('calculation.inBetweenSteps[3].exampleTitle')}}:</b><br>
+      {{$t('calculation.smallerSteps[3].example')}}
     </p>
     <br>
     <math display="block" v-if="zValue >= 0">

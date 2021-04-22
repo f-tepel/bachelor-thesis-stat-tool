@@ -9,11 +9,11 @@
     <p class="font-weight-regular">
       {{$t('calculation.inBetweenSteps[1].description')}}
     </p>
-    <div class="caption">z1 berechnen</div>
+    <div class="caption">{{$t('calculation.inBetweenSteps[1].calcZ1')}}</div>
     <PhiFormulaInner zName="z1"/>
     <PhiFormulaInnerInputBetween zName="z1"/>
     <br>
-    <div class="caption">z2 berechnen</div>
+    <div class="caption">{{$t('calculation.inBetweenSteps[1].calcZ2')}}</div>
     <PhiFormulaInner zName="z2"/>
     <PhiFormulaInnerInputBetween zName="z2"/>
     <br>
@@ -47,7 +47,7 @@
     </math>
     <div v-if="zValue >= 0">
       <p class="font-weight-regular">
-        Da der z1 Wert positiv bzw. 0 ist, verändert sich die Formel nicht.
+        {{$t('calculation.inBetweenSteps[2].z1.valuePositive')}}
       </p>
       <math display="block">
         <mrow>
@@ -61,7 +61,9 @@
       </math>
     </div>
     <div v-if="zValue < 0">
-      <p>Da der z1 Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv.</p>
+      <p>
+        {{$t('calculation.inBetweenSteps[2].z1.valueNegative')}}
+      </p>
       <math display="block">
         <mrow>
           <mi>P (x &#60; {{aValueStart}})</mi>
@@ -91,7 +93,7 @@
     </div>
     <div v-if="zValueTwo >= 0">
       <p class="font-weight-regular">
-        Da der z2 Wert positiv bzw. 0 ist, verändert sich die Formel nicht.
+        {{$t('calculation.inBetweenSteps[2].z2.valueNegative')}}
       </p>
       <math display="block">
         <mrow>
@@ -105,7 +107,9 @@
       </math>
     </div>
     <div v-if="zValueTwo < 0">
-      <p>Da der z1 Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv.</p>
+      <p>
+        {{$t('calculation.inBetweenSteps[2].z2.valueNegative')}}
+      </p>
       <math display="block">
         <mrow>
           <mi>P (x &#60; {{aValueEnd}})</mi>
@@ -137,9 +141,13 @@
     <p class="font-weight-regular">
       {{$t('calculation.inBetweenSteps[3].description')}}
     </p>
+    <p>
+      <b>{{$t('calculation.inBetweenSteps[3].exampleTitle')}}:</b><br>
+      {{$t('calculation.inBetweenSteps[3].example')}}
+    </p>
     <br>
     <div class="caption">
-      a1 Wahrscheinlichkeit berechnen
+      {{$t('calculation.inBetweenSteps[3].a1')}}
     </div>
     <div v-if="zValue >= 0">
       <math display="block">
@@ -181,7 +189,7 @@
     <br>
     <br>
     <div class="caption">
-      a2 Wahrscheinlichkeit berechnen
+      {{$t('calculation.inBetweenSteps[3].a2')}}
     </div>
     <div v-if="zValueTwo >= 0">
       <math display="block">
@@ -223,7 +231,7 @@
     <br>
     <br>
     <div class="caption">
-      Gesamtwahrscheinlichkeit berechnen
+      {{$t('calculation.inBetweenSteps[3].total')}}
     </div>
     <br>
     <math display="block">

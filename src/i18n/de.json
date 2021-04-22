@@ -8,6 +8,12 @@
   "probability": "Wahrscheinlichkeit",
   "calculation": {
     "procedure": "Rechenweg",
+    "basicSteps": [
+      {},
+      {},
+      {},
+      {}
+    ],
     "smallerSteps": [
       {
         "text": "1. Welche Formel muss verwendet werden",
@@ -19,11 +25,15 @@
       },
       {
         "text": "3. Positiv oder Negativ?",
-        "description": "Bevor der errechnete z Wert in der Phi Tabelle nachgeschlagen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:"
+        "description": "Bevor der errechnete z Wert in der Phi Tabelle nachgeschlagen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:",
+        "valuePositive": "Da der z Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
+        "valueNegative": "Da der z Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
       },
       {
         "text": "4. Wert in Phi / Z Tabelle nachschauen",
-        "description": "Zuletzt wird der z Wert verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma als y-Koordinate verwendet. Die Zahlen hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen. Die Grünen Kästchen helfen beim ablesen."
+        "description": "Zuletzt wird der z Wert verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma und die erste Stelle nach dem Komma als y-Koordinate verwendet. Die zweite Stelle hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen werden. Die Grünen Kästchen helfen beim ablesen.",
+        "exampleTitle": "Beispiel",
+        "example": "z = 0.63 - '0.6' wird als y-Koordinate verwendet. Die Zweite Stelle hinter dem Komma '3' wird als x-Koordinate verwendet. Vor die '3' wird noch '0.0' gesetzt, also '0.03'. Dieser Wert wird dann als x-Koordinate verwendet."
       }
     ],
     "greaterSteps": [
@@ -37,11 +47,15 @@
       },
       {
         "text": "3. Positiv oder Negativ?",
-        "description": "Bevor der errechnete z Wert in der Phi Tabelle nachgeschlagen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:"
+        "description": "Bevor der errechnete z Wert in der Phi Tabelle nachgeschlagen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:",
+        "valuePositive": "Da der z Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
+        "valueNegative": "Da der z Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
       },
       {
         "text": "4. Wert in Phi / Z Tabelle nachschauen",
-        "description": "Zuletzt wird der z Wert verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma als y-Koordinate verwendet. Die Zahlen hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen. Die Grünen Kästchen helfen beim ablesen."
+        "description": "Zuletzt wird der z Wert verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma und die erste Stelle nach dem Komma als y-Koordinate verwendet. Die zweite Stelle hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen werden. Die Grünen Kästchen helfen beim ablesen.",
+        "exampleTitle": "Beispiel",
+        "example": "z = 0.63 - '0.6' wird als y-Koordinate verwendet. Die Zweite Stelle hinter dem Komma '3' wird als x-Koordinate verwendet. Vor die '3' wird noch '0.0' gesetzt, also '0.03'. Dieser Wert wird dann als x-Koordinate verwendet."
       }
     ],
     "inBetweenSteps": [
@@ -51,15 +65,30 @@
       },
       {
         "text": "2. Innere Gleichungen Lösen",
-        "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, müssen zunächst die inneren Gleichungen gelöst werden. Das Ergebnis wir hier 'z1' und 'z2 genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren."
+        "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, müssen zunächst die inneren Gleichungen gelöst werden. Das Ergebnis wir hier 'z1' und 'z2 genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren.",
+        "calcZ1": "z1 berechnen",
+        "calcZ2": "z2 berechnen"
       },
       {
         "text": "3. Positiv oder Negativ?",
-        "description": "Bevor der errechnete z Wert in der Phi Tabelle nachgeschlagen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:"
+        "description": "Bevor der errechnete z Wert in der Phi Tabelle nachgeschlagen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:",
+        "z1": {
+          "valuePositive": "Da der z1 Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
+          "valueNegative": "Da der z1 Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
+        },
+        "z2": {
+          "valuePositive": "Da der z2 Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
+          "valueNegative": "Da der z2 Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
+        }
       },
       {
         "text": "4. Wert in Phi / Z Tabelle nachschauen",
-        "description": "Zuletzt werden die z Werte verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma als y-Koordinate verwendet. Die Zahlen hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen. Die Grünen Kästchen helfen beim ablesen."
+        "description": "Zuletzt werden die z Werte verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma und die erste Stelle nach dem Komma als y-Koordinate verwendet. Die zweite Stelle hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen. Die Grünen Kästchen helfen beim ablesen.",
+        "exampleTitle": "Beispiel",
+        "example": "z = 0.63 - '0.6' wird als y-Koordinate verwendet. Die Zweite Stelle hinter dem Komma '3' wird als x-Koordinate verwendet. Vor die '3' wird noch '0.0' gesetzt, also '0.03'. Dieser Wert wird dann als x-Koordinate verwendet.",
+        "a1": "a1 Wahrscheinlichkeit berechnen",
+        "a2": "a2 Wahrscheinlichkeit berechnen",
+        "total": "Gesamtwahrscheinlichkeit berechnen"
       }
     ]
   }
