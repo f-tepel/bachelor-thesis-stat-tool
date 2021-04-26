@@ -5,13 +5,13 @@
       <input type='number' :step='step' class='paramField' :min='min' v-model='value' @change="updateAValue"/><br>
       <input class='paramSlider' type='range' :min='min' v-bind:max='max' :step='step' v-model='value'  data-orientation='vertical' @change="updateAValue"/>
     </div>
-    <div v-if="isBetween" class="d-flex flex-row">
-      <div>
+    <div v-if="isBetween" class="d-flex flex-row flex-wrap justify-center">
+      <div class="mx-2">
         <p>{{$t('aValueStart')}}</p>
         <input type='number' :step='step' class='paramField' :min='min' v-model='start' @change="updateAValueStart"/><br>
         <input class='paramSlider' type='range' :min='min' v-bind:max='max' :step='step' v-model='start'  data-orientation='vertical' @change="updateAValueStart"/>
       </div>
-      <div>
+      <div class="mx-2">
         <p>{{$t('aValueEnd')}}</p>
         <input type='number' :step='step' class='paramField' :min='min' v-model='end' @change="updateAValueEnd"/><br>
         <input class='paramSlider' type='range' :min='min' v-bind:max='max' :step='step' v-model='end'  data-orientation='vertical' @change="updateAValueEnd"/>

@@ -5,18 +5,34 @@
       color="primary"
       dark
     >
-      <v-spacer></v-spacer>
       <v-toolbar-title>{{$t('title')}}</v-toolbar-title>
       <v-spacer></v-spacer>
-      <select v-model="$i18n.locale">
-        <option
-          v-for="(o, i) in LOCALES"
-          :key="i"
-          :value="o.value"
-          :selected="o.value === defaultLocale"
-          >{{ o.caption }}</option
-        >
-      </select>
+      <v-menu
+        left
+        bottom
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            icon
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item
+            v-for="(o, i) in LOCALES"
+            :key="i"
+            @click="() => {
+              $i18n.locale = o.value
+            }"
+          >
+            <v-list-item-title>{{ o.value }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-app-bar>
     <v-main>
       <Home/>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-h5">{{$t('calculation.inBetweenSteps[0].text')}} in Between</div>
+    <div class="text-h5">{{$t('calculation.inBetweenSteps[0].text')}}</div>
     <p class="font-weight-regular">
       {{$t('calculation.inBetweenSteps[0].description')}}
     </p>
@@ -93,7 +93,7 @@
     </div>
     <div v-if="zValueTwo >= 0">
       <p class="font-weight-regular">
-        {{$t('calculation.inBetweenSteps[2].z2.valueNegative')}}
+        {{$t('calculation.inBetweenSteps[2].z2.valuePositive')}}
       </p>
       <math display="block">
         <mrow>

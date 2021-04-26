@@ -1,5 +1,5 @@
 <template>
-  <v-flex>
+  <v-flex v-bind:class="{ 'text-center': $vuetify.breakpoint.mobile }">
     <v-btn class="ma-2" elevation="2" :color="(isSmaller == true) ? 'primary' : 'secondary'" @click='updateMode("smaller")'>]</v-btn>
     <v-btn class="ma-2" elevation="2" :color="(isGreater == true) ? 'primary' : 'secondary'" @click='updateMode("greater")'>[</v-btn>
     <v-btn class="ma-2" elevation="2" :color="(isBetween == true) ? 'primary' : 'secondary'" @click='updateMode("between")'>[]</v-btn>

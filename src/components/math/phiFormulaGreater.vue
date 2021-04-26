@@ -8,6 +8,7 @@
       <mo>&Phi;</mo>
       <mfenced>
         <mrow>
+          <mo>(</mo>
           <mfrac>
             <mrow>
               <mi>a</mi>
@@ -16,6 +17,7 @@
             </mrow>
             <mi>&sigma;</mi>
           </mfrac>
+          <mo>)</mo>
         </mrow>
       </mfenced>
     </mrow>

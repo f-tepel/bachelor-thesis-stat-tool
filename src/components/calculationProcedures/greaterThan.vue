@@ -1,8 +1,11 @@
 <template>
   <div>
-    <div class="text-h5">{{$t('calculation.greaterSteps[0].text')}} greater</div>
+    <div class="text-h5">{{$t('calculation.greaterSteps[0].text')}}</div>
     <p class="font-weight-regular">
       {{$t('calculation.greaterSteps[0].description')}}
+    </p>
+    <p>
+      {{$t('calculation.greaterSteps[0].description_2')}}
     </p>
     <PhiFormulaGreater/>
     <div class="text-h5">{{$t('calculation.greaterSteps[1].text')}}</div>

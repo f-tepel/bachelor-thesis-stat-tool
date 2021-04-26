@@ -1,16 +1,17 @@
 <template>
-  <v-container class='container' id='container'>
+  <div class='mycontainer' id='container'>
     <div id='chart-container' class='chart-container'></div>
     <div class="settings-container" :style="{width: width + 'px'}">
       <Settings/>
-      <div class='data-input-container'>
+      <br>
+      <div class="data-input-container" v-bind:class="{ 'justify-space-around': $vuetify.breakpoint.mobile, 'justify-space-between': !$vuetify.breakpoint.mobile }">
         <InputSlider name='mean' setMethod='setMean' storeName='mean' min=-10 max=10 step=0.1></InputSlider>
         <InputSlider name='std' setMethod='setStd' storeName='std' min=0 max=10 step=0.1></InputSlider>
         <AValueInput name='A value' setMethod='setAValue' min=-10 storeName='aValue' max=10 step=0.1></AValueInput>
       </div>
       <Probability/>
     </div>
-  </v-container>
+  </div>
 </template>
 
 <script lang='ts'>
@@ -101,7 +102,7 @@ export default Vue.extend({
     create_chart: function () {
       this.svg = d3.select('#chart-container')
         .append('svg')
-        .attr('width', this.width + this.margin.top + this.margin.bottom)
+        .attr('width', this.width)
         .attr('height', this.height + this.margin.top + this.margin.bottom)
         .attr('class', 'chart')
         .append('g')
@@ -131,8 +132,8 @@ export default Vue.extend({
         this.width = currentWidth * 0.8
         this.height = currentHeight * 0.5
       } else {
-        this.width = currentWidth * 0.9
-        this.height = currentHeight * 0.5
+        this.width = currentWidth * 0.95
+        this.height = currentHeight * 0.3
       }
       this.$store.commit('setChartWidth', this.width)
     },
@@ -311,8 +312,7 @@ p {
   font-family: 'Roboto Slab', serif;
 }
 
-.container {
-  margin: auto;
+.mycontainer {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -321,7 +321,7 @@ p {
 .data-input-container {
   text-align: center;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .chart-container {
