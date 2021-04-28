@@ -38,3 +38,9 @@ export default Vue.extend({
   ])
 })
 </script>
+
+<style scoped>
+.container {
+  margin: auto;
+}
+</style>
