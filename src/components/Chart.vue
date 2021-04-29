@@ -7,7 +7,7 @@
       <div class="data-input-container" v-bind:class="{ 'justify-space-around': $vuetify.breakpoint.mobile, 'justify-space-between': !$vuetify.breakpoint.mobile }">
         <InputSlider name='mean' setMethod='setMean' storeName='mean' :min="meanMin()" :max="meanMax()" step=0.1></InputSlider>
         <InputSlider name='std' setMethod='setStd' storeName='std' :min="stdMin()" :max="stdMax()" step=0.1></InputSlider>
-        <AValueInput name='A value' setMethod='setAValue' min=-10 storeName='aValue' max=10 step=0.1></AValueInput>
+        <AValueInput name='A value' setMethod='setAValue' storeName='aValue' :min="meanMin()" :max="meanMax()" step=0.1></AValueInput>
       </div>
       <Probability/>
     </div>
