@@ -52,8 +52,34 @@ export default Vue.extend({
   components: {
     Home
   },
+  data: () => ({ LOCALES, defaultLocale }),
+  mounted () {
+    if (this.$route.query.mean) {
+      this.$store.commit('setMean', this.$route.query.mean)
+    }
 
-  data: () => ({ LOCALES, defaultLocale })
+    if (this.$route.query.std) {
+      this.$store.commit('setStd', this.$route.query.std)
+    }
+
+    if (this.$route.query.mode) {
+      this.$store.commit('setMode', this.$route.query.mode)
+    }
+
+    if (this.$route.query.mode === 'inBetween') {
+      if (this.$route.query.a1) {
+        this.$store.commit('setAValueStart', this.$route.query.a1)
+      }
+
+      if (this.$route.query.a2) {
+        this.$store.commit('setAValueEnd', this.$route.query.a2)
+      }
+    } else {
+      if (this.$route.query.a) {
+        this.$store.commit('setAValue', this.$route.query.a)
+      }
+    }
+  }
 })
 </script>
 
