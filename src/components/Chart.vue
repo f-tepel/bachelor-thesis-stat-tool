@@ -5,8 +5,8 @@
       <Settings/>
       <br>
       <div class="data-input-container" v-bind:class="{ 'justify-space-around': $vuetify.breakpoint.mobile, 'justify-space-between': !$vuetify.breakpoint.mobile }">
-        <InputSlider name='mean' setMethod='setMean' storeName='mean' min=-10 max=10 step=0.1></InputSlider>
-        <InputSlider name='std' setMethod='setStd' storeName='std' min=0 max=10 step=0.1></InputSlider>
+        <InputSlider name='mean' setMethod='setMean' storeName='mean' :min="meanMin()" :max="meanMax()" step=0.1></InputSlider>
+        <InputSlider name='std' setMethod='setStd' storeName='std' :min="stdMin()" :max="stdMax()" step=0.1></InputSlider>
         <AValueInput name='A value' setMethod='setAValue' min=-10 storeName='aValue' max=10 step=0.1></AValueInput>
       </div>
       <Probability/>
@@ -138,11 +138,14 @@ export default Vue.extend({
       this.$store.commit('setChartWidth', this.width)
     },
     create_data: function (): Data {
-      var n = Math.ceil((this.upperBound - this.lowerBound) / this.interval)
+      this.upperBound = parseFloat(this.mean) + (this.std * 4)
+      this.lowerBound = parseFloat(this.mean) - (this.std * 4)
+      const steps = 100
+      this.interval = (this.upperBound - this.lowerBound) / steps
       var data = []
 
       var xPosition = this.lowerBound
-      for (var i = 0; i < n; i++) {
+      for (var i = 0; i < steps; i++) {
         data.push({
           y: jStat.normal.pdf(xPosition, this.mean, this.std),
           x: xPosition
@@ -258,11 +261,25 @@ export default Vue.extend({
     update_from_slider: function () {
       var chartData = this.create_data()
       this.update(chartData, this.x, this.y, this.xAxis, this.yAxis)
+    },
+    meanMin: function () {
+      return parseFloat(this.mean) - (this.std * 4)
+    },
+    meanMax: function () {
+      return parseFloat(this.mean) + (this.std * 4)
+    },
+    stdMin: function () {
+      return Math.max(parseFloat(this.std) - 10, 0.1)
+    },
+    stdMax: function () {
+      return parseFloat(this.std) + 10
     }
   },
-  computed: mapState([
-    'mean', 'std', 'aValue', 'aValueStart', 'aValueEnd', 'isGreater', 'isSmaller', 'isBetween'
-  ]),
+  computed: {
+    ...mapState([
+      'mean', 'std', 'aValue', 'aValueStart', 'aValueEnd', 'isGreater', 'isSmaller', 'isBetween'
+    ])
+  },
   watch: {
     mean: function (val) {
       this.update_from_slider()

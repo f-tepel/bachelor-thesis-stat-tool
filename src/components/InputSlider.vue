@@ -1,8 +1,8 @@
 <template>
   <div>
     <p>{{$t(name)}}</p>
-    <input type='number' :step='step' class='paramField' :min='min' v-model='value' @change="update"/><br>
-    <input class='paramSlider' type='range' :min='min' v-bind:max='max' :step='step' v-model='value'  data-orientation='vertical' @change="update"/>
+    <v-text-field type='number' :step='step' class='paramField' :min='min' v-model='value' @change="update"/>
+    <input class='paramSlider' type='range' v-bind:min='min' v-bind:max='max' :step='step' v-model='value'  data-orientation='vertical' @change="update"/>
   </div>
 </template>
 
