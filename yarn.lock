@@ -1251,7 +1251,7 @@
 
 "@types/mathjs@^6.0.11":
   version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@types/mathjs/-/mathjs-6.0.11.tgz#bf24c1ed875252274008d2c373bad07e0348adfb"
+  resolved "https://registry.npmjs.org/@types/mathjs/-/mathjs-6.0.11.tgz"
   integrity sha512-q9B8ZreO41L38iTY76bCZEtAqzeRs4mNIOZpZ1sLSlcYgvgfFrnf8y8qfmas0tVWrsODjmQbQJFD6RJJJCqJbQ==
   dependencies:
     decimal.js "^10.0.0"
@@ -6386,12 +6386,12 @@ map-visit@^1.0.0:
 
 mathjax@^3.1.2:
   version "3.1.2"
-  resolved "https://registry.yarnpkg.com/mathjax/-/mathjax-3.1.2.tgz#95c0d45ce2330ef7b6a815cebe7d61ecc26bbabd"
+  resolved "https://registry.npmjs.org/mathjax/-/mathjax-3.1.2.tgz"
   integrity sha512-BojKspBv4nNWzO1wC6VEI+g9gHDOhkaGHGgLxXkasdU4pwjdO5AXD5M/wcLPkXYPjZ/N+6sU8rjQTlyvN2cWiQ==
 
 mathjs@^9.3.0:
   version "9.3.0"
-  resolved "https://registry.yarnpkg.com/mathjs/-/mathjs-9.3.0.tgz#59cc43b536b22616197e56da303604b430daa6ac"
+  resolved "https://registry.npmjs.org/mathjs/-/mathjs-9.3.0.tgz"
   integrity sha512-0kYW+TXgB8lCqUj5wHR2hqAO2twSbPRelSFgRJXiwAx4nM6FrIb43Jd6XhW7sVbwYB+9HCNiyg5Kn8VYeB7ilg==
   dependencies:
     complex.js "^2.0.11"
@@ -9533,6 +9533,11 @@ uuid@^3.3.2, uuid@^3.4.0:
   resolved "https://registry.npm.taobao.org/uuid/download/uuid-3.4.0.tgz?cache=0&sync_timestamp=1607460081656&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fuuid%2Fdownload%2Fuuid-3.4.0.tgz"
   integrity sha1-sj5DWK+oogL+ehAK8fX4g/AgB+4=
 
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
 v8-compile-cache@^2.0.3:
   version "2.3.0"
   resolved "https://registry.npm.taobao.org/v8-compile-cache/download/v8-compile-cache-2.3.0.tgz?cache=0&sync_timestamp=1614993892777&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fv8-compile-cache%2Fdownload%2Fv8-compile-cache-2.3.0.tgz"
@@ -9603,7 +9608,7 @@ vue-hot-reload-api@^2.3.0:
 
 vue-i18n@8.15.1:
   version "8.15.1"
-  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.15.1.tgz#90097a08a1e932f645c6b9c404c780d24f6d6224"
+  resolved "https://registry.npmjs.org/vue-i18n/-/vue-i18n-8.15.1.tgz"
   integrity sha512-GBbz8qYCu0U2LNu4IcuFLZiuyninG4k26knvhL7GZG5Ncp4RR2VKDEH6g8gQ6I+UUBCvH2MBQVPSdxWe4DBkPw==
 
 "vue-loader-v16@npm:vue-loader@^16.1.0":
@@ -9628,7 +9633,7 @@ vue-loader@^15.9.2:
 
 vue-mathjax@^0.0.11:
   version "0.0.11"
-  resolved "https://registry.yarnpkg.com/vue-mathjax/-/vue-mathjax-0.0.11.tgz#ab2cfae479e76d95db8ea0e941203d08572714a8"
+  resolved "https://registry.npmjs.org/vue-mathjax/-/vue-mathjax-0.0.11.tgz"
   integrity sha512-s2P4OatDmzBZD/gm+/FHl5Idd43gxzSIdXOkMq/MiWrNsdOvMMzNFrirfQp0agqbCiNuA8/It/sXsgCDeh5FfA==
 
 vue-property-decorator@^9.1.2:

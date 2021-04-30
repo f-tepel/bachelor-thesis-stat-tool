@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :style="{width: chartWidth + 'px'}">
+  <div class="container">
     <div class="text-h3">{{$t('calculation.procedure')}}</div>
     <br>
     <div v-if="isSmaller">
@@ -33,6 +33,10 @@ export default Vue.extend({
       //
     }
   },
+  // updated () {
+  //   // @ts-ignore
+  //   window.MathJax.typeset()
+  // },
   computed: mapState([
     'isGreater', 'isSmaller', 'isBetween', 'chartWidth'
   ])
