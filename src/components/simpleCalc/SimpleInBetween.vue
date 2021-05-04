@@ -3,16 +3,17 @@
     <DefaultChart
       :mean="parseFloat(mean)"
       :std="parseFloat(std)"
-      :aValue="parseFloat(aValue)"
-      :isGreater="true"/>
+      :aValueStart="parseFloat(aValueStart)"
+      :aValueEnd="parseFloat(aValueEnd)"
+      :isBetween="true"/>
     <div class="text-h1 d-flex justify-center align-center mx-5">
       =
     </div>
     <DefaultChart
       :mean="parseFloat(mean)"
       :std="parseFloat(std)"
-      :aValue="parseFloat(mean - (4*std))"
-      :isGreater="isGreater"
+      :aValue="parseFloat(aValueEnd)"
+      :isSmaller="true"
       chartColor="steelblue"
     />
     <div class="text-h1 d-flex justify-center align-center mx-5">
@@ -21,7 +22,7 @@
     <DefaultChart
       :mean="parseFloat(mean)"
       :std="parseFloat(std)"
-      :aValue="aValue"
+      :aValue="aValueStart"
       :isSmaller="true"
       chartColor="lightgreen"
     />
@@ -40,7 +41,7 @@ export default Vue.extend({
     DefaultChart
   },
   computed: {
-    ...mapState(['mean', 'std', 'aValue', 'isGreater'])
+    ...mapState(['mean', 'std', 'aValue', 'aValueStart', 'aValueEnd', 'isGreater'])
   }
 })
 </script>

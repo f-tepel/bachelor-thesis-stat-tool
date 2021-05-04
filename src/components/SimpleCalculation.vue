@@ -9,7 +9,7 @@
       <SimpleGreaterThan/>
     </div>
     <div v-if="isBetween">
-      <InBetweenProcedure/>
+      <SimpleInBetween/>
     </div>
   </div>
 </template>
@@ -18,11 +18,13 @@
 import Vue from 'vue'
 import { mapState } from 'vuex'
 import SimpleGreaterThan from './simpleCalc/SimpleGreaterThan.vue'
+import SimpleInBetween from './simpleCalc/SimpleInBetween.vue'
 
 export default Vue.extend({
   name: 'SimpleCalculation',
   components: {
-    SimpleGreaterThan
+    SimpleGreaterThan,
+    SimpleInBetween
   },
   computed: mapState([
     'isGreater', 'isSmaller', 'isBetween', 'chartWidth'

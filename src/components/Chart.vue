@@ -95,6 +95,28 @@ export default Vue.extend({
     this.add_x_axis(chartData)
     this.add_y_axis(chartData)
     this.create_area(this.x, this.y)
+    const pct = (((this.std * 4) + parseFloat(this.aValue)) / (this.std * 8)) * 98
+    this.svg.append('line')
+      .attr('class', 'aLine')
+      .style('stroke', 'lightgreen')
+      .style('stroke-width', 10)
+      .attr('x1', pct + '%')
+      .attr('y1', '100%')
+      .attr('x2', pct + '%')
+      .attr('y2', -5)
+    this.svg.append('line')
+      .attr('class', 'aLineEnd')
+      .style('stroke', 'steelblue')
+      .style('stroke-width', 0)
+      .attr('x1', pct + '%')
+      .attr('y1', '100%')
+      .attr('x2', pct + '%')
+      .attr('y2', -5)
+
+    this.svg.append('text')
+      .attr('x', pct + '%')
+      .attr('dy', 0)
+      .text(`A = ${this.aValue}`)
 
     this.update(chartData, this.x, this.y, this.xAxis, this.yAxis)
   },
@@ -140,7 +162,7 @@ export default Vue.extend({
     create_data: function (): Data {
       this.upperBound = parseFloat(this.mean) + (this.std * 4)
       this.lowerBound = parseFloat(this.mean) - (this.std * 4)
-      const steps = 100
+      const steps = 1000
       this.interval = (this.upperBound - this.lowerBound) / steps
       var data = []
 
@@ -202,6 +224,36 @@ export default Vue.extend({
       this.svg.append('g')
         .attr('class', 'yAxis')
     },
+    getMeanRatio: function () {
+      return (parseFloat(this.mean) / (this.std * 8)) * 100
+    },
+    getStdRatio: function (aValue: number) {
+      return ((this.std * 4) + aValue) / (this.std * 8) * 100
+    },
+    add_a_line: function () {
+      if (this.isBetween === true) {
+        const pctStart = this.getStdRatio(parseFloat(this.aValueStart)) - this.getMeanRatio()
+        const pctEnd = this.getStdRatio(parseFloat(this.aValueEnd)) - this.getMeanRatio()
+        this.svg.selectAll('.aLine')
+          .attr('x1', pctStart + '%')
+          .attr('x2', pctStart + '%')
+
+        this.svg.selectAll('.aLineEnd')
+          .style('stroke-width', 5)
+          .attr('x1', pctEnd + '%')
+          .attr('x2', pctEnd + '%')
+      } else {
+        const pct = this.getStdRatio(parseFloat(this.aValue)) - this.getMeanRatio()
+        this.svg.selectAll('.aLine')
+          .attr('x1', pct + '%')
+          .attr('x2', pct + '%')
+        this.svg.selectAll('.aLineEnd')
+          .style('stroke-width', 0)
+
+        this.svg.selectAll('text')
+          .attr('x', pct - 2 + '%')
+      }
+    },
     update: function (data: any, x: any, y: any, xAxis: any, yAxis: any) {
       const ANIMATION_DURATION = 500
 
@@ -236,7 +288,7 @@ export default Vue.extend({
           .x(function (d: any) { return x(d.x) })
           .y(function (d: any) { return y(d.y) }))
         .attr('fill', 'none')
-        .attr('stroke', 'steelblue')
+        .attr('stroke', 'grey')
         .attr('stroke-width', 2.5)
 
       var a = this.svg.selectAll('.area')
@@ -249,6 +301,7 @@ export default Vue.extend({
         .transition()
         .duration(ANIMATION_DURATION)
         .attr('d', this.area)
+        .style('fill', 'grey')
 
       // update
       a.transition()
@@ -257,6 +310,8 @@ export default Vue.extend({
 
       // exit
       a.exit().remove()
+
+      this.add_a_line()
     },
     update_from_slider: function () {
       var chartData = this.create_data()

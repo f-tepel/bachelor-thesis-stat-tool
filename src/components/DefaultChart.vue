@@ -81,7 +81,7 @@ export default Vue.extend({
     },
     isSmaller: {
       type: Boolean,
-      default: true
+      default: false
     },
     isBetween: {
       type: Boolean,
@@ -94,6 +94,10 @@ export default Vue.extend({
     height: {
       type: Number,
       default: 200
+    },
+    chartColor: {
+      type: String,
+      default: 'grey'
     }
   },
   mounted: function () {
@@ -227,7 +231,7 @@ export default Vue.extend({
           .x(function (d: any) { return x(d.x) })
           .y(function (d: any) { return y(d.y) }))
         .attr('fill', 'none')
-        .attr('stroke', 'steelblue')
+        .attr('stroke', this.chartColor)
         .attr('stroke-width', 2.5)
 
       var a = this.svg.selectAll('.area')
@@ -240,11 +244,13 @@ export default Vue.extend({
         .transition()
         .duration(ANIMATION_DURATION)
         .attr('d', this.area)
+        .style('fill', this.chartColor)
 
       // update
       a.transition()
         .duration(ANIMATION_DURATION)
         .attr('d', this.area)
+        .style('fill', this.chartColor)
 
       // exit
       a.exit().remove()
@@ -270,34 +276,33 @@ export default Vue.extend({
     containerId () {
       return '_' + Math.random().toString(36).substr(2, 9)
     }
+  },
+  watch: {
+    mean: function (val) {
+      this.update_from_slider()
+    },
+    std: function (val) {
+      this.update_from_slider()
+    },
+    aValue: function (val) {
+      this.update_from_slider()
+    },
+    aValueStart: function (val) {
+      this.update_from_slider()
+    },
+    aValueEnd: function (val) {
+      this.update_from_slider()
+    },
+    isGreater: function (val) {
+      this.update_from_slider()
+    },
+    isSmaller: function (val) {
+      this.update_from_slider()
+    },
+    isBetween: function (val) {
+      this.update_from_slider()
+    }
   }
-
-  // watch: {
-  //   mean: function (val) {
-  //     this.update_from_slider()
-  //   },
-  //   std: function (val) {
-  //     this.update_from_slider()
-  //   },
-  //   aValue: function (val) {
-  //     this.update_from_slider()
-  //   },
-  //   aValueStart: function (val) {
-  //     this.update_from_slider()
-  //   },
-  //   aValueEnd: function (val) {
-  //     this.update_from_slider()
-  //   },
-  //   isGreater: function (val) {
-  //     this.update_from_slider()
-  //   },
-  //   isSmaller: function (val) {
-  //     this.update_from_slider()
-  //   },
-  //   isBetween: function (val) {
-  //     this.update_from_slider()
-  //   }
-  // }
 })
 </script>
 
@@ -340,14 +345,14 @@ p {
 .axis path,
 .axis line {
     fill: none;
-    stroke: black;
+    stroke: red;
     shape-rendering: crispEdges;
 }
 
 .axis text {
     font-size: 10px;
     font-family: 'Roboto Slab', serif;
-    color: black;
+    color: green;
 }
 
 .text-label {
@@ -357,12 +362,12 @@ p {
 }
 
 .dot {
-    stroke: #293b47;
-    fill: #7A99AC
+    stroke: red;
+    fill: red
 }
 
 #ex1Slider .slider-selection {
-  background: #BABABA;
+  background: red;
 }
 
 .area {
