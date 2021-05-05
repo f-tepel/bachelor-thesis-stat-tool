@@ -21,20 +21,20 @@ export default new Vuex.Store({
     chartWidth: 960
   },
   mutations: {
-    setMean (state, val: number) {
-      state.mean = val
+    setMean (state, val: any) {
+      state.mean = parseFloat(val)
     },
-    setStd (state, val: number) {
-      state.std = val
+    setStd (state, val: any) {
+      state.std = parseFloat(val)
     },
-    setAValue (state, val: number) {
-      state.aValue = val
+    setAValue (state, val: any) {
+      state.aValue = parseFloat(val)
     },
-    setAValueStart (state, val: number) {
-      state.aValueStart = val
+    setAValueStart (state, val: any) {
+      state.aValueStart = parseFloat(val)
     },
-    setAValueEnd (state, val: number) {
-      state.aValueEnd = val
+    setAValueEnd (state, val: any) {
+      state.aValueEnd = parseFloat(val)
     },
     setMode (state, val: string) {
       if (val === 'greater') {

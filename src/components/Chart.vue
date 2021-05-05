@@ -99,11 +99,11 @@ export default Vue.extend({
     this.svg.append('line')
       .attr('class', 'aLine')
       .style('stroke', 'lightgreen')
-      .style('stroke-width', 10)
+      .style('stroke-width', 5)
       .attr('x1', pct + '%')
       .attr('y1', '100%')
       .attr('x2', pct + '%')
-      .attr('y2', -5)
+      .attr('y2', 0)
     this.svg.append('line')
       .attr('class', 'aLineEnd')
       .style('stroke', 'steelblue')
@@ -111,12 +111,18 @@ export default Vue.extend({
       .attr('x1', pct + '%')
       .attr('y1', '100%')
       .attr('x2', pct + '%')
-      .attr('y2', -5)
+      .attr('y2', 0)
 
     this.svg.append('text')
+      .attr('class', 'aLabel')
       .attr('x', pct + '%')
       .attr('dy', 0)
       .text(`A = ${this.aValue}`)
+
+    this.svg.append('text')
+      .attr('class', 'aLabelEnd')
+      .attr('x', pct + '%')
+      .attr('dy', 0)
 
     this.update(chartData, this.x, this.y, this.xAxis, this.yAxis)
   },
@@ -230,7 +236,7 @@ export default Vue.extend({
     getStdRatio: function (aValue: number) {
       return ((this.std * 4) + aValue) / (this.std * 8) * 100
     },
-    add_a_line: function () {
+    updateALine: function () {
       if (this.isBetween === true) {
         const pctStart = this.getStdRatio(parseFloat(this.aValueStart)) - this.getMeanRatio()
         const pctEnd = this.getStdRatio(parseFloat(this.aValueEnd)) - this.getMeanRatio()
@@ -242,6 +248,9 @@ export default Vue.extend({
           .style('stroke-width', 5)
           .attr('x1', pctEnd + '%')
           .attr('x2', pctEnd + '%')
+
+        this.updateLineLabel(pctStart - 2, this.aValueStart, '.aLabel')
+        this.updateLineLabel(pctEnd - 2, this.aValueEnd, '.aLabelEnd')
       } else {
         const pct = this.getStdRatio(parseFloat(this.aValue)) - this.getMeanRatio()
         this.svg.selectAll('.aLine')
@@ -250,9 +259,14 @@ export default Vue.extend({
         this.svg.selectAll('.aLineEnd')
           .style('stroke-width', 0)
 
-        this.svg.selectAll('text')
-          .attr('x', pct - 2 + '%')
+        this.updateLineLabel(pct - 2, this.aValue, '.aLabel')
+        this.updateLineLabel(-100, this.aValue, '.aLabelEnd')
       }
+    },
+    updateLineLabel: function (position: number, value: number, selector = 'aLabel') {
+      this.svg.selectAll(selector)
+        .attr('x', position + '%')
+        .text(`A = ${value}`)
     },
     update: function (data: any, x: any, y: any, xAxis: any, yAxis: any) {
       const ANIMATION_DURATION = 500
@@ -311,7 +325,7 @@ export default Vue.extend({
       // exit
       a.exit().remove()
 
-      this.add_a_line()
+      this.updateALine()
     },
     update_from_slider: function () {
       var chartData = this.create_data()
