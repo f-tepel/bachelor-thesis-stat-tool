@@ -23,18 +23,26 @@
             color="primary"
             dark
           >Dein Link</v-toolbar>
-          <v-card-text>
-            <div class="text-subtitle-2 pa-12">{{shareLink}}</div>
+          <v-card-text class="d-flex justify-center">
+            <div class="text-subtitle-2 pa-12" v-if="!showQR">{{shareLink}}</div>
+            <vue-qrcode v-if="showQR" :value="shareLink" class="ma-10"/>
           </v-card-text>
-          <v-card-actions class="justify-end">
-            <v-btn
-              text
-              @click="copy"
-            >Kopieren</v-btn>
-            <v-btn
-              text
-              @click="dialog.value = false"
-            >Schließen</v-btn>
+          <v-card-actions class="justify-space-between">
+            <v-switch
+              v-model="showQR"
+              label="QR Code anzeigen"
+            ></v-switch>
+            <div>
+              <v-btn
+                text
+                @click="copy"
+                v-if="!showQR"
+              >Kopieren</v-btn>
+              <v-btn
+                text
+                @click="dialog.value = false"
+              >Schließen</v-btn>
+            </div>
           </v-card-actions>
         </v-card>
       </template>
@@ -44,9 +52,18 @@
 
 <script lang='ts'>
 import Vue from 'vue'
+import VueQrcode from 'vue-qrcode'
 
 export default Vue.extend({
   name: 'Settings',
+  data () {
+    return {
+      showQR: false
+    }
+  },
+  components: {
+    VueQrcode
+  },
   methods: {
     updateMode: function (mode: string) {
       this.$store.commit('setMode', mode)
