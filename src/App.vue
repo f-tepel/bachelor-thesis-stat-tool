@@ -39,7 +39,6 @@
     <v-navigation-drawer
       v-model="drawer"
       absolute
-      bottom
       temporary
     >
       <v-list
@@ -50,7 +49,11 @@
           active-class="deep-purple--text text--accent-4"
         >
           <v-list-item to="/">
-            <v-list-item-title>Interaktives Diagramm</v-list-item-title>
+            <v-list-item-title>Einleitung</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item to="/learn">
+            <v-list-item-title>Lernen</v-list-item-title>
           </v-list-item>
 
           <v-list-item to="/application">
