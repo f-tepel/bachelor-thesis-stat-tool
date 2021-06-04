@@ -5,6 +5,8 @@
       color="primary"
       dark
     >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-spacer></v-spacer>
       <v-toolbar-title>{{$t('title')}}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-menu
@@ -34,25 +36,52 @@
         </v-list>
       </v-menu>
     </v-app-bar>
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      bottom
+      temporary
+    >
+      <v-list
+        nav
+        dense
+      >
+        <v-list-item-group
+          active-class="deep-purple--text text--accent-4"
+        >
+          <v-list-item to="/">
+            <v-list-item-title>Interaktives Diagramm</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item to="/application">
+            <v-list-item-title>Anwendungsgebiete</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item to="/exercises">
+            <v-list-item-title>Aufgaben</v-list-item-title>
+          </v-list-item>
+
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
     <v-main>
-      <Home/>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Home from './views/Home.vue'
 import { LOCALES } from '@/i18n/locales'
 import { defaultLocale } from '@/i18n'
 
 export default Vue.extend({
   name: 'App',
-
-  components: {
-    Home
-  },
-  data: () => ({ LOCALES, defaultLocale }),
+  data: () => ({
+    LOCALES,
+    defaultLocale,
+    drawer: false
+  }),
   mounted () {
     if (this.$route.query.mean) {
       this.$store.commit('setMean', this.$route.query.mean)
