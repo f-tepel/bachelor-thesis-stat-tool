@@ -9741,6 +9741,13 @@
   "resolved" "https://registry.npmjs.org/vue-mathjax/-/vue-mathjax-0.0.11.tgz"
   "version" "0.0.11"
 
+"vue-meta@^2.4.0":
+  "integrity" "sha512-XEeZUmlVeODclAjCNpWDnjgw+t3WA6gdzs6ENoIAgwO1J1d5p1tezDhtteLUFwcaQaTtayRrsx7GL6oXp/m2Jw=="
+  "resolved" "https://registry.npmjs.org/vue-meta/-/vue-meta-2.4.0.tgz"
+  "version" "2.4.0"
+  dependencies:
+    "deepmerge" "^4.2.2"
+
 "vue-property-decorator@^9.1.2":
   "integrity" "sha1-JmourGG6ZSfi5oppM8+5j92rVFc="
   "resolved" "https://registry.npm.taobao.org/vue-property-decorator/download/vue-property-decorator-9.1.2.tgz"

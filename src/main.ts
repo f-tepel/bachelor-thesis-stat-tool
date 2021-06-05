@@ -6,8 +6,10 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import { messages, defaultLocale } from '@/i18n'
+import VueMeta from 'vue-meta'
 
 Vue.use(VueI18n)
+Vue.use(VueMeta)
 
 Vue.config.productionTip = false
 

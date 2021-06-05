@@ -85,6 +85,9 @@ export default Vue.extend({
     defaultLocale,
     drawer: false
   }),
+  metaInfo: {
+    title: 'Statistik E-Learning Tool'
+  },
   mounted () {
     if (this.$route.query.mean) {
       this.$store.commit('setMean', this.$route.query.mean)
