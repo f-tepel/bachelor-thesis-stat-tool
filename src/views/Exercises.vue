@@ -1,17 +1,17 @@
 <template>
   <v-container>
     <div class="text-h4">
-      Übungsaufgaben
+      {{$t('exercises.title')}}
     </div>
     <p>
-      Auf dieser Seite finden Sie Übungsaufgaben. Die Antworten können aufgedeckt werden.
+      {{$t('exercises.text')}}
     </p>
     <v-card>
       <v-card-text>
-        {{exercises[index].text}}
+        {{$t(`exercises.tasks[${index}].text`)}}
       </v-card-text>
       <v-card-text v-if="showAnswer">
-        Die Wahrscheinlichkeit beträgt {{exercises[index].probability}}%
+        {{$t(`exercises.tasks[${index}].answer`)}}
       </v-card-text>
 
       <v-card-actions>
@@ -20,31 +20,31 @@
           @click="showAnswer = true"
           v-if="showAnswer == false"
         >
-          Antwort anzeigen
+        {{$t(`exercises.showAnswer`)}}
         </v-btn>
         <v-btn
           color="primary"
           @click="showAnswer = false"
           v-if="showAnswer == true"
         >
-          Antwort verbergen
+        {{$t(`exercises.hideAnswer`)}}
         </v-btn>
       </v-card-actions>
     </v-card>
     <v-row class="my-5 justify-center d-none d-lg-block">
       <v-btn class="mx-5 my-1" color="primary" @click="index--; showAnswer = false" v-if="index > 0">
-        Vorherige Aufgabe
+        {{$t(`exercises.previousTask`)}}
       </v-btn>
       <v-btn  class="mx-5 my-1" color="primary" @click="index++; showAnswer = false" v-if="index < (exercises.length - 1)">
-        Nächste Aufgabe
+        {{$t(`exercises.nextTask`)}}
       </v-btn>
     </v-row>
     <v-row class="my-5 px-2 justify-center d-lg-none">
       <v-btn class="mx-5 my-1" color="primary" @click="index--; showAnswer = false" v-if="index > 0" block>
-        Vorherige Aufgabe
+        {{$t(`exercises.previousTask`)}}
       </v-btn>
       <v-btn  class="mx-5 my-1" color="primary" @click="index++; showAnswer = false" v-if="index < (exercises.length - 1)" block>
-        Nächste Aufgabe
+        {{$t(`exercises.nextTask`)}}
       </v-btn>
     </v-row>
   </v-container>

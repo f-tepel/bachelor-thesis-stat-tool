@@ -1,35 +1,47 @@
 <template>
   <v-container>
     <div class="text-h4">
-      Einleitung
+      {{$t('introduction.title')}}
     </div>
     <p>
-      Diese Webanwendung dient dem Erlernen der Wahrscheinlichkeitsrechnung mit Normalverteilungen. Das Tool beinhaltet folgende Funktionen.
+      {{$t('introduction.text')}}
     </p>
     <p>
-      <b>Lernen</b><br>
-      In diesem Teil lernt man wie man Wahrscheinlichkeiten mit Normalverteilungen berechnet. Interaktive Diagramme und Erklärungen vermitteln das Thema verständlich und spielerisch.
+      <b>{{$t('introduction.learn.title')}}</b><br>
+      {{$t('introduction.learn.text')}}
     </p>
     <p>
-      <b>Anwendungsgebiete</b><br>
-      Dieser Teil erläutert Beispiel Bereiche in denen Normalverteilungen tatsächlich verwendet werden, wie diese eingesetzt werden und warum sie eingesetzt werden.
+      <b>{{$t('introduction.application.title')}}</b><br>
+      {{$t('introduction.application.text')}}
     </p>
     <p>
-      <b>Übungsaufgaben</b><br>
-      Übungsaufgaben helfen das Gelernte anzuwenden, überprüfen und zu festigen.
+      <b>{{$t('introduction.exercises.title')}}</b><br>
+      {{$t('introduction.exercises.text')}}
+    </p>
+    <p>
+      <b>{{$t('introduction.language.title')}}</b><br>
+      {{$t('introduction.language.text')}}
     </p>
     <div class="d-none d-lg-block">
-
+      <v-btn class="mx-2 primary" to="/learn">
+        {{$t('introduction.actions[0]')}}
+      </v-btn>
+      <v-btn class="mx-2 primary" to="/application">
+        {{$t('introduction.actions[1]')}}
+      </v-btn>
+      <v-btn class="mx-2 primary" to="/exercises">
+        {{$t('introduction.actions[2]')}}
+      </v-btn>
     </div>
     <div class="d-lg-none">
       <v-btn block class="my-2 primary" to="/learn">
-        Lernen
+        {{$t('introduction.actions[0]')}}
       </v-btn>
       <v-btn block class="my-2 primary" to="/application">
-        Anwendungsgebiete
+        {{$t('introduction.actions[1]')}}
       </v-btn>
       <v-btn block class="my-2 primary" to="/exercises">
-        Übungsaufgaben
+        {{$t('introduction.actions[2]')}}
       </v-btn>
     </div>
   </v-container>

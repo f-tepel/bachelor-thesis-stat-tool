@@ -1,23 +1,23 @@
 <template>
   <div>
-    <div class="text-h5">{{$t('calculation.greaterSteps[0].text')}}</div>
+    <div class="text-h5">{{$t('learn.calculation.greaterSteps[0].text')}}</div>
     <p class="font-weight-regular">
-      {{$t('calculation.greaterSteps[0].description')}}
+      {{$t('learn.calculation.greaterSteps[0].description')}}
     </p>
     <p>
-      {{$t('calculation.greaterSteps[0].description_2')}}
+      {{$t('learn.calculation.greaterSteps[0].description_2')}}
     </p>
     <PhiFormulaGreater/>
-    <div class="text-h5">{{$t('calculation.greaterSteps[1].text')}}</div>
+    <div class="text-h5">{{$t('learn.calculation.greaterSteps[1].text')}}</div>
     <p class="font-weight-regular">
-      {{$t('calculation.greaterSteps[1].description')}}
+      {{$t('learn.calculation.greaterSteps[1].description')}}
     </p>
     <PhiFormulaInner/>
     <PhiFormulaInnerInput/>
     <br>
-    <div class="text-h5">{{$t('calculation.greaterSteps[2].text')}}</div>
+    <div class="text-h5">{{$t('learn.calculation.greaterSteps[2].text')}}</div>
     <p class="font-weight-regular">
-      {{$t('calculation.greaterSteps[2].description')}}
+      {{$t('learn.calculation.greaterSteps[2].description')}}
     </p>
     <math display="block">
       <mrow>
@@ -40,12 +40,12 @@
     </math>
     <div v-if="zValue >= 0">
       <p class="font-weight-regular">
-        {{$t('calculation.greaterSteps[2].valuePositive')}}
+        {{$t('learn.calculation.greaterSteps[2].valuePositive')}}
       </p>
     </div>
     <div v-if="zValue < 0">
       <p>
-        {{$t('calculation.greaterSteps[2].valueNegative')}}
+        {{$t('learn.calculation.greaterSteps[2].valueNegative')}}
       </p>
       <math display="block">
         <mrow>
@@ -77,13 +77,13 @@
         </mrow>
       </math>
     </div>
-    <div class="text-h5">{{$t('calculation.greaterSteps[3].text')}}</div>
+    <div class="text-h5">{{$t('learn.calculation.greaterSteps[3].text')}}</div>
     <p class="font-weight-regular">
-      {{$t('calculation.greaterSteps[3].description')}}
+      {{$t('learn.calculation.greaterSteps[3].description')}}
     </p>
     <p>
-      <b>{{$t('calculation.inBetweenSteps[3].exampleTitle')}}:</b><br>
-      {{$t('calculation.greaterSteps[3].example')}}
+      <b>{{$t('learn.calculation.inBetweenSteps[3].exampleTitle')}}:</b><br>
+      {{$t('learn.calculation.greaterSteps[3].example')}}
     </p>
     <br>
     <math display="block" v-if="zValue >= 0">

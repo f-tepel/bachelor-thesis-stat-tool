@@ -49,19 +49,19 @@
           active-class="deep-purple--text text--accent-4"
         >
           <v-list-item to="/">
-            <v-list-item-title>Einleitung</v-list-item-title>
+            <v-list-item-title>{{$t(`introduction.title`)}}</v-list-item-title>
           </v-list-item>
 
           <v-list-item to="/learn">
-            <v-list-item-title>Lernen</v-list-item-title>
+            <v-list-item-title>{{$t(`learn.title`)}}</v-list-item-title>
           </v-list-item>
 
           <v-list-item to="/application">
-            <v-list-item-title>Anwendungsgebiete</v-list-item-title>
+            <v-list-item-title>{{$t(`application.title`)}}</v-list-item-title>
           </v-list-item>
 
           <v-list-item to="/exercises">
-            <v-list-item-title>Aufgaben</v-list-item-title>
+            <v-list-item-title>{{$t(`exercises.title`)}}</v-list-item-title>
           </v-list-item>
 
         </v-list-item-group>

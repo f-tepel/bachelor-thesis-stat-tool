@@ -15,14 +15,14 @@
           dark
           v-bind="attrs"
           v-on="on">
-          Share</v-btn>
+          {{$t(`learn.share.share`)}}</v-btn>
       </template>
       <template v-slot:default="dialog">
         <v-card>
           <v-toolbar
             color="primary"
             dark
-          >Dein Link</v-toolbar>
+          >{{$t(`learn.share.link`)}}</v-toolbar>
           <v-card-text class="d-flex justify-center">
             <div class="text-subtitle-2 pa-12" v-if="!showQR">{{shareLink}}</div>
             <vue-qrcode v-if="showQR" :value="shareLink" class="ma-10"/>
@@ -37,11 +37,11 @@
                 text
                 @click="copy"
                 v-if="!showQR"
-              >Kopieren</v-btn>
+              >{{$t(`learn.share.copy`)}}</v-btn>
               <v-btn
                 text
                 @click="dialog.value = false"
-              >Schließen</v-btn>
+              >{{$t(`learn.share.close`)}}</v-btn>
             </div>
           </v-card-actions>
         </v-card>

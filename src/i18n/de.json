@@ -1,96 +1,164 @@
 {
   "title": "Statistik E-Learning Tool",
-  "std": "Standardabweichung σ",
-  "mean": "Mittelwert μ",
-  "aValue": "A Wert",
-  "aValueStart": "a1",
-  "aValueEnd": "a2",
-  "probability": "Wahrscheinlichkeit",
-  "calculation": {
-    "procedure": "Rechenweg",
-    "basicSteps": [
-      {},
-      {},
-      {},
-      {}
-    ],
-    "smallerSteps": [
-      {
-        "text": "1. Welche Formel muss verwendet werden",
-        "description": "Mit Hilfe der folgenden Formel kann die Wahrscheinlichkeit berechnet werden, dass ein Wert kleiner als der festgelegte a Wert ist. Es wird also eigentlich die Größe bzw. das Integral der schwarzen Fläche berechnet. Da die Berchnung des Intergrals jedoch sehr komplex ist, wird zur Hilfe die sogenannte Phi / Z Tabelle verwendet. Diese kommt aber erst in Schritt 4 zum Einsatz"
-      },
-      {
-        "text": "2. Innere Gleichung Lösen",
-        "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, muss zunächst die innere Gleichung gelöst werden. Das Ergebnis wird hier 'z' genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren."
-      },
-      {
-        "text": "3. Positiv oder Negativ?",
-        "description": "Bevor der errechnete z Wert in der Phi Tabelle abgelesen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:",
-        "valuePositive": "Da der z Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
-        "valueNegative": "Da der z Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
-      },
-      {
-        "text": "4. Wert in Phi / Z Tabelle ablesen",
-        "description": "Zuletzt wird der z Wert verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma und die erste Stelle nach dem Komma als y-Koordinate verwendet. Die zweite Stelle hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen werden. Die Grünen Kästchen helfen beim ablesen.",
-        "exampleTitle": "Beispiel",
-        "example": "z = 0.63 - '0.6' wird als y-Koordinate verwendet. Die Zweite Stelle hinter dem Komma '3' wird als x-Koordinate verwendet. Vor die '3' wird noch '0.0' gesetzt, also '0.03'. Dieser Wert wird dann als x-Koordinate verwendet."
-      }
-    ],
-    "greaterSteps": [
-      {
-        "text": "1. Welche Formel muss verwendet werden",
-        "description": "Mit Hilfe der folgenden Formel kann die Wahrscheinlichkeit berechnet werden, dass ein Wert größer als der festgelegte a Wert ist. Da mit der bereits bekannten Formel aber nur die Wahrscheinlichkeit berechnet werden kann, dass ein Wert kleiner als a ist, muss die Formel umgestellt werden. Zunächst wird die Wahrscheinlichkeit für x < a berechnet und dann von 1 subtrahiert.",
-        "description_2": "Um die Größe der schwarzen Fläche zu berechnen, wird also eignetlich die Größe der weißen Fläche berechnet, die dann von der gesamten Fläche unter der Kurve abgezogen wird."
-      },
-      {
-        "text": "2. Innere Gleichung Lösen",
-        "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, muss zunächst die innere Gleichung gelöst werden. Das Ergebnis wird hier 'z' genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren."
-      },
-      {
-        "text": "3. Positiv oder Negativ?",
-        "description": "Bevor der errechnete z Wert in der Phi Tabelle abgelesen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:",
-        "valuePositive": "Da der z Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
-        "valueNegative": "Da der z Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
-      },
-      {
-        "text": "4. Wert in Phi / Z Tabelle ablesen",
-        "description": "Zuletzt wird der z Wert verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma und die erste Stelle nach dem Komma als y-Koordinate verwendet. Die zweite Stelle hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen werden. Die Grünen Kästchen helfen beim ablesen.",
-        "exampleTitle": "Beispiel",
-        "example": "z = 0.63 - '0.6' wird als y-Koordinate verwendet. Die Zweite Stelle hinter dem Komma '3' wird als x-Koordinate verwendet. Vor die '3' wird noch '0.0' gesetzt, also '0.03'. Dieser Wert wird dann als x-Koordinate verwendet."
-      }
-    ],
-    "inBetweenSteps": [
-      {
-        "text": "1. Welche Formel muss verwendet werden",
-        "description": "Wenn die Wahrscheinlichkeit berechnet werden soll, dass ein Wert größer als a1 und kleiner als a2 ist, müssen zwei Warhscheinlickeiten berechnet und voneinander abgezogen werden. Da mit der normalen Phi Formel nur die Wahrscheinlichkeit berechnet werden kann, dass ein Wert kleiner als a ist, muss zunächst die Wahrscheinlichkeit für P(x < a2) berechnet werden. Danach die Wahrscheinlichkeit für P(x < a1) und zuletzt voneinander subtrahiert werden. Es ergibt sicher daher folgende Formel"
-      },
-      {
-        "text": "2. Innere Gleichungen Lösen",
-        "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, müssen zunächst die inneren Gleichungen gelöst werden. Das Ergebnis wird hier 'z1' und 'z2' genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren.",
-        "calcZ1": "z1 berechnen",
-        "calcZ2": "z2 berechnen"
-      },
-      {
-        "text": "3. Positiv oder Negativ?",
-        "description": "Bevor der errechnete z Wert in der Phi Tabelle nachgeschlagen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:",
-        "z1": {
-          "valuePositive": "Da der z1 Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
-          "valueNegative": "Da der z1 Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
+  "learn": {
+    "title": "Statistik E-Learning Tool",
+    "std": "Standardabweichung σ",
+    "mean": "Mittelwert μ",
+    "aValue": "A Wert",
+    "aValueStart": "a1",
+    "aValueEnd": "a2",
+    "probability": "Wahrscheinlichkeit",
+    "calculation": {
+      "procedure": "Rechenweg",
+      "basicSteps": [
+        {},
+        {},
+        {},
+        {}
+      ],
+      "smallerSteps": [
+        {
+          "text": "1. Welche Formel muss verwendet werden",
+          "description": "Mit Hilfe der folgenden Formel kann die Wahrscheinlichkeit berechnet werden, dass ein Wert kleiner als der festgelegte a Wert ist. Es wird also eigentlich die Größe bzw. das Integral der schwarzen Fläche berechnet. Da die Berchnung des Intergrals jedoch sehr komplex ist, wird zur Hilfe die sogenannte Phi / Z Tabelle verwendet. Diese kommt aber erst in Schritt 4 zum Einsatz"
         },
-        "z2": {
-          "valuePositive": "Da der z2 Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
-          "valueNegative": "Da der z2 Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
+        {
+          "text": "2. Innere Gleichung Lösen",
+          "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, muss zunächst die innere Gleichung gelöst werden. Das Ergebnis wird hier 'z' genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren."
+        },
+        {
+          "text": "3. Positiv oder Negativ?",
+          "description": "Bevor der errechnete z Wert in der Phi Tabelle abgelesen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:",
+          "valuePositive": "Da der z Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
+          "valueNegative": "Da der z Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
+        },
+        {
+          "text": "4. Wert in Phi / Z Tabelle ablesen",
+          "description": "Zuletzt wird der z Wert verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma und die erste Stelle nach dem Komma als y-Koordinate verwendet. Die zweite Stelle hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen werden. Die Grünen Kästchen helfen beim ablesen.",
+          "exampleTitle": "Beispiel",
+          "example": "z = 0.63 - '0.6' wird als y-Koordinate verwendet. Die Zweite Stelle hinter dem Komma '3' wird als x-Koordinate verwendet. Vor die '3' wird noch '0.0' gesetzt, also '0.03'. Dieser Wert wird dann als x-Koordinate verwendet."
         }
-      },
+      ],
+      "greaterSteps": [
+        {
+          "text": "1. Welche Formel muss verwendet werden",
+          "description": "Mit Hilfe der folgenden Formel kann die Wahrscheinlichkeit berechnet werden, dass ein Wert größer als der festgelegte a Wert ist. Da mit der bereits bekannten Formel aber nur die Wahrscheinlichkeit berechnet werden kann, dass ein Wert kleiner als a ist, muss die Formel umgestellt werden. Zunächst wird die Wahrscheinlichkeit für x < a berechnet und dann von 1 subtrahiert.",
+          "description_2": "Um die Größe der schwarzen Fläche zu berechnen, wird also eignetlich die Größe der weißen Fläche berechnet, die dann von der gesamten Fläche unter der Kurve abgezogen wird."
+        },
+        {
+          "text": "2. Innere Gleichung Lösen",
+          "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, muss zunächst die innere Gleichung gelöst werden. Das Ergebnis wird hier 'z' genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren."
+        },
+        {
+          "text": "3. Positiv oder Negativ?",
+          "description": "Bevor der errechnete z Wert in der Phi Tabelle abgelesen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:",
+          "valuePositive": "Da der z Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
+          "valueNegative": "Da der z Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
+        },
+        {
+          "text": "4. Wert in Phi / Z Tabelle ablesen",
+          "description": "Zuletzt wird der z Wert verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma und die erste Stelle nach dem Komma als y-Koordinate verwendet. Die zweite Stelle hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen werden. Die Grünen Kästchen helfen beim ablesen.",
+          "exampleTitle": "Beispiel",
+          "example": "z = 0.63 - '0.6' wird als y-Koordinate verwendet. Die Zweite Stelle hinter dem Komma '3' wird als x-Koordinate verwendet. Vor die '3' wird noch '0.0' gesetzt, also '0.03'. Dieser Wert wird dann als x-Koordinate verwendet."
+        }
+      ],
+      "inBetweenSteps": [
+        {
+          "text": "1. Welche Formel muss verwendet werden",
+          "description": "Wenn die Wahrscheinlichkeit berechnet werden soll, dass ein Wert größer als a1 und kleiner als a2 ist, müssen zwei Warhscheinlickeiten berechnet und voneinander abgezogen werden. Da mit der normalen Phi Formel nur die Wahrscheinlichkeit berechnet werden kann, dass ein Wert kleiner als a ist, muss zunächst die Wahrscheinlichkeit für P(x < a2) berechnet werden. Danach die Wahrscheinlichkeit für P(x < a1) und zuletzt voneinander subtrahiert werden. Es ergibt sicher daher folgende Formel"
+        },
+        {
+          "text": "2. Innere Gleichungen Lösen",
+          "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, müssen zunächst die inneren Gleichungen gelöst werden. Das Ergebnis wird hier 'z1' und 'z2' genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren.",
+          "calcZ1": "z1 berechnen",
+          "calcZ2": "z2 berechnen"
+        },
+        {
+          "text": "3. Positiv oder Negativ?",
+          "description": "Bevor der errechnete z Wert in der Phi Tabelle nachgeschlagen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:",
+          "z1": {
+            "valuePositive": "Da der z1 Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
+            "valueNegative": "Da der z1 Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
+          },
+          "z2": {
+            "valuePositive": "Da der z2 Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
+            "valueNegative": "Da der z2 Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
+          }
+        },
+        {
+          "text": "4. Wert in Phi / Z Tabelle ablesen",
+          "description": "Zuletzt werden die z Werte verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma und die erste Stelle nach dem Komma als y-Koordinate verwendet. Die zweite Stelle hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen. Die Grünen Kästchen helfen beim ablesen.",
+          "exampleTitle": "Beispiel",
+          "example": "z = 0.63 - '0.6' wird als y-Koordinate verwendet. Die Zweite Stelle hinter dem Komma '3' wird als x-Koordinate verwendet. Vor die '3' wird noch '0.0' gesetzt, also '0.03'. Dieser Wert wird dann als x-Koordinate verwendet.",
+          "a1": "a1 Wahrscheinlichkeit berechnen",
+          "a2": "a2 Wahrscheinlichkeit berechnen",
+          "total": "Gesamtwahrscheinlichkeit berechnen"
+        }
+      ]
+    },
+    "share": {
+      "share": "Teilen",
+      "link": "Dein Link",
+      "copy": "Kopieren",
+      "close": "Schließen"
+    }
+  },
+  "introduction": {
+    "title": "Einleitung",
+    "text": " Diese Webanwendung dient dem Erlernen der Wahrscheinlichkeitsrechnung mit Normalverteilungen. Das Tool beinhaltet folgende Funktionen.",
+    "learn": {
+      "title": "Lernen",
+      "text": "In diesem Teil lernt man wie man Wahrscheinlichkeiten mit Normalverteilungen berechnet. Interaktive Diagramme und Erklärungen vermitteln das Thema verständlich und spielerisch."
+    },
+    "application": {
+      "title": "Anwendungsgebiete",
+      "text": "Dieser Teil erläutert Beispiel Bereiche in denen Normalverteilungen tatsächlich verwendet werden, wie diese eingesetzt werden und warum sie eingesetzt werden."
+    },
+    "exercises": {
+      "title": "Übungsaufgaben",
+      "text": "Übungsaufgaben helfen das Gelernte anzuwenden, überprüfen und zu festigen. "
+    },
+    "language": {
+      "title": "Sprache",
+      "text": "Die Sprache kann über die 3 Punkte rechts oben auf dem Bildschirm eingestellt werden. "
+    },
+    "actions": [
+      "Lernen", "Anwendungsgebiete", "übungsaufgaben"
+    ]
+  },
+  "application": {
+    "title": "Anwendungsgebiete",
+    "text": " Die Messwerte vieler Prozesse der Natur-, Wirtschafts- und Ingenieurswissenschaft sind annähernd normalverteilt. Die Normalverteilung wird daher in vielen Gebieten verwendet um Daten derren Wahrscheinlichkeiten zu beschreiben. Auf dieser Seite werden zwei Bereiche vorgestellt, in denen mit Normalverteilungen gerechnet wird.",
+    "sections": [
       {
-        "text": "4. Wert in Phi / Z Tabelle ablesen",
-        "description": "Zuletzt werden die z Werte verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma und die erste Stelle nach dem Komma als y-Koordinate verwendet. Die zweite Stelle hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen. Die Grünen Kästchen helfen beim ablesen.",
-        "exampleTitle": "Beispiel",
-        "example": "z = 0.63 - '0.6' wird als y-Koordinate verwendet. Die Zweite Stelle hinter dem Komma '3' wird als x-Koordinate verwendet. Vor die '3' wird noch '0.0' gesetzt, also '0.03'. Dieser Wert wird dann als x-Koordinate verwendet.",
-        "a1": "a1 Wahrscheinlichkeit berechnen",
-        "a2": "a2 Wahrscheinlichkeit berechnen",
-        "total": "Gesamtwahrscheinlichkeit berechnen"
+        "title": "Finanzindustrie",
+        "text": " Eine zentrale Aufgabe von Fonds - und Vermögensverwaltern ist das Risikomanagement. Wenn Trades durchgeführt werden, muss immer zwischen Rendite und Risiko abgewogen werden. Beide variables werden von Kursschwankungen beeinflusst. Oft wird davon ausgegangen, dass Kursschwankungen normalverteilt sind. Dadurch können Analysten die Wahrscheinlichkeiten errechnen, dass bestimmte Ereignisse eintreten. So könnte z.B. die Wahrscheinlichkeit errechnet werden, dass ein Wertpapier innerhalb der nächsten Tage um 10 % fällt. Mit Hilfe historischer Kurse können Mittelwert und Standardabweichung der Kursveränderungen berechnet werden. Durch Anwendung der Normalverteilung und den Berchnungen, die in dieser Anwendung erklärt werden, können dann Risiken quantifiziert und Investitionsentscheidungen optimiert werden."
       }
     ]
+  },
+  "exercises": {
+    "title": "Übungsaufgaben",
+    "text": "Auf dieser Seite finden Sie Übungsaufgaben. Die Antworten können aufgedeckt werden.",
+    "tasks": [
+      {
+        "text": "Eine Maschine produziert 500 mm lange Schrauben mit einer Standardabweichung von 10 mm. Die Länge der Schrauben kann als normalverteilt angesehen werden. Berechne die Wahrscheinlichkeit dafür, dass eine Schraube kürzer ist als 485 mm.",
+        "answer": "Die Wahrscheinlichkeit beträgt 6,7%"
+      },
+      {
+        "text": "Für den Ebolavirus wird nach Einschätzung der Statistiker bei 8 % der Bevölkerung eine ärztliche Behandlung notwendig sein. Die Standardabweichung beträgt 38. Ein Großhandel möchte für die Apotheken einer Kreisstadt mit 20 000 Einwohnern Behandlungsmaterialien im Voraus bestellen. Mit welcher Wahrscheinlichkeit werden mindestens 1350 Behandlungsmaterialien benötigt?",
+        "answer": "Die Wahrscheinlichkeit beträgt rund 100%"
+      },
+      {
+        "text": "Eine Maschine produziert 500 mm lange Schrauben mit einer Standardabweichung von 10 mm. Berechne die Wahrscheinlichkeit dafür, dass eine Schraube höchstens 501 mm und mindestens 499 mm lang ist.",
+        "answer": "Die Wahrscheinlichkeit beträgt rund 8%"
+      },
+      {
+        "text": "Für den Ebolavirus wird nach Einschätzung der Statistiker bei 8 % der Bevölkerung eine ärztliche Behandlung notwendig sein. Ein Großhandel möchte für die Apotheken einer Kreisstadt mit 20 000 Einwohnern Behandlungsmaterialien im Voraus bestellen. Die Standardabweichung beträgr 38. Mit welcher Wahrscheinlichkeit weicht die Zahl der benötigten Behandlungsmaterialien um nicht mehr als die Standardabweichung vom Erwartungswert ab?",
+        "answer": "Die Wahrscheinlichkeit beträgt rund 68,27%"
+      }
+    ],
+    "nextTask": "Nächste Aufgabe",
+    "previousTask": "Vorherige Aufgabe",
+    "showAnswer": "Antwort anzeigen",
+    "hideAnswer": "Antwort verbergen"
   }
 }

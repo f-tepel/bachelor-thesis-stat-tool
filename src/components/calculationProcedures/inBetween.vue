@@ -1,25 +1,25 @@
 <template>
   <div>
-    <div class="text-h5">{{$t('calculation.inBetweenSteps[0].text')}}</div>
+    <div class="text-h5">{{$t('learn.calculation.inBetweenSteps[0].text')}}</div>
     <p class="font-weight-regular">
-      {{$t('calculation.inBetweenSteps[0].description')}}
+      {{$t('learn.calculation.inBetweenSteps[0].description')}}
     </p>
     <PhiFormulaBetween/>
-    <div class="text-h5">{{$t('calculation.inBetweenSteps[1].text')}}</div>
+    <div class="text-h5">{{$t('learn.calculation.inBetweenSteps[1].text')}}</div>
     <p class="font-weight-regular">
-      {{$t('calculation.inBetweenSteps[1].description')}}
+      {{$t('learn.calculation.inBetweenSteps[1].description')}}
     </p>
-    <div class="caption">{{$t('calculation.inBetweenSteps[1].calcZ1')}}</div>
+    <div class="caption">{{$t('learn.calculation.inBetweenSteps[1].calcZ1')}}</div>
     <PhiFormulaInner zName="z1"/>
     <PhiFormulaInnerInputBetween zName="z1"/>
     <br>
-    <div class="caption">{{$t('calculation.inBetweenSteps[1].calcZ2')}}</div>
+    <div class="caption">{{$t('learn.calculation.inBetweenSteps[1].calcZ2')}}</div>
     <PhiFormulaInner zName="z2"/>
     <PhiFormulaInnerInputBetween zName="z2"/>
     <br>
-    <div class="text-h5">{{$t('calculation.inBetweenSteps[2].text')}}</div>
+    <div class="text-h5">{{$t('learn.calculation.inBetweenSteps[2].text')}}</div>
     <p class="font-weight-regular">
-      {{$t('calculation.inBetweenSteps[2].description')}}
+      {{$t('learn.calculation.inBetweenSteps[2].description')}}
     </p>
     <math display="block">
       <mrow>
@@ -47,7 +47,7 @@
     </math>
     <div v-if="zValue >= 0">
       <p class="font-weight-regular">
-        {{$t('calculation.inBetweenSteps[2].z1.valuePositive')}}
+        {{$t('learn.calculation.inBetweenSteps[2].z1.valuePositive')}}
       </p>
       <math display="block">
         <mrow>
@@ -62,7 +62,7 @@
     </div>
     <div v-if="zValue < 0">
       <p>
-        {{$t('calculation.inBetweenSteps[2].z1.valueNegative')}}
+        {{$t('learn.calculation.inBetweenSteps[2].z1.valueNegative')}}
       </p>
       <math display="block">
         <mrow>
@@ -93,7 +93,7 @@
     </div>
     <div v-if="zValueTwo >= 0">
       <p class="font-weight-regular">
-        {{$t('calculation.inBetweenSteps[2].z2.valuePositive')}}
+        {{$t('learn.calculation.inBetweenSteps[2].z2.valuePositive')}}
       </p>
       <math display="block">
         <mrow>
@@ -108,7 +108,7 @@
     </div>
     <div v-if="zValueTwo < 0">
       <p>
-        {{$t('calculation.inBetweenSteps[2].z2.valueNegative')}}
+        {{$t('learn.calculation.inBetweenSteps[2].z2.valueNegative')}}
       </p>
       <math display="block">
         <mrow>
@@ -137,17 +137,17 @@
         </mrow>
       </math>
     </div>
-    <div class="text-h5">{{$t('calculation.inBetweenSteps[3].text')}}</div>
+    <div class="text-h5">{{$t('learn.calculation.inBetweenSteps[3].text')}}</div>
     <p class="font-weight-regular">
-      {{$t('calculation.inBetweenSteps[3].description')}}
+      {{$t('learn.calculation.inBetweenSteps[3].description')}}
     </p>
     <p>
-      <b>{{$t('calculation.inBetweenSteps[3].exampleTitle')}}:</b><br>
-      {{$t('calculation.inBetweenSteps[3].example')}}
+      <b>{{$t('learn.calculation.inBetweenSteps[3].exampleTitle')}}:</b><br>
+      {{$t('learn.calculation.inBetweenSteps[3].example')}}
     </p>
     <br>
     <div class="caption">
-      {{$t('calculation.inBetweenSteps[3].a1')}}
+      {{$t('learn.calculation.inBetweenSteps[3].a1')}}
     </div>
     <div v-if="zValue >= 0">
       <math display="block">
@@ -189,7 +189,7 @@
     <br>
     <br>
     <div class="caption">
-      {{$t('calculation.inBetweenSteps[3].a2')}}
+      {{$t('learn.calculation.inBetweenSteps[3].a2')}}
     </div>
     <div v-if="zValueTwo >= 0">
       <math display="block">
@@ -231,7 +231,7 @@
     <br>
     <br>
     <div class="caption">
-      {{$t('calculation.inBetweenSteps[3].total')}}
+      {{$t('learn.calculation.inBetweenSteps[3].total')}}
     </div>
     <br>
     <math display="block">

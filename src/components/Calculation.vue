@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="text-h3">{{$t('calculation.procedure')}}</div>
+    <div class="text-h3">{{$t('learn.calculation.procedure')}}</div>
     <br>
     <div v-if="isSmaller">
       <SmallerThanProcedure/>

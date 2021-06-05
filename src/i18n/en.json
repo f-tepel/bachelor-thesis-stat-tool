@@ -1,95 +1,166 @@
 {
-  "title": "Probability E-Learning Tool",
-  "std": "Standard Deviation",
-  "mean": "Mean",
-  "aValue": "A Value",
-  "aValueStart": "A Value Start",
-  "aValueEnd": "A Value End",
-  "probability": "Probability",
-  "calculation": {
-    "procedure": "Rechenweg",
-    "basicSteps": [
-      {},
-      {},
-      {},
-      {}
-    ],
-    "smallerSteps": [
-      {
-        "text": "1. Welche Formel muss verwendet werden",
-        "description": "Mit Hilfe der folgenden Formel kann die Wahrscheinlichkeit berechnet werden, dass ein Wert kleiner als der festgelegte a Wert ist. Es wird also eigentlich die Größe bzw. das Integral der schwarzen Fläche berechnet. Da die Berchnung des Intergrals jedoch sehr komplex ist, wird zur Hilfe die sogenannte Phi / Z Tabelle verwendet. Diese kommt aber erst in Schritt 4 zum Einsatz"
-      },
-      {
-        "text": "2. Innere Gleichung Lösen",
-        "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, muss zunächst die innere Gleichung gelöst werden. Das Ergebnis wir hier 'z' genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren."
-      },
-      {
-        "text": "3. Positiv oder Negativ?",
-        "description": "Bevor der errechnete z Wert in der Phi Tabelle nachgeschlagen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:",
-        "valuePositive": "Da der z Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
-        "valueNegative": "Da der z Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
-      },
-      {
-        "text": "4. Wert in Phi / Z Tabelle nachschauen",
-        "description": "Zuletzt wird der z Wert verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma und die erste Stelle nach dem Komma als y-Koordinate verwendet. Die zweite Stelle hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen werden. Die Grünen Kästchen helfen beim ablesen.",
-        "exampleTitle": "Beispiel",
-        "example": "z = 0.63 - '0.6' wird als y-Koordinate verwendet. Die Zweite Stelle hinter dem Komma '3' wird als x-Koordinate verwendet. Vor die '3' wird noch '0.0' gesetzt, also '0.03'. Dieser Wert wird dann als x-Koordinate verwendet."
-      }
-    ],
-    "greaterSteps": [
-      {
-        "text": "1. Welche Formel muss verwendet werden",
-        "description": "Mit Hilfe der folgenden Formel kann die Wahrscheinlichkeit berechnet werden, dass ein Wert größer als der festgelegte a Wert ist. Es wird also eigentlich die Größe bzw. das Integral der schwarzen Fläche berechnet. Da die Berchnung des Intergrals jedoch sehr komplex ist, wird zur Hilfe die sogenannte Phi / Z Tabelle verwendet. Diese kommt aber erst in Schritt 4 zum Einsatz"
-      },
-      {
-        "text": "2. Innere Gleichung Lösen",
-        "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, muss zunächst die innere Gleichung gelöst werden. Das Ergebnis wir hier 'z' genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren."
-      },
-      {
-        "text": "3. Positiv oder Negativ?",
-        "description": "Bevor der errechnete z Wert in der Phi Tabelle nachgeschlagen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:",
-        "valuePositive": "Da der z Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
-        "valueNegative": "Da der z Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
-      },
-      {
-        "text": "4. Wert in Phi / Z Tabelle nachschauen",
-        "description": "Zuletzt wird der z Wert verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma und die erste Stelle nach dem Komma als y-Koordinate verwendet. Die zweite Stelle hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen werden. Die Grünen Kästchen helfen beim ablesen.",
-        "exampleTitle": "Beispiel",
-        "example": "z = 0.63 - '0.6' wird als y-Koordinate verwendet. Die Zweite Stelle hinter dem Komma '3' wird als x-Koordinate verwendet. Vor die '3' wird noch '0.0' gesetzt, also '0.03'. Dieser Wert wird dann als x-Koordinate verwendet."
-      }
-    ],
-    "inBetweenSteps": [
-      {
-        "text": "1. Welche Formel muss verwendet werden",
-        "description": "Wenn die Wahrscheinlichkeit berechnet werden soll, dass ein Wert größer als A1 und kleiner als A2 ist, müssen zwei Warhscheinlickeiten berechnet und voneinander abgezogen werden. Da mit der normalen Phi Formel nur die Wahrscheinlichkeit berechnet werden kann, dass ein Wert kleiner als A ist, muss zunächst die Wahrscheinlichkeit für p(x < a2) berechnet werden. Danach die Wahrscheinlichkeit für P(x < a1) und zuletzt voneinander subtrahiert werden. Es ergibt sicher daher folgende Formel"
-      },
-      {
-        "text": "2. Innere Gleichungen Lösen",
-        "description": "Damit die in Schritt 1 gezeigte Gleichung gelöst werden kann, müssen zunächst die inneren Gleichungen gelöst werden. Das Ergebnis wir hier 'z1' und 'z2 genannt. Die Berechnung erfolgt durch simples einsetzen, subtrahieren und dividieren.",
-        "calcZ1": "z1 berechnen",
-        "calcZ2": "z2 berechnen"
-      },
-      {
-        "text": "3. Positiv oder Negativ?",
-        "description": "Bevor der errechnete z Wert in der Phi Tabelle nachgeschlagen werden kann, muss geprüft werden ob der z Wert positiv oder negativ ist. Wenn z negativ ist, ändert sich die Formel, wie man unten sehen kann. Normalerweise ist die Formel folgende:",
-        "z1": {
-          "valuePositive": "Da der z1 Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
-          "valueNegative": "Da der z1 Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
+  "title": "Statistics E-Learning Tool",
+  "learn": {
+    "title": "Statistics E-Learning Tool",
+    "std": "Standard deviation σ",
+    "mean": "Mean value μ",
+    "aValue": "A value",
+    "aValueStart": "a1",
+    "aValueEnd": "a2",
+    "probability": "probability",
+    "calculation": {
+      "procedure": "Calculation method",
+      "basicSteps": [
+        {},
+        {},
+        {},
+        {}
+      ],
+      "smallerSteps": [
+        {
+          "text": "1. Which formula must be used",
+          "description": "The following formula can be used to calculate the probability that a value is smaller than the specified a value. So actually the size or the integral of the black area is calculated. However, since the calculation of the integral is very complex, the so-called Phi / Z table is used to help. This is only used in step 4"
         },
-        "z2": {
-          "valuePositive": "Da der z2 Wert positiv bzw. 0 ist, verändert sich die Formel nicht.",
-          "valueNegative": "Da der z2 Wert negativ ist, muss die Formel geändert werden. Das negative z wird durch die Betragsstriche positiv."
+        {
+          "text": "2. Solve Inner Equation",
+          "description": "In order to solve the equation shown in step 1, the inner equation must first be solved. The result is called 'z' here. The calculation is done by simply inserting, subtracting and dividing."
+        },
+        {
+          "text": "3. Positive or negative?",
+          "description": "Before the calculated z value can be read in the Phi table, it must be checked whether the z value is positive or negative. When z is negative, the formula changes as you can see below. Usually the formula is as follows:",
+          "valuePositive": "Since the z value is positive or 0, the formula does not change.",
+          "valueNegative": "Since the z value is negative, the formula must be changed. The negative z is made positive by the amount bars."
+        },
+        {
+          "text": "4. Read value in Phi / Z table",
+          "description": "1. Which formula must be used0",
+          "exampleTitle": "1. Which formula must be used1",
+          "example": "1. Which formula must be used2"
         }
-      },
+      ],
+      "greaterSteps": [
+        {
+          "text": "1. Which formula must be used",
+          "description": "The following formula can be used to calculate the probability that a value is greater than the specified a value. However, since the already known formula can only be used to calculate the probability that a value is less than a, the formula must be rearranged. First the probability for x <a is calculated and then subtracted from 1.",
+          "description_2": "To calculate the size of the black area, the size of the white area is calculated, which is then subtracted from the entire area under the curve."
+        },
+        {
+          "text": " 2. Solve Inner Equation",
+          "description": "In order to solve the equation shown in step 1, you must first solve the inner equation. The result is called 'z' here. The calculation is done by simply inserting, subtracting and dividing."
+        },
+        {
+          "text": "3. Positive or negative?",
+          "description": "Before the calculated z value can be read off in the Phi table, it must be checked whether the z value is positive or negative. When z is negative, the formula changes as you can see below. Usually the formula is as follows:",
+          "valuePositive": "Since the z value is positive or 0, the formula does not change.",
+          "valueNegative": "Since the z value is negative, the formula must be changed. The negative z is made positive by the amount bars."
+        },
+        {
+          "text": "4. Read value in Phi / Z table",
+          "description": "The following formula can be used to calculate the probability that a value is greater than the specified a value. However, since the already known formula can only be used to calculate the probability that a value is less than a, the formula must be rearranged. First the probability for x <a is calculated and then subtracted from 1.0",
+          "exampleTitle": "The following formula can be used to calculate the probability that a value is greater than the specified a value. However, since the already known formula can only be used to calculate the probability that a value is less than a, the formula must be rearranged. First the probability for x <a is calculated and then subtracted from 1.1",
+          "example": "The following formula can be used to calculate the probability that a value is greater than the specified a value. However, since the already known formula can only be used to calculate the probability that a value is less than a, the formula must be rearranged. First the probability for x <a is calculated and then subtracted from 1.2"
+        }
+      ],
+      "inBetweenSteps": [
+        {
+          "text": "1. Which formula must be used",
+          "description": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula"
+        },
+        {
+          "text": "2. Solving Inner Equations",
+          "description": "In order to solve the equation shown in step 1, you must first solve the inner equations. The result is called here 'z1' and 'z2'. The calculation is done by simply inserting, subtracting and dividing.",
+          "calcZ1": "Calculate z1",
+          "calcZ2": "calculate z2"
+        },
+        {
+          "text": "3. Positive or negative?",
+          "description": "Before the calculated z value can be looked up in the Phi table, it must be checked whether the z value is positive or negative. When z is negative, the formula changes as you can see below. Usually the formula is as follows:",
+          "z1": {
+            "valuePositive": "Since the z1 value is positive or 0, the formula does not change.",
+            "valueNegative": "Since the z1 value is negative, the formula must be changed. The negative z becomes positive through the dashes."
+          },
+          "z2": {
+            "valuePositive": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula0",
+            "valueNegative": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula1"
+          }
+        },
+        {
+          "text": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula2",
+          "description": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula3",
+          "exampleTitle": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula4",
+          "example": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula5",
+          "a1": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula6",
+          "a2": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula7",
+          "total": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula8"
+        }
+      ]
+    },
+    "share": {
+      "share": "Share",
+      "link": "Your link",
+      "copy": "Copy",
+      "close": "Close"
+    }
+  },
+  "introduction": {
+    "title": "Introduction",
+    "text": "This web application is used to learn the calculation of probability with normal distributions. The tool includes the following functions.",
+    "learn": {
+      "title": "Learning",
+      "text": "In this part you learn how to calculate probabilities with normal distributions. Interactive diagrams and explanations convey the topic in an understandable and playful way."
+    },
+    "application": {
+      "title": "Areas of application",
+      "text": "This part explains example areas in which normal distributions are actually used, how they are used and why they are used."
+    },
+    "exercises": {
+      "title": "Exercises",
+      "text": "Exercises help to apply and check what has been learned and consolidate. "
+    },
+    "language": {
+      "title": "Language",
+      "text": "The language can be set using the 3 dots on the top right of the screen. "
+    },
+    "actions": [
+      "Learning",
+      "Areas of application",
+      "Exercises"
+    ]
+  },
+  "application": {
+    "title": "Areas of application",
+    "text": "This web application is used to learn the calculation of probability with normal distributions. The tool includes the following functions.2",
+    "sections": [
       {
-        "text": "4. Wert in Phi / Z Tabelle nachschauen",
-        "description": "Zuletzt werden die z Werte verwendet um die Wahrscheinlichkeit aus der Phi Tabelle abzulesen. Dafür wird der Wert vor dem Komma und die erste Stelle nach dem Komma als y-Koordinate verwendet. Die zweite Stelle hinter dem Komma als X-Koordinate. Mithilfe der Koordinaten kann in der unten gezeigten Tabelle die approximierte Wahrscheinlichkeit abgelesen. Die Grünen Kästchen helfen beim ablesen.",
-        "exampleTitle": "Beispiel",
-        "example": "z = 0.63 - '0.6' wird als y-Koordinate verwendet. Die Zweite Stelle hinter dem Komma '3' wird als x-Koordinate verwendet. Vor die '3' wird noch '0.0' gesetzt, also '0.03'. Dieser Wert wird dann als x-Koordinate verwendet.",
-        "a1": "a1 Wahrscheinlichkeit berechnen",
-        "a2": "a2 Wahrscheinlichkeit berechnen",
-        "total": "Gesamtwahrscheinlichkeit berechnen"
+        "title": "This web application is used to learn the calculation of probability with normal distributions. The tool includes the following functions.3",
+        "text": "This web application is used to learn the calculation of probability with normal distributions. The tool includes the following functions.4"
       }
     ]
+  },
+  "exercises": {
+    "title": "Exercises",
+    "text": "On this page you will find exercises. The answers can be revealed.",
+    "tasks": [
+      {
+        "text": "A machine produces 500mm long screws with a standard deviation of 10mm. The length of the screws can be viewed as normally distributed. Calculate the probability that a screw is shorter than 485 mm.",
+        "answer": "The probability is about 6,7%"
+      },
+      {
+        "text": "Statisticians estimate that 8% of the population will require medical treatment for the Ebola virus. A wholesaler would like to order treatment materials in advance for pharmacies in a district town with 20,000 inhabitants. The standard deviation is 38. What is the probability that at least 1,350 treatment materials will be required?",
+        "answer": "The probability is about 100%"
+      },
+      {
+        "text": "A machine produces 500 mm long screws with a standard deviation of 10 mm. Calculate the probability that a screw is no more than 501 mm long and at least 499 mm long.",
+        "answer": "The probability is about 8%"
+      },
+      {
+        "text": "According to statisticians, 8% of the population will require medical treatment for the Ebola virus. A wholesaler would like to order treatment materials in advance for pharmacies in a district town with 20,000 inhabitants. The standard deviation is 38. What is the probability that the number of treatment materials required does not deviate from the expected value by more than the standard deviation?",
+        "answer": "The probability is about 68.27%"
+      }
+    ],
+    "nextTask": "Next task",
+    "previousTask": "Previous task",
+    "showAnswer": "Show answer",
+    "hideAnswer": "Hide answer"
   }
 }
