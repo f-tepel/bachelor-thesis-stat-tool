@@ -46,7 +46,7 @@
         dense
       >
         <v-list-item-group
-          active-class="deep-purple--text text--accent-4"
+          active-class="primary--text text--primary-4"
         >
           <v-list-item to="/">
             <v-list-item-title>{{$t(`introduction.title`)}}</v-list-item-title>
