@@ -29,6 +29,13 @@
         >
         {{$t(`exercises.hideAnswer`)}}
         </v-btn>
+        <v-btn
+          color="primary"
+          @click="showAnswer = true"
+          :to="$t(`exercises.tasks[${index}].diagramLink`)"
+        >
+        {{$t(`exercises.toDiagram`)}}
+        </v-btn>
       </v-card-actions>
     </v-card>
     <v-row class="my-5 justify-center d-none d-lg-block">

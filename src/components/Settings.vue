@@ -87,7 +87,7 @@ export default Vue.extend({
       return this.$store.state.isBetween
     },
     shareLink () {
-      const baseUrl = `${window.location.host}/#?mean=${this.$store.state.mean}&std=${this.$store.state.std}`
+      const baseUrl = `${window.location.host}#/learn?mean=${this.$store.state.mean}&std=${this.$store.state.std}`
 
       if (this.$store.state.isBetween) {
         return baseUrl + `&mode=inBetween&a1=${this.$store.state.aValueStart}&a2=${this.$store.state.aValueEnd}`

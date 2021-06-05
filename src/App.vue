@@ -88,31 +88,42 @@ export default Vue.extend({
   metaInfo: {
     title: 'Statistik E-Learning Tool'
   },
-  mounted () {
-    if (this.$route.query.mean) {
-      this.$store.commit('setMean', this.$route.query.mean)
-    }
-
-    if (this.$route.query.std) {
-      this.$store.commit('setStd', this.$route.query.std)
-    }
-
-    if (this.$route.query.mode) {
-      this.$store.commit('setMode', this.$route.query.mode)
-    }
-
-    if (this.$route.query.mode === 'inBetween') {
-      if (this.$route.query.a1) {
-        this.$store.commit('setAValueStart', this.$route.query.a1)
+  methods: {
+    parseRoutes () {
+      if (this.$route.query.mean) {
+        this.$store.commit('setMean', this.$route.query.mean)
       }
 
-      if (this.$route.query.a2) {
-        this.$store.commit('setAValueEnd', this.$route.query.a2)
+      if (this.$route.query.std) {
+        this.$store.commit('setStd', this.$route.query.std)
       }
-    } else {
-      if (this.$route.query.a) {
-        this.$store.commit('setAValue', this.$route.query.a)
+
+      if (this.$route.query.mode) {
+        this.$store.commit('setMode', this.$route.query.mode)
       }
+
+      if (this.$route.query.mode === 'inBetween') {
+        if (this.$route.query.a2) {
+          this.$store.commit('setAValueEnd', this.$route.query.a2)
+        }
+        if (this.$route.query.a1) {
+          this.$store.commit('setAValueStart', this.$route.query.a1)
+        }
+      } else {
+        if (this.$route.query.a) {
+          this.$store.commit('setAValue', this.$route.query.a)
+        }
+      }
+    }
+  },
+  created () {
+    this.$router.onReady(() => {
+      this.parseRoutes()
+    })
+  },
+  watch: {
+    $route () {
+      this.parseRoutes()
     }
   }
 })

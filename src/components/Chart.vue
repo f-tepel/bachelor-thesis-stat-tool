@@ -2,6 +2,7 @@
   <div class='mycontainer' id='container'>
     <div id='chart-container' class='chart-container'></div>
     <div class="settings-container" :style="{width: width + 'px'}">
+      {{$store.state.mean}}
       <Settings/>
       <br>
       <div class="data-input-container" v-bind:class="{ 'justify-space-around': $vuetify.breakpoint.mobile, 'justify-space-between': !$vuetify.breakpoint.mobile }">

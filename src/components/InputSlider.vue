@@ -19,6 +19,7 @@ export default Vue.extend({
   },
   methods: {
     update () {
+      console.log('updated ')
       this.$store.commit(this.setMethod, this.value)
     }
   }

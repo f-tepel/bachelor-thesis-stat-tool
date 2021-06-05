@@ -140,22 +140,27 @@
   "exercises": {
     "title": "Exercises",
     "text": "On this page you will find exercises. The answers can be revealed.",
+    "toDiagram": "To diagram",
     "tasks": [
       {
         "text": "A machine produces 500mm long screws with a standard deviation of 10mm. The length of the screws can be viewed as normally distributed. Calculate the probability that a screw is shorter than 485 mm.",
-        "answer": "The probability is about 6,7%"
+        "answer": "The probability is about 6,7%",
+        "diagramLink": "/learn?mean=500&std=10&a=485&mode=smaller"
       },
       {
         "text": "Statisticians estimate that 8% of the population will require medical treatment for the Ebola virus. A wholesaler would like to order treatment materials in advance for pharmacies in a district town with 20,000 inhabitants. The standard deviation is 38. What is the probability that at least 1,350 treatment materials will be required?",
-        "answer": "The probability is about 100%"
+        "answer": "The probability is about 100%",
+        "diagramLink": "/learn?mean=1600&std=38&a=1350&mode=greater"
       },
       {
         "text": "A machine produces 500 mm long screws with a standard deviation of 10 mm. Calculate the probability that a screw is no more than 501 mm long and at least 499 mm long.",
-        "answer": "The probability is about 8%"
+        "answer": "The probability is about 8%",
+        "diagramLink": "/learn?mean=500&std=10&a1=499&a2=501&mode=inBetween"
       },
       {
         "text": "According to statisticians, 8% of the population will require medical treatment for the Ebola virus. A wholesaler would like to order treatment materials in advance for pharmacies in a district town with 20,000 inhabitants. The standard deviation is 38. What is the probability that the number of treatment materials required does not deviate from the expected value by more than the standard deviation?",
-        "answer": "The probability is about 68.27%"
+        "answer": "The probability is about 68.27%",
+        "diagramLink": "/learn?mean=1600&std=38&a=1350&a1=1562&a2=1638&mode=inBetween"
       }
     ],
     "nextTask": "Next task",
