@@ -117,21 +117,43 @@
       "title": "Übungsaufgaben",
       "text": "Übungsaufgaben helfen das Gelernte anzuwenden, überprüfen und zu festigen. "
     },
+    "definitions": {
+      "title": "Definitionen",
+      "text": "Definitionen erklären unbekannte Begriffe und zeigen die relevanten Formeln. "
+    },
     "language": {
       "title": "Sprache",
       "text": "Die Sprache kann über die 3 Punkte rechts oben auf dem Bildschirm eingestellt werden. "
     },
     "actions": [
-      "Lernen", "Anwendungsgebiete", "übungsaufgaben"
+      "Lernen", "Anwendungsgebiete", "übungsaufgaben", "definitionen"
     ]
   },
   "application": {
     "title": "Anwendungsgebiete",
-    "text": " Die Messwerte vieler Prozesse der Natur-, Wirtschafts- und Ingenieurswissenschaft sind annähernd normalverteilt. Die Normalverteilung wird daher in vielen Gebieten verwendet um Daten derren Wahrscheinlichkeiten zu beschreiben. Auf dieser Seite werden zwei Bereiche vorgestellt, in denen mit Normalverteilungen gerechnet wird.",
+    "text": "Die Messwerte vieler Prozesse der Natur-, Wirtschafts- und Ingenieurswissenschaft sind annähernd normalverteilt. Die Normalverteilung wird daher in vielen Gebieten verwendet um Daten derren Wahrscheinlichkeiten zu beschreiben. Auf dieser Seite werden zwei Bereiche vorgestellt, in denen mit Normalverteilungen gerechnet wird.",
     "sections": [
       {
         "title": "Finanzindustrie",
-        "text": " Eine zentrale Aufgabe von Fonds - und Vermögensverwaltern ist das Risikomanagement. Wenn Trades durchgeführt werden, muss immer zwischen Rendite und Risiko abgewogen werden. Beide variables werden von Kursschwankungen beeinflusst. Oft wird davon ausgegangen, dass Kursschwankungen normalverteilt sind. Dadurch können Analysten die Wahrscheinlichkeiten errechnen, dass bestimmte Ereignisse eintreten. So könnte z.B. die Wahrscheinlichkeit errechnet werden, dass ein Wertpapier innerhalb der nächsten Tage um 10 % fällt. Mit Hilfe historischer Kurse können Mittelwert und Standardabweichung der Kursveränderungen berechnet werden. Durch Anwendung der Normalverteilung und den Berchnungen, die in dieser Anwendung erklärt werden, können dann Risiken quantifiziert und Investitionsentscheidungen optimiert werden."
+        "text": " Eine zentrale Aufgabe von Fonds - und Vermögensverwaltern ist das Risikomanagement. Wenn Trades durchgeführt werden, muss immer zwischen Rendite und Risiko abgewogen werden. Beide Variablen werden von Kursschwankungen beeinflusst. Oft wird davon ausgegangen, dass Kursschwankungen normalverteilt sind. Dadurch können Analysten die Wahrscheinlichkeiten errechnen, dass bestimmte Ereignisse eintreten. So könnte z.B. die Wahrscheinlichkeit errechnet werden, dass ein Wertpapier innerhalb der nächsten Tage um 10 % fällt. Mit Hilfe historischer Kurse können Mittelwert und Standardabweichung der Kursveränderungen berechnet werden. Durch Anwendung der Normalverteilung und den Berchnungen, die in dieser Anwendung erklärt werden, können dann Risiken quantifiziert und Investitionsentscheidungen optimiert werden."
+      }
+    ]
+  },
+  "definitions": {
+    "title": "Definitionen",
+    "text": "Definitionen erklären unbekannte Begriffe und zeigen die relevanten Formeln.",
+    "sections": [
+      {
+        "title": "Mittelwert",
+        "text": "Der Mittelwert ist der Durchschnitt mehrerer Werte und definiert als: "
+      },
+      {
+        "title": "Standardabweichung",
+        "text": "Die Standardabweichung ist ein Maß für die Streung einer Variable. Sie ist definiert als:"
+      },
+      {
+        "title": "Phi-Tabelle",
+        "text": "Die Phi-Tabelle wird verwendet um die Wahrscheinlichkeit einer Normalverteilung für einen gegebenen Z Wert zu liefern."
       }
     ]
   },

@@ -10,7 +10,9 @@
     <div class="text-h6">
       {{$t('application.sections[0].title')}}
     </div>
-    <v-img src="https://www.1sstockss1.com/wp-content/uploads/2020/11/avoiding-high-votality-810x455-1.jpg" width="600"/>
+    <br>
+    <v-img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dHJhZGluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" width="600"/>
+    <br>
     <p>
       {{$t('application.sections[0].text')}}
     </p>

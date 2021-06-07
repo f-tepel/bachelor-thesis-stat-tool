@@ -60,6 +60,10 @@
             <v-list-item-title>{{$t(`application.title`)}}</v-list-item-title>
           </v-list-item>
 
+          <v-list-item to="/definitions">
+            <v-list-item-title>{{$t(`definitions.title`)}}</v-list-item-title>
+          </v-list-item>
+
           <v-list-item to="/exercises">
             <v-list-item-title>{{$t(`exercises.title`)}}</v-list-item-title>
           </v-list-item>

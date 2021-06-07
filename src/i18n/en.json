@@ -117,6 +117,10 @@
       "title": "Exercises",
       "text": "Exercises help to apply and check what has been learned and consolidate. "
     },
+    "definitions": {
+      "title": "Definitions",
+      "text": "Definitions explain unknown terms and show the relevant formulas. "
+    },
     "language": {
       "title": "Language",
       "text": "The language can be set using the 3 dots on the top right of the screen. "
@@ -124,16 +128,35 @@
     "actions": [
       "Learning",
       "Areas of application",
-      "Exercises"
+      "Exercises",
+      "definitions"
     ]
   },
   "application": {
     "title": "Areas of application",
-    "text": "This web application is used to learn the calculation of probability with normal distributions. The tool includes the following functions.2",
+    "text": "The measured values of many processes in natural science, economics and engineering are approximately normally distributed. The normal distribution is therefore used in many fields to describe data of their probabilities. On this page, two areas are presented in which normal distributions are used.",
     "sections": [
       {
-        "title": "This web application is used to learn the calculation of probability with normal distributions. The tool includes the following functions.3",
-        "text": "This web application is used to learn the calculation of probability with normal distributions. The tool includes the following functions.4"
+        "title": "Financial Markets",
+        "text": "A central task of fund and asset managers is risk management. When trades are executed, a balance must always be struck between return and risk. Both variables are influenced by price fluctuations. It is often assumed that price fluctuations are normally distributed. This allows analysts to calculate the probabilities that certain events will occur. For example, the probability that a security will fall by 10% within the next few days could be calculated. Using historical prices, the mean and standard deviation of price changes can be calculated. By applying the normal distribution and the calculations explained in this application, risks can then be quantified and investment decisions optimized. Translated with www.DeepL.com/Translator (free version)"
+      }
+    ]
+  },
+  "definitions": {
+    "title": "Definitions",
+    "text": "Definitions explain unknown terms and show the relevant formulas.",
+    "sections": [
+      {
+        "title": "Mean",
+        "text": "The mean is the average of several values and is defined as:"
+      },
+      {
+        "title": "Standard Deviation",
+        "text": "The standard deviation is a measure of the dispersion of a variable. It is defined as:"
+      },
+      {
+        "title": "Phi-Table",
+        "text": "The Phi table is used to provide the probability of a normal distribution for a given Z value."
       }
     ]
   },

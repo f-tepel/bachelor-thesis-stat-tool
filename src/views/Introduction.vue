@@ -11,6 +11,10 @@
       {{$t('introduction.learn.text')}}
     </p>
     <p>
+      <b>{{$t('introduction.definitions.title')}}</b><br>
+      {{$t('introduction.definitions.text')}}
+    </p>
+    <p>
       <b>{{$t('introduction.application.title')}}</b><br>
       {{$t('introduction.application.text')}}
     </p>
@@ -32,7 +36,9 @@
       <v-btn class="mx-2 primary" to="/exercises">
         {{$t('introduction.actions[2]')}}
       </v-btn>
-    </div>
+      <v-btn class="mx-2 primary" to="/definitions">
+        {{$t('introduction.actions[3]')}}
+      </v-btn>    </div>
     <div class="d-lg-none">
       <v-btn block class="my-2 primary" to="/learn">
         {{$t('introduction.actions[0]')}}
@@ -42,6 +48,9 @@
       </v-btn>
       <v-btn block class="my-2 primary" to="/exercises">
         {{$t('introduction.actions[2]')}}
+      </v-btn>
+      <v-btn block class="my-2 primary" to="/definitions">
+        {{$t('introduction.actions[3]')}}
       </v-btn>
     </div>
   </v-container>
