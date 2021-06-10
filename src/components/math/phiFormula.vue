@@ -1,7 +1,7 @@
 <template>
   <math display="block">
     <mrow>
-      <mi>P (x &#60; a)</mi>
+      <mi>P (x &le; a)</mi>
       <mo>=</mo>
       <mo>&Phi;</mo>
       <mfenced>

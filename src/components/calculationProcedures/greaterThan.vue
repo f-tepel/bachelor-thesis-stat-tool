@@ -49,7 +49,7 @@
       </p>
       <math display="block">
         <mrow>
-          <mi>P (x &#60; {{aValue}})</mi>
+          <mi>P (x &le; {{aValue}})</mi>
           <mo>=</mo>
           <mi>1</mi>
           <mo>-</mo>
@@ -67,7 +67,7 @@
       </math>
       <math display="block">
         <mrow>
-          <mi>P (x &#60; {{aValue}})</mi>
+          <mi>P (x &le; {{aValue}})</mi>
           <mo>=</mo>
           <mi>1</mi>
           <mo>-</mo>
@@ -92,7 +92,7 @@
         <mo>=</mo>
         <mi>1</mi>
         <mo>-</mo>
-        <mo>P (x &#60; {{aValue}})</mo>
+        <mo>P (x &le; {{aValue}})</mo>
       </mrow>
     </math>
     <math display="block" v-if="zValue >= 0">
@@ -108,7 +108,7 @@
     </math>
     <math display="block" v-if="zValue < 0">
       <mrow>
-        <mi>P (x &#60; {{aValue}})</mi>
+        <mi>P (x &le; {{aValue}})</mi>
         <mo>=</mo>
         <mi>1</mi>
         <mo>-</mo>

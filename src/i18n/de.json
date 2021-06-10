@@ -19,7 +19,7 @@
       "smallerSteps": [
         {
           "text": "1. Welche Formel muss verwendet werden",
-          "description": "Mit Hilfe der folgenden Formel kann die Wahrscheinlichkeit berechnet werden, dass ein Wert kleiner als der festgelegte a Wert ist. Es wird also eigentlich die Größe bzw. das Integral der schwarzen Fläche berechnet. Da die Berchnung des Intergrals jedoch sehr komplex ist, wird zur Hilfe die sogenannte Phi / Z Tabelle verwendet. Diese kommt aber erst in Schritt 4 zum Einsatz"
+          "description": "Mit Hilfe der folgenden Formel kann die Wahrscheinlichkeit berechnet werden, dass ein Wert kleiner gleich dem festgelegten a Wert ist. Es wird also eigentlich die Größe bzw. das Integral der grauen Fläche berechnet. Da die Berchnung des Intergrals jedoch sehr komplex ist, wird zur Hilfe die sogenannte Phi / Z Tabelle verwendet. Diese kommt aber erst in Schritt 4 zum Einsatz"
         },
         {
           "text": "2. Innere Gleichung Lösen",
@@ -41,8 +41,8 @@
       "greaterSteps": [
         {
           "text": "1. Welche Formel muss verwendet werden",
-          "description": "Mit Hilfe der folgenden Formel kann die Wahrscheinlichkeit berechnet werden, dass ein Wert größer als der festgelegte a Wert ist. Da mit der bereits bekannten Formel aber nur die Wahrscheinlichkeit berechnet werden kann, dass ein Wert kleiner als a ist, muss die Formel umgestellt werden. Zunächst wird die Wahrscheinlichkeit für x < a berechnet und dann von 1 subtrahiert.",
-          "description_2": "Um die Größe der schwarzen Fläche zu berechnen, wird also eignetlich die Größe der weißen Fläche berechnet, die dann von der gesamten Fläche unter der Kurve abgezogen wird."
+          "description": "Mit Hilfe der folgenden Formel kann die Wahrscheinlichkeit berechnet werden, dass ein Wert größer als der festgelegte a Wert ist. Da mit der bereits bekannten Formel aber nur die Wahrscheinlichkeit berechnet werden kann, dass ein Wert kleiner gleich a ist, muss die Formel umgestellt werden. Zunächst wird die Wahrscheinlichkeit für x <= a berechnet und dann von 1 subtrahiert.",
+          "description_2": "Um die Größe der grauen Fläche zu berechnen, wird also eignetlich die Größe der weißen Fläche berechnet, die dann von der gesamten Fläche unter der Kurve abgezogen wird."
         },
         {
           "text": "2. Innere Gleichung Lösen",
@@ -64,7 +64,7 @@
       "inBetweenSteps": [
         {
           "text": "1. Welche Formel muss verwendet werden",
-          "description": "Wenn die Wahrscheinlichkeit berechnet werden soll, dass ein Wert größer als a1 und kleiner als a2 ist, müssen zwei Warhscheinlickeiten berechnet und voneinander abgezogen werden. Da mit der normalen Phi Formel nur die Wahrscheinlichkeit berechnet werden kann, dass ein Wert kleiner als a ist, muss zunächst die Wahrscheinlichkeit für P(x < a2) berechnet werden. Danach die Wahrscheinlichkeit für P(x < a1) und zuletzt voneinander subtrahiert werden. Es ergibt sicher daher folgende Formel"
+          "description": "Wenn die Wahrscheinlichkeit berechnet werden soll, dass ein Wert größer als a1 und kleiner als a2 ist, müssen zwei Warhscheinlickeiten berechnet und voneinander abgezogen werden. Da mit der normalen Phi Formel nur die Wahrscheinlichkeit berechnet werden kann, dass ein Wert kleiner gleich a ist, muss zunächst die Wahrscheinlichkeit für P(x <= a2) berechnet werden. Danach die Wahrscheinlichkeit für P(x <= a1) und zuletzt voneinander subtrahiert werden. Es ergibt sicher daher folgende Formel:"
         },
         {
           "text": "2. Innere Gleichungen Lösen",
@@ -95,6 +95,17 @@
         }
       ]
     },
+    "simpleCalculation": {
+      "isSmaller": {
+        "text": "Um die Wahrscheinlichkeit zu errechnen, muss die graue Fläche berechnet werden. Diese Fläche kann berechnet werden, indem eine simple Formel verwendet wird."
+      },
+      "isGreater": {
+        "text": "Um die Wahrscheinlichkeit zu errechnen, muss die graue Fläche berechnet werden. Diese Fläche kann berechnet werden, indem man von der gesamten Fläche, hier in blau dargestellt, die grüne Fläche subtrahiert."
+      },
+      "isInBetween": {
+        "text": "Um die Wahrscheinlichkeit zu errechnen, muss die graue Fläche berechnet werden. Diese Fläche kann berechnet werden, indem zunächst die blaue Fläche berechnet wird und dann die grüne Fläche von der blauen abgezogen wird."
+      }
+    },
     "share": {
       "share": "Teilen",
       "link": "Dein Link",
@@ -104,18 +115,18 @@
   },
   "introduction": {
     "title": "Einleitung",
-    "text": " Diese Webanwendung dient dem Erlernen der Wahrscheinlichkeitsrechnung mit Normalverteilungen. Das Tool beinhaltet folgende Funktionen.",
+    "text": "Diese Webanwendung dient dem Erlernen der Wahrscheinlichkeitsrechnung mit Normalverteilungen. Das Tool beinhaltet folgende Funktionen.",
     "learn": {
       "title": "Lernen",
       "text": "In diesem Teil lernt man wie man Wahrscheinlichkeiten mit Normalverteilungen berechnet. Interaktive Diagramme und Erklärungen vermitteln das Thema verständlich und spielerisch."
     },
     "application": {
       "title": "Anwendungsgebiete",
-      "text": "Dieser Teil erläutert Beispiel Bereiche in denen Normalverteilungen tatsächlich verwendet werden, wie diese eingesetzt werden und warum sie eingesetzt werden."
+      "text": "Dieser Teil erläutert wie Normalverteilungen tatsächlich in Anwendungsbereichen verwendet werden und warum sie eingesetzt werden."
     },
     "exercises": {
       "title": "Übungsaufgaben",
-      "text": "Übungsaufgaben helfen das Gelernte anzuwenden, überprüfen und zu festigen. "
+      "text": "Übungsaufgaben helfen das Erlernte anzuwenden, überprüfen und zu festigen. "
     },
     "definitions": {
       "title": "Definitionen",
@@ -131,7 +142,7 @@
   },
   "application": {
     "title": "Anwendungsgebiete",
-    "text": "Die Messwerte vieler Prozesse der Natur-, Wirtschafts- und Ingenieurswissenschaft sind annähernd normalverteilt. Die Normalverteilung wird daher in vielen Gebieten verwendet um Daten derren Wahrscheinlichkeiten zu beschreiben. Auf dieser Seite werden zwei Bereiche vorgestellt, in denen mit Normalverteilungen gerechnet wird.",
+    "text": "Die Messwerte vieler Prozesse der Natur-, Wirtschafts- und Ingenieurswissenschaft sind annähernd normalverteilt. Die Normalverteilung wird daher in vielen Gebieten verwendet um Daten und deren Wahrscheinlichkeiten zu beschreiben. Auf dieser Seite wird ein Bereich vorgestellt, in dem mit Normalverteilungen gerechnet wird.",
     "sections": [
       {
         "title": "Finanzindustrie",
@@ -163,22 +174,22 @@
     "toDiagram": "Zum Diagramm",
     "tasks": [
       {
-        "text": "Eine Maschine produziert 500 mm lange Schrauben mit einer Standardabweichung von 10 mm. Die Länge der Schrauben kann als normalverteilt angesehen werden. Berechne die Wahrscheinlichkeit dafür, dass eine Schraube kürzer ist als 485 mm.",
+        "text": "Peter geht im Durchschnitt jeden Morgen 500 Meter zur Universität. Da er nicht immer den optimalen Weg verwendet hat sein Weg eine Standardabweichung von 10 Meter. Der Weg zur Universität kann als normalverteilt angesehen werden. Berechne die Wahrscheinlichkeit dafür, dass Peters Weg kürzer als 485 Meter ist.",
         "answer": "Die Wahrscheinlichkeit beträgt 6,7%",
         "diagramLink": "/learn?mean=500&std=10&a=485&mode=smaller"
       },
       {
-        "text": "Für den Ebolavirus wird nach Einschätzung der Statistiker bei 8 % der Bevölkerung eine ärztliche Behandlung notwendig sein. Die Standardabweichung beträgt 38. Ein Großhandel möchte für die Apotheken einer Kreisstadt mit 20 000 Einwohnern Behandlungsmaterialien im Voraus bestellen. Mit welcher Wahrscheinlichkeit werden mindestens 1350 Behandlungsmaterialien benötigt?",
+        "text": "Schätzungen zu Folge schließen jedes jahr in etwa 8% aller Studierenden ihren Bachelor ab. Eine Hochschule in Frankfurt hat 20 000 Studierende und möchte für die Absolventen Sekt bestellen. Mit welcher Wahrscheinlichkeit werden mindestens 1350 Flaschen Sekt benötigt? Die Standardabweichung beträgt 38.",
         "answer": "Die Wahrscheinlichkeit beträgt rund 100%",
         "diagramLink": "/learn?mean=1600&std=38&a=1350&mode=greater"
       },
       {
-        "text": "Eine Maschine produziert 500 mm lange Schrauben mit einer Standardabweichung von 10 mm. Berechne die Wahrscheinlichkeit dafür, dass eine Schraube höchstens 501 mm und mindestens 499 mm lang ist.",
+        "text": "Peter geht im Durchschnitt jeden Morgen 500 Meter zur Universität. Da er nicht immer den optimalen Weg verwendet hat sein Weg eine Standardabweichung von 10 Meter. Berechne die Wahrscheinlichkeit dafür, dass der Weg höchstens 501 Meter und mindestens 499 Meter lang ist.",
         "answer": "Die Wahrscheinlichkeit beträgt rund 8%",
         "diagramLink": "/learn?mean=500&std=10&a1=499&a2=501&mode=inBetween"
       },
       {
-        "text": "Für den Ebolavirus wird nach Einschätzung der Statistiker bei 8 % der Bevölkerung eine ärztliche Behandlung notwendig sein. Ein Großhandel möchte für die Apotheken einer Kreisstadt mit 20 000 Einwohnern Behandlungsmaterialien im Voraus bestellen. Die Standardabweichung beträgr 38. Mit welcher Wahrscheinlichkeit weicht die Zahl der benötigten Behandlungsmaterialien um nicht mehr als die Standardabweichung vom Erwartungswert ab?",
+        "text": "Schätzungen zu Folge schließen jedes jahr in etwa 8% aller Studierenden ihren Bachelor ab. Eine Hochschule in Frankfurt hat 20 000 Studierende und möchte für die Absolventen Sekt bestellen. Mit welcher Wahrscheinlichkeit weicht die Zahl der benötigten Meter um nicht mehr als die Standardabweichung vom Erwartungswert ab?",
         "answer": "Die Wahrscheinlichkeit beträgt rund 68,27%",
         "diagramLink": "/learn?mean=1600&std=38&a=1350&a1=1562&a2=1638&mode=inBetween"
       }

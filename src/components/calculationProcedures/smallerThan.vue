@@ -25,7 +25,7 @@
     </math>
     <math display="block">
       <mrow>
-        <mi>P (x &#60; a)</mi>
+        <mi>P (x &le; a)</mi>
         <mo>=</mo>
         <mo>&Phi;</mo>
         <mo>(</mo>
@@ -42,7 +42,7 @@
       <p>{{$t('learn.calculation.smallerSteps[2].valueNegative')}}</p>
       <math display="block">
         <mrow>
-          <mi>P (x &#60; {{aValue}})</mi>
+          <mi>P (x &le; {{aValue}})</mi>
           <mo>=</mo>
           <mi>1</mi>
           <mo>-</mo>
@@ -56,7 +56,7 @@
       </math>
       <math display="block">
         <mrow>
-          <mi>P (x &#60; {{aValue}})</mi>
+          <mi>P (x &le; {{aValue}})</mi>
           <mo>=</mo>
           <mi>1</mi>
           <mo>-</mo>
@@ -77,14 +77,14 @@
     <br>
     <math display="block" v-if="zValue >= 0">
       <mrow>
-        <mi>P (x &#60; {{aValue}})</mi>
+        <mi>P (x &le; {{aValue}})</mi>
         <mo>=</mo>
         <mi>{{probabilityTable.toFixed(4)}}</mi>
       </mrow>
     </math>
     <math display="block" v-if="zValue < 0">
       <mrow>
-        <mi>P (x &#60; {{aValue}})</mi>
+        <mi>P (x &le; {{aValue}})</mi>
         <mo>=</mo>
         <mi>1</mi>
         <mo>-</mo>

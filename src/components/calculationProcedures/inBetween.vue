@@ -37,7 +37,7 @@
     </math>
     <math display="block">
       <mrow>
-        <mi>P (x &#60; a)</mi>
+        <mi>P (x &le; a)</mi>
         <mo>=</mo>
         <mo>&Phi;</mo>
         <mo>(</mo>
@@ -51,7 +51,7 @@
       </p>
       <math display="block">
         <mrow>
-          <mi>P (x &#60; {{aValueStart}})</mi>
+          <mi>P (x &le; {{aValueStart}})</mi>
           <mo>=</mo>
           <mo>&Phi;</mo>
           <mo>(</mo>
@@ -66,7 +66,7 @@
       </p>
       <math display="block">
         <mrow>
-          <mi>P (x &#60; {{aValueStart}})</mi>
+          <mi>P (x &le; {{aValueStart}})</mi>
           <mo>=</mo>
           <mi>1</mi>
           <mo>-</mo>
@@ -80,7 +80,7 @@
       </math>
       <math display="block">
         <mrow>
-          <mi>P (x &#60; {{aValueStart}})</mi>
+          <mi>P (x &le; {{aValueStart}})</mi>
           <mo>=</mo>
           <mi>1</mi>
           <mo>-</mo>
@@ -97,7 +97,7 @@
       </p>
       <math display="block">
         <mrow>
-          <mi>P (x &#60; {{aValueEnd}})</mi>
+          <mi>P (x &le; {{aValueEnd}})</mi>
           <mo>=</mo>
           <mo>&Phi;</mo>
           <mo>(</mo>
@@ -112,7 +112,7 @@
       </p>
       <math display="block">
         <mrow>
-          <mi>P (x &#60; {{aValueEnd}})</mi>
+          <mi>P (x &le; {{aValueEnd}})</mi>
           <mo>=</mo>
           <mi>1</mi>
           <mo>-</mo>
@@ -126,7 +126,7 @@
       </math>
       <math display="block">
         <mrow>
-          <mi>P (x &#60; {{aValueEnd}})</mi>
+          <mi>P (x &le; {{aValueEnd}})</mi>
           <mo>=</mo>
           <mi>1</mi>
           <mo>-</mo>
@@ -152,7 +152,7 @@
     <div v-if="zValue >= 0">
       <math display="block">
         <mrow>
-          <mi>P (x &#60; {{aValueStart}})</mi>
+          <mi>P (x &le; {{aValueStart}})</mi>
           <mo>=</mo>
           <mo>&Phi;</mo>
           <mo>(</mo>
@@ -166,18 +166,18 @@
     <math display="block" v-if="zValue < 0">
       <math display="block">
         <mrow>
-          <mi>P (x &#60; a1)</mi>
+          <mi>P (x &le; a1)</mi>
           <mo>=</mo>
           <mi>1</mi>
           <mo>-</mo>
           <mo>&Phi;</mo>
           <mo>(</mo>
-          <mi>{{Math.abs(zValue)}}</mi>
+          <mi>{{Math.abs(zValue).toFixed(4)}}</mi>
           <mo>)</mo>
         </mrow>
       </math>
       <mrow>
-        <mi>P (x &#60; {{aValueStart}})</mi>
+        <mi>P (x &le; {{aValueStart}})</mi>
         <mo>=</mo>
         <mi>1</mi>
         <mo>-</mo>
@@ -194,7 +194,7 @@
     <div v-if="zValueTwo >= 0">
       <math display="block">
         <mrow>
-          <mi>P (x &#60; {{aValueEnd}})</mi>
+          <mi>P (x &le; {{aValueEnd}})</mi>
           <mo>=</mo>
           <mo>&Phi;</mo>
           <mo>(</mo>
@@ -208,18 +208,18 @@
     <math display="block" v-if="zValueTwo < 0">
       <math display="block">
         <mrow>
-          <mi>P (x &#60; a2)</mi>
+          <mi>P (x &le; a2)</mi>
           <mo>=</mo>
           <mi>1</mi>
           <mo>-</mo>
           <mo>&Phi;</mo>
           <mo>(</mo>
-          <mi>{{Math.abs(zValueTwo)}}</mi>
+          <mi>{{Math.abs(zValueTwo).toFixed(4)}}</mi>
           <mo>)</mo>
         </mrow>
       </math>
       <mrow>
-        <mi>P (x &#60; {{aValueEnd}})</mi>
+        <mi>P (x &le; {{aValueEnd}})</mi>
         <mo>=</mo>
         <mi>1</mi>
         <mo>-</mo>
@@ -236,17 +236,17 @@
     <br>
     <math display="block">
       <mrow>
-        <mi>P (a1 &#60; x &#60; a2)</mi>
+        <mi>P (a1 &le; x &le; a2)</mi>
         <mo>=</mo>
-        <mi>P (x &#60; a2)</mi>
+        <mi>P (x &le; a2)</mi>
         <mo>-</mo>
-        <mi>P (x &#60; a1)</mi>
+        <mi>P (x &le; a1)</mi>
       </mrow>
     </math>
     <br>
     <math display="block">
       <mrow>
-        <mi>P (a1 &#60; x &#60; a2)</mi>
+        <mi>P (a1 &le; x &le; a2)</mi>
         <mo>=</mo>
         <mi>{{probabilityTableTwo}}</mi>
         <mo>-</mo>
@@ -256,7 +256,7 @@
     <br>
     <math display="block">
       <mrow>
-        <mi>P (a1 &#60; x &#60; a2)</mi>
+        <mi>P (a1 &le; x &le; a2)</mi>
         <mo>=</mo>
         <mi>{{Number(probabilityTableTwo - (1 - probabilityTable)).toFixed(4)}}</mi>
       </mrow>

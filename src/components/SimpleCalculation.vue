@@ -3,7 +3,7 @@
     <div class="text-h3">{{$t('learn.calculation.procedure')}}</div>
     <br>
     <div v-if="isSmaller">
-      <SmallerThanProcedure/>
+      <SimpleSmallerThan/>
     </div>
     <div v-if="isGreater">
       <SimpleGreaterThan/>
@@ -17,12 +17,14 @@
 <script lang="ts">
 import Vue from 'vue'
 import { mapState } from 'vuex'
+import SimpleSmallerThan from './simpleCalc/simpleSmallerThan.vue'
 import SimpleGreaterThan from './simpleCalc/SimpleGreaterThan.vue'
 import SimpleInBetween from './simpleCalc/SimpleInBetween.vue'
 
 export default Vue.extend({
   name: 'SimpleCalculation',
   components: {
+    SimpleSmallerThan,
     SimpleGreaterThan,
     SimpleInBetween
   },

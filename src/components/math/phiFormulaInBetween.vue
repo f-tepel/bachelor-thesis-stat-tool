@@ -2,17 +2,17 @@
   <div>
     <math display="block">
       <mrow>
-        <mi>P (a1 &#60; x &#60; a2)</mi>
+        <mi>P (a1 &le; x &le; a2)</mi>
         <mo>=</mo>
-        <mi>P (x &#60; a2)</mi>
+        <mi>P (x &le; a2)</mi>
         <mo>-</mo>
-        <mi>P (x &#60; a1)</mi>
+        <mi>P (x &le; a1)</mi>
       </mrow>
     </math>
     <br>
     <math display="block">
       <mrow>
-        <mi>P (a1 &#60; x &#60; a2)</mi>
+        <mi>P (a1 &le; x &le; a2)</mi>
         <mo>=</mo>
         <mo>&Phi;</mo>
         <mfenced>

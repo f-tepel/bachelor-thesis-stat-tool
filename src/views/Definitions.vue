@@ -20,7 +20,6 @@
           <mo>=</mo>
           <mfenced>
             <mrow>
-              <mo>(</mo>
               <mfrac>
                 <mrow>
                   <mi>x1</mi>
@@ -33,7 +32,6 @@
                 </mrow>
                 <mi>n</mi>
               </mfrac>
-              <mo>)</mo>
             </mrow>
           </mfenced>
         </mrow>
@@ -70,14 +68,6 @@
       <br>
     </div>
     <br><br>
-    <div>
-      <div class="text-h6">
-        {{$t('definitions.sections[2].title')}}
-      </div>
-      <span>
-        {{$t('definitions.sections[2].text')}}
-      </span>
-    </div>
   </v-container>
 </template>
 

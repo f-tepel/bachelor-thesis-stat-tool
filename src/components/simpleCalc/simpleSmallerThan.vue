@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>
-      {{$t('learn.simpleCalculation.isGreater.text')}}
+      {{$t('learn.simpleCalculation.isSmaller.text')}}
     </p>
     <div class="d-flex">
       <div>
@@ -9,7 +9,7 @@
           :mean="mean"
           :std="std"
           :aValue="aValue"
-          :isGreater="true"/>
+          :isSmaller="true"/>
         <div class="text-center">
           P (x > a)
         </div>
@@ -20,25 +20,6 @@
       </div>
       <div class="text-h1 d-flex justify-center align-center mx-5">
         =
-      </div>
-      <div>
-        <DefaultChart
-          :mean="mean"
-          :std="std"
-          :aValue="mean - (4 * std)"
-          :isGreater="isGreater"
-          chartColor="steelblue"
-        />
-        <div class="text-center">
-          1
-        </div>
-        <br>
-        <div class="text-center">
-          1
-        </div>
-      </div>
-      <div class="text-h1 d-flex justify-center align-center mx-5">
-        -
       </div>
       <div>
         <DefaultChart
@@ -69,7 +50,7 @@
         </div>
         <br>
         <div class="text-center">
-          {{(1 - this.$store.state.probability).toFixed(4)}}
+          {{this.$store.state.probability.toFixed(4)}}
         </div>
       </div>
     </div>
@@ -83,7 +64,7 @@ import { mapState } from 'vuex'
 import DefaultChart from '../DefaultChart.vue'
 
 export default Vue.extend({
-  name: 'SimpleGreaterThan',
+  name: 'SimpleSmallerThan',
   components: {
     DefaultChart
   },

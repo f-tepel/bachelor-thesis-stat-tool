@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Chart/>
-    <v-card :style="{width: chartWidth + 'px'}" class="mx-auto">
+    <v-card :style="{width: chartWidth + 'px'}" class="mx-auto my-10">
       <v-tabs
         v-model="tab"
         background-color="primary"

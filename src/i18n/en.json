@@ -19,7 +19,7 @@
       "smallerSteps": [
         {
           "text": "1. Which formula must be used",
-          "description": "The following formula can be used to calculate the probability that a value is smaller than the specified a value. So actually the size or the integral of the black area is calculated. However, since the calculation of the integral is very complex, the so-called Phi / Z table is used to help. This is only used in step 4"
+          "description": "The following formula can be used to calculate the probability that a value is less than or equal than the specified a value. So actually the size or the integral of the grey area is calculated. However, since the calculation of the integral is very complex, the so-called Phi / Z table is used to help. This is only used in step 4"
         },
         {
           "text": "2. Solve Inner Equation",
@@ -33,16 +33,16 @@
         },
         {
           "text": "4. Read value in Phi / Z table",
-          "description": "1. Which formula must be used0",
-          "exampleTitle": "1. Which formula must be used1",
-          "example": "1. Which formula must be used2"
+          "description": "Finally, the z value is used to read the probability from the Phi table. For this, the value before the decimal point and the first digit after the decimal point is used as the y-coordinate. The second digit after the decimal point is used as the x-coordinate. With the help of the coordinates the approximated probability can be read in the table shown below. The green boxes help to read off.",
+          "exampleTitle": "Example",
+          "example": "z = 0.63 - '0.6' is used as y-coordinate. The second digit after the comma '3' is used as x-coordinate. Before the '3' still '0.0' is set, thus '0.03'. This value is then used as the x-coordinate."
         }
       ],
       "greaterSteps": [
         {
           "text": "1. Which formula must be used",
           "description": "The following formula can be used to calculate the probability that a value is greater than the specified a value. However, since the already known formula can only be used to calculate the probability that a value is less than a, the formula must be rearranged. First the probability for x <a is calculated and then subtracted from 1.",
-          "description_2": "To calculate the size of the black area, the size of the white area is calculated, which is then subtracted from the entire area under the curve."
+          "description_2": "To calculate the size of the grey area, the size of the white area is calculated, which is then subtracted from the entire area under the curve."
         },
         {
           "text": " 2. Solve Inner Equation",
@@ -56,15 +56,15 @@
         },
         {
           "text": "4. Read value in Phi / Z table",
-          "description": "The following formula can be used to calculate the probability that a value is greater than the specified a value. However, since the already known formula can only be used to calculate the probability that a value is less than a, the formula must be rearranged. First the probability for x <a is calculated and then subtracted from 1.0",
-          "exampleTitle": "The following formula can be used to calculate the probability that a value is greater than the specified a value. However, since the already known formula can only be used to calculate the probability that a value is less than a, the formula must be rearranged. First the probability for x <a is calculated and then subtracted from 1.1",
-          "example": "The following formula can be used to calculate the probability that a value is greater than the specified a value. However, since the already known formula can only be used to calculate the probability that a value is less than a, the formula must be rearranged. First the probability for x <a is calculated and then subtracted from 1.2"
+          "description": "Finally, the z value is used to read the probability from the Phi table. For this, the value before the decimal point and the first digit after the decimal point is used as the y-coordinate. The second digit after the decimal point is used as the x-coordinate. With the help of the coordinates the approximated probability can be read in the table shown below. The green boxes help to read off.",
+          "exampleTitle": "Example",
+          "example": "z = 0.63 - '0.6' is used as y-coordinate. The second digit after the comma '3' is used as x-coordinate. Before the '3' still '0.0' is set, thus '0.03'. This value is then used as the x-coordinate."
         }
       ],
       "inBetweenSteps": [
         {
           "text": "1. Which formula must be used",
-          "description": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula"
+          "description": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <= a2) must first be calculated. Then the probability for P (x <= a1) and finally subtracted from each other. It certainly gives the following formula"
         },
         {
           "text": "2. Solving Inner Equations",
@@ -80,20 +80,31 @@
             "valueNegative": "Since the z1 value is negative, the formula must be changed. The negative z becomes positive through the dashes."
           },
           "z2": {
-            "valuePositive": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula0",
-            "valueNegative": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula1"
+            "valuePositive": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <= a2) must first be calculated. Then the probability for P (x <= a1) and finally subtracted from each other. It certainly gives the following formula",
+            "valueNegative": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <= a2) must first be calculated. Then the probability for P (x <= a1) and finally subtracted from each other. It certainly gives the following formula"
           }
         },
         {
-          "text": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula2",
-          "description": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula3",
-          "exampleTitle": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula4",
-          "example": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula5",
-          "a1": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula6",
-          "a2": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula7",
-          "total": "If the probability is to be calculated that a value is greater than a1 and less than a2, two warranties must be calculated and subtracted from each other. Since the normal Phi formula can only calculate the probability that a value is smaller than a, the probability for P (x <a2) must first be calculated. Then the probability for P (x <a1) and finally subtracted from each other. It certainly gives the following formula8"
+          "text": "4. Read value from Phi / Z table",
+          "description": "Finally, the z values are used to read the probability from the Phi table. For this, the value before the decimal point and the first digit after the decimal point is used as the y-coordinate. The second digit after the decimal point is used as the x-coordinate. With the help of the coordinates the approximated probability can be read in the table shown below. The green boxes help to read off.",
+          "exampleTitle": "Example",
+          "example": "z = 0.63 - '0.6' is used as y-coordinate. The second digit after the comma '3' is used as x-coordinate. Before the '3' still '0.0' is set, thus '0.03'. This value is then used as the x-coordinate.",
+          "a1": "Calculate a1 probability",
+          "a2": "Calculate a2 probability",
+          "total": "Calculate total probability"
         }
       ]
+    },
+    "simpleCalculation": {
+      "isSmaller": {
+        "text": "To calculate the probability, the gray area must be calculated. This area can be calculated by using a simple formula."
+      },
+      "isGreater": {
+        "text": "To calculate the probability, the gray area must be calculated. This area can be calculated by subtracting the green area from the total area, shown here in blue."
+      },
+      "isInBetween": {
+        "text": "To calculate the probability, the gray area must be calculated. This area can be calculated by first calculating the blue area and then subtracting the green area from the blue area."
+      }
     },
     "share": {
       "share": "Share",
@@ -134,7 +145,7 @@
   },
   "application": {
     "title": "Areas of application",
-    "text": "The measured values of many processes in natural science, economics and engineering are approximately normally distributed. The normal distribution is therefore used in many fields to describe data of their probabilities. On this page, two areas are presented in which normal distributions are used.",
+    "text": "The measured values of many processes in natural science, economics and engineering are approximately normally distributed. The normal distribution is therefore used in many areas to describe data and their probabilities. This page presents a field in which normal distributions are used.",
     "sections": [
       {
         "title": "Financial Markets",
@@ -166,22 +177,22 @@
     "toDiagram": "To diagram",
     "tasks": [
       {
-        "text": "A machine produces 500mm long screws with a standard deviation of 10mm. The length of the screws can be viewed as normally distributed. Calculate the probability that a screw is shorter than 485 mm.",
+        "text": "Peter walks an average of 500 meters to the university every morning. Since he does not always use the optimal path, his path has a standard deviation of 10 meters. The path to the university can be considered normally distributed. Calculate the probability that Peter's path is shorter than 485 meters.",
         "answer": "The probability is about 6,7%",
         "diagramLink": "/learn?mean=500&std=10&a=485&mode=smaller"
       },
       {
-        "text": "Statisticians estimate that 8% of the population will require medical treatment for the Ebola virus. A wholesaler would like to order treatment materials in advance for pharmacies in a district town with 20,000 inhabitants. The standard deviation is 38. What is the probability that at least 1,350 treatment materials will be required?",
+        "text": "It is estimated that about 8% of all students graduate with a bachelor's degree each year. A university in Frankfurt has 20,000 students and wants to order champagne for the graduates. What is the probability that at least 1350 bottles of sparkling wine will be needed? The standard deviation is 38.",
         "answer": "The probability is about 100%",
         "diagramLink": "/learn?mean=1600&std=38&a=1350&mode=greater"
       },
       {
-        "text": "A machine produces 500 mm long screws with a standard deviation of 10 mm. Calculate the probability that a screw is no more than 501 mm long and at least 499 mm long.",
+        "text": "Peter walks an average of 500 meters to the university every morning. Since he does not always use the optimal path, his path has a standard deviation of 10 meters. Calculate the probability that the path is at most 501 meters and at least 499 meters long.",
         "answer": "The probability is about 8%",
         "diagramLink": "/learn?mean=500&std=10&a1=499&a2=501&mode=inBetween"
       },
       {
-        "text": "According to statisticians, 8% of the population will require medical treatment for the Ebola virus. A wholesaler would like to order treatment materials in advance for pharmacies in a district town with 20,000 inhabitants. The standard deviation is 38. What is the probability that the number of treatment materials required does not deviate from the expected value by more than the standard deviation?",
+        "text": "It is estimated that about 8% of all students graduate with a bachelor's degree each year. A university in Frankfurt has 20,000 students and wants to order champagne for the graduates. With what probability does the number of meters required deviate from the expected value by no more than the standard deviation?",
         "answer": "The probability is about 68.27%",
         "diagramLink": "/learn?mean=1600&std=38&a=1350&a1=1562&a2=1638&mode=inBetween"
       }
